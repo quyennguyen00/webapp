@@ -24,8 +24,9 @@ public class HomeController {
     public String register(Model model){
         return "register";
     }
+   
     
-     @RequestMapping("/Reset")
+     @RequestMapping("/ResetPassword")
     public String password(Model model){
         return "pass";
     }
@@ -35,4 +36,13 @@ public class HomeController {
         return "tableControl";
     }
    
+    // Redirects 
+      @RequestMapping(path ="/redirectRegister")
+    public String redirectRegister(Model model){
+        return "redirect:/Register";
+    }
+      @RequestMapping(path ="//redirectResetPass")
+    public String redirectGetPass(Model model){
+        return "redirect:/ResetPassword";
+    }
 }
