@@ -34,8 +34,5 @@ public class HomeController {
     public String tables(Model model){
         return "tableControl";
     }
-    @RequestMapping("/Tales")
-    public String chartgit (Model model){
-        return "tableControl";
-    }
+   
 }
