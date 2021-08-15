@@ -5,6 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="string" uri="http://www.springframework.org/tags" %>
+<%@taglib prefix="form" uri ="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <div class="bg-info">
   <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
@@ -25,36 +28,42 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating">
+                                                        <!--//Java-->
                                                         <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" />
                                                         <label for="inputLastName">Last name</label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
+                                                <!--//Java-->
+                                                <input class="form-control" id="inputEmail" type="email" placeholder="name@gmail.com" />
                                                 <label for="inputEmail">Email address</label>
                                             </div>
                                             <div class="row mb-3">
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
+                                                        <!--//Java-->
                                                         <input class="form-control" id="inputPassword" type="password" placeholder="Create a password" />
                                                         <label for="inputPassword">Password</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-floating mb-3 mb-md-0">
+                                                          <!--// java-->
                                                         <input class="form-control" id="inputPasswordConfirm" type="password" placeholder="Confirm password" />
+                                                      
                                                         <label for="inputPasswordConfirm">Confirm Password</label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="mt-4 mb-0">
+                                                <!--//java-->
                                                 <div class="d-grid"><a class="btn btn-primary btn-block" href="login.html">Create Account</a></div>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="login.html">Have an account? Go to login</a></div>
+                                        <div class="small"><a href="<c:url value="/redirectLogin"/>">Have an account? Go to login</a></div>
                                     </div>
                                 </div>
                             </div>

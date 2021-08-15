@@ -41,8 +41,12 @@ public class HomeController {
     public String redirectRegister(Model model){
         return "redirect:/Register";
     }
-      @RequestMapping(path ="//redirectResetPass")
+      @RequestMapping(path ="/redirectResetPass")
     public String redirectGetPass(Model model){
         return "redirect:/ResetPassword";
+    }
+      @RequestMapping(path ="/redirectLogin")
+    public String redirectLogin(Model model){
+        return "redirect:/";
     }
 }
