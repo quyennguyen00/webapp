@@ -1,0 +1,12 @@
+com\medicweb\repository\impl\CategoryRepositoryImpl.class
+com\medicweb\configs\SpringSecurityConfig.class
+com\medicweb\controllers\HomeController.class
+com\medicweb\repository\CategoryRepository.class
+com\medicweb\configs\DispatcherServletInitializer.class
+com\medicweb\pojo\Category.class
+com\medicweb\configs\TilesConfig.class
+com\medicweb\service\impl\CategoryServiceImpl.class
+com\medicweb\configs\HibernateConfig.class
+com\medicweb\configs\WebApplicationContextConfig.class
+com\medicweb\pojo\User.class
+com\medicweb\service\CategoryService.class
