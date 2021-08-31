@@ -12,30 +12,27 @@ and open the template in the editor.
  
 <tiles-definitions>
     <definition name="page" template="/WEB-INF/layout/page.jsp">
-        <put-attribute name="title" value="Login"/>
-         <put-attribute name="topbar" value="/WEB-INF/layout/topbar.jsp"/>
+        <put-attribute name="title" value="ADMIN"/>
         <put-attribute name="header" value="/WEB-INF/layout/header.jsp"/>
-        <put-attribute name="content" value="/WEB-INF/layout/main/login.jsp"/>
+        <put-attribute name="content" value="/WEB-INF/page/tablecontent.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
         
     </definition>
-     <definition name="register" extends="page">
+    <definition name="login" template="/WEB-INF/layout/loginform.jsp">
+        <put-attribute name="title" value="Login"/>
+        <put-attribute name="content" value="/WEB-INF/page/login.jsp"/>  
+         <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>     
+    </definition>
+     <definition name="register" extends="login">
         <put-attribute name="title" value="Register"/>
-        <put-attribute name="content" value="/WEB-INF/layout/main/register.jsp"/>       
+        <put-attribute name="content" value="/WEB-INF/page/register.jsp"/>       
     </definition>
     
-     <definition name="pass" extends="page">
+     <definition name="pass" extends="login">
         <put-attribute name="title" value="Reset Password"/>
-        <put-attribute name="content" value="/WEB-INF/layout/main/password.jsp"/>       
+        <put-attribute name="content" value="/WEB-INF/page/password.jsp"/>       
     </definition>
-     <definition name="tableControl" extends="page">
-        <put-attribute name="title" value="Tables"/>
-        <put-attribute name="content" value="/WEB-INF/layout/tablecontent.jsp"/>       
-    </definition>
-       <definition name="" extends="page">
-        <put-attribute name="title" value="Tables"/>
-        <put-attribute name="content" value="/WEB-INF/layout/tablecontent.jsp"/>       
-    </definition>
+    
     
   
 </tiles-definitions>

@@ -24,7 +24,7 @@ public class HomeController {
     
     @RequestMapping("/")
     public String index(Model model){
-      model.addAttribute("categories",this.categoryService.getCategories());
+//      model.addAttribute("categories",this.categoryService.getCategories());
         return"page";
     }
     
@@ -40,9 +40,9 @@ public class HomeController {
         return "pass";
     }
     
-    @RequestMapping("/Tales")
+    @RequestMapping("/Login")
     public String tables(Model model){
-        return "tableControl";
+        return "login";
     }
    
     // Redirects 

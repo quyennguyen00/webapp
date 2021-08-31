@@ -15,6 +15,7 @@ import org.springframework.web.servlet.view.tiles3.TilesView;
  *
  * @author NGUYEN_NGUYEN
  */
+
 @Configuration
 public class TilesConfig {
     @Bean

@@ -11,22 +11,81 @@
 
  
   
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <ul class="navbar-nav">
-        <li class="nav-item active">
-            <a class="nav-link" href="<c:url value="/"/>">Trang chủ</a>
-        </li>
-        <c:forEach items="${categories}" var="cate">
-            <li class="nav-item">
-              <a class="nav-link" href="<c:url value="/?cateId=${cate.id}" />">${cate.name}</a>
-            </li>
-        </c:forEach>
-        <li class="nav-item">
-            <a class="nav-link" href="<c:url value="/cart" />">
-                Giỏ hàng 
-            </a>
-        </li>
-       
+<header class="header dark-bg">
+      <div class="toggle-nav">
+        <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="fa fa-list"></i></div>
+      </div>
+
+      <!--logo start-->
+      <a href="index.html" class="logo">Nice <span class="lite">Admin</span></a>
+      <!--logo end-->
+
+      <div class="nav search-row" id="top_menu">
+        <!--  search form start -->
+        <ul class="nav top-menu">
+          <li>
+            <form class="navbar-form">
+              <input class="form-control" placeholder="Search" type="text">
+            </form>
+          </li>
+        </ul>
+        <!--  search form end -->
+      </div>
+
+      <div class="top-nav notification-row">
+        <!-- notificatoin dropdown start-->
+        <ul class="nav pull-right top-menu">
+
+          <!-- task notificatoin start -->
+          <li id="task_notificatoin_bar" class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="fa fa-envelope"></i>
+                            <span class="badge bg-important">5</span>
+                        </a>
+            <ul class="dropdown-menu extended tasks-bar">
+              <div class="notify-arrow notify-arrow-blue"></div>
+             
+            </ul>
+          </li>
+          <!-- task notificatoin end -->
+          <!-- inbox notificatoin start-->
+          <li id="mail_notificatoin_bar" class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="fa fa-bell"></i>
+                            <span class="badge bg-important">5</span>
+                        </a>
+            <ul class="dropdown-menu extended inbox">
+              <div class="notify-arrow notify-arrow-blue"></div>
+          <!-- user login dropdown start-->
+          <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="profile-ava">
+                                <img alt="anh" src="<c:url value="/images/logo.png"/>">
+                            </span>
+                            <span class="username">Jenifer Smith</span>
+                            <b class="caret"></b>
+                        </a>
+                            
+                
+            <ul class="dropdown-menu extended logout">
+              <div class="log-arrow-up"></div>
+              <li class="eborder-top">
+                <a href="#"><i class="icon_profile"></i> My Profile</a>
+              </li>
+              <li>
+                <a href="#"><i class="icon_mail_alt"></i> My Inbox</a>
+              </li>
+             
+              <li>
+                <a href="login.html"><i class="icon_key_alt"></i> Log Out</a>
+              </li>
+             
+            </ul>
+          </li>
          
-    </ul>
-</nav>
+        </ul>
+       
+      </div>
+</header>
+                            
+                            
