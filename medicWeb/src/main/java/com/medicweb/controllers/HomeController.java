@@ -24,7 +24,7 @@ public class HomeController {
     
     @RequestMapping("/")
     public String index(Model model){
-//      model.addAttribute("categories",this.categoryService.getCategories());
+      model.addAttribute("categories",this.categoryService.getCategories());
         return"page";
     }
     

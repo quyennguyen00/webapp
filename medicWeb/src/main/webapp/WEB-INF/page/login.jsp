@@ -9,7 +9,7 @@
 <%@taglib prefix="form" uri ="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
-<div class="bg-info">
+
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -50,4 +50,4 @@
            
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
-</div>>
+</div>
