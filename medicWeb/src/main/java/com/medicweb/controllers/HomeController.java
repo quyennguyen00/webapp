@@ -22,10 +22,15 @@ public class HomeController {
     @Autowired
     private CategoryService categoryService;
     
+    @RequestMapping("/Admin")
+    public String admin(Model model){
+      model.addAttribute("categories",this.categoryService.getCategories());
+        return"page";
+    }
     @RequestMapping("/")
     public String index(Model model){
       model.addAttribute("categories",this.categoryService.getCategories());
-        return"page";
+        return"page-index";
     }
     
     @RequestMapping("/Register")

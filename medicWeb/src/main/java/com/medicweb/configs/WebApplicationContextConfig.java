@@ -45,16 +45,52 @@ public class WebApplicationContextConfig implements WebMvcConfigurer{
               .addResourceLocations("/resources/js/");
       registry.addResourceHandler("/images/**")
               .addResourceLocations("/resources/images/");
+      
+       registry.addResourceHandler("/styles/**")
+              .addResourceLocations("/resources/styles/");
+       registry.addResourceHandler("/bootstrap-4.1.2/**")
+              .addResourceLocations("/styles/bootstrap-4.1.2/");
+       
+    
+        registry.addResourceHandler("/greensock/**")
+              .addResourceLocations("/plugins/greensock/");
+        registry.addResourceHandler("/scrollmagic/**")
+              .addResourceLocations("/plugins/scrollmagic/");
+        
+        registry.addResourceHandler("/easing/**")
+              .addResourceLocations("/plugins/easing/");
+        
+//        registry.addResourceHandler("/css/**")
+//              .addResourceLocations("/resources/font-awesome-4.7.0/css/");
+        registry.addResourceHandler("/fonts/**")
+              .addResourceLocations("/font-awesome-4.7.0/fonts/");
+        registry.addResourceHandler("/less/**")
+              .addResourceLocations("/font-awesome-4.7.0/less/");
+        registry.addResourceHandler("/scss/**")
+              .addResourceLocations("/font-awesome-4.7.0/scss/");
+        
+         registry.addResourceHandler("/OwlCarousel/**")
+              .addResourceLocations("/plugins/OwlCarousel/");
+         
+        registry.addResourceHandler("/parallax-js-master/**")
+              .addResourceLocations("/plugins/parallax-js-master/");
+        
+        registry.addResourceHandler("/progressbar/**")
+              .addResourceLocations("/plugins/progressbar/");
+        
+        registry.addResourceHandler("/jquery-datepicker/**")
+              .addResourceLocations("/plugins/jquery-datepicker/");
+
     }
     
-//    @Bean
-//    public InternalResourceViewResolver getInternalResourceViewResolver(){
-//        InternalResourceViewResolver resource = new InternalResourceViewResolver();
-//        resource.setViewClass(JstlView.class);
-//        resource.setPrefix("/WEB-INF/jsp/");
-//        resource.setSuffix(".jsp");
-//        
-//        return resource;
-//    }
+    @Bean
+    public InternalResourceViewResolver getInternalResourceViewResolver(){
+        InternalResourceViewResolver resource = new InternalResourceViewResolver();
+        resource.setViewClass(JstlView.class);
+        resource.setPrefix("/WEB-INF/jsp/");
+        resource.setSuffix(".jsp");
+        
+        return resource;
+    }
    
 }
