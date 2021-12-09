@@ -17,7 +17,7 @@
 
             <!-- Slide -->
             <div class="owl-item">
-                <div class="background_image" style="background-image:url(images/gallery-1.jpg)"></div>
+                <div class="background_image" style="background-image:url(/images/gallery-1.jpg)"></div>
                 <div class="home_container">
                     <div class="container">
                         <div class="row">
@@ -41,7 +41,7 @@
 
             <!-- Slide -->
             <div class="owl-item">
-                <div class="background_image" style="background-image:url(images/gallery-2.jpg)"></div>
+                <div class="background_image" style="background-image:url(/images/gallery-2.jpg)"></div>
                 <div class="home_container">
                     <div class="container">
                         <div class="row">

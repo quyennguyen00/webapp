@@ -22,39 +22,12 @@
 ******************************/
 
 /************
-1. 1840px
-************/
-
-@media only screen and (max-width: 1840px)
-{
-	.main_nav
-	{
-	    margin-left: 143px;
-	}
-}
-
-/************
-1. 1760px
-************/
-
-@media only screen and (max-width: 1760px)
-{
-	.work_hours
-	{
-	    display: none;
-	}
-}
-
-/************
 1. 1600px
 ************/
 
 @media only screen and (max-width: 1600px)
 {
-	.main_nav
-	{
-		margin-left: 54px;
-	}
+	
 }
 
 /************
@@ -63,10 +36,7 @@
 
 @media only screen and (max-width: 1440px)
 {
-	.header_phone
-	{
-		display: none;
-	}
+	
 }
 
 /************
@@ -84,10 +54,7 @@
 
 @media only screen and (max-width: 1280px)
 {
-	.main_nav ul li:not(:last-child)
-	{
-		margin-right: 29px;
-	}
+	
 }
 
 /************
@@ -96,22 +63,7 @@
 
 @media only screen and (max-width: 1199px)
 {
-	.header_button
-	{
-		display: none;
-	}
-	.home
-	{
-		height: 525px;
-	}
-	.direct_line_num
-	{
-		font-size: 24px;
-	}
-	.cd-resize-img
-	{
-		right: 0px;
-	}
+	
 }
 
 /************
@@ -138,31 +90,95 @@
 
 @media only screen and (max-width: 991px)
 {
-	.main_nav,
-	.header_social
+	.main_nav
 	{
 		display: none;
+	}
+	.logo_container
+	{
+		width: 181px;
+	}
+	.logo_content
+	{
+		padding-left: 28px;
+	}
+	.logo_text
+	{
+		font-size: 24px;
+	}
+	.logo_sub
+	{
+		font-size: 12px;
+		font-weight: 400;
+	}
+	.top_bar_content
+	{
+		padding-left: 166px;
+	}
+	.top_bar_item
+	{
+		margin-left: 27px;
+	}
+	.top_bar_item a
+	{
+		font-size: 12px;
+	}
+	.emergencies
+	{
+		font-size: 12px;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.logo_box
+	{
+		width: 18px;
+		height: 18px;
+		line-height: 18px;
+		font-size: 18px;
+		-webkit-transform: translateY(-1px);
+		-moz-transform: translateY(-1px);
+		-ms-transform: translateY(-1px);
+		-o-transform: translateY(-1px);
+		transform: translateY(-1px);
 	}
 	.hamburger
 	{
 		display: block;
 	}
-	.contact_col
+	.input_name
 	{
-		margin-top: 70px;
+		margin-bottom: 28px;
 	}
-	.google_map
+	.form_col
 	{
-		height: 470px;
+		margin-top: 95px;
 	}
-	.footer_col:not(:last-child)
+	.box
 	{
-		margin-bottom: 80px;
+		width: 322px;
+		height: auto;
+		padding-bottom: 40px;
+		padding-left: 30px;
 	}
-	.footer_location,
-	.footer_contact
+	.working_hours
 	{
-		padding-top: 0;
+		padding-right: 40px;
+	}
+	.footer_column
+	{
+		padding-top: 75px;
+	}
+	.copyright_content
+	{
+		height: auto;
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	.footer_social ul
+	{
+		margin-right: 0;
+		margin-left: -5px;
+		margin-top: 15px;
 	}
 }
 
@@ -199,31 +215,33 @@
 
 @media only screen and (max-width: 767px)
 {
-	.home
+	.top_bar
 	{
-		height: 444px;
+		display: none;
 	}
-	.home_container
+	.logo_container
 	{
-		top: 200px;
+		height: 127px;
 	}
-	.home_content
+	.logo
 	{
-		max-width: 100%;
+		margin-top: 9px;
 	}
-	.home_title
+	.box
 	{
-		font-size: 48px;
+		width: 100%;
 	}
-	.footer_bar_content
+	.working_hours
 	{
-		height: auto;
-		padding-top: 30px;
-		padding-bottom: 30px;
-	}
-	.footer_nav
-	{
-		margin-top: 15px;
+		position: relative;
+		top: auto;
+		-webkit-transform: none;
+		-moz-transform: none;
+		-ms-transform: none;
+		-o-transform: none;
+		transform: none;
+		left: auto;
+		margin-top: 95px;
 	}
 }
 
@@ -237,110 +255,112 @@
 	{
 		font-size: 13px;
 	}
-	h2
+	.header.scrolled
 	{
-		font-size: 36px;
+		top: 0px !important;
 	}
-	.header.scrolled .header_content,
-	.header_content
+	.header_content,
+	.header.scrolled .header_content
 	{
 		height: 60px;
 	}
-	.home
+	.header.scrolled .logo_container
 	{
-		height: 365px;
+		top: 0;
 	}
-	.home_container
+	.header.scrolled .logo_container
 	{
-		top: 154px;
+		height: 77px;
 	}
-	.home_text
+	.hamburger i
 	{
-		font-size: 13px;
+		font-size: 20px;
 	}
-	.logo a > div:first-child
+	.logo_container
 	{
-		font-size: 24px;
+		width: 141px;
+		height: 77px;
 	}
-	.logo a > div:last-child
+	.logo_content
 	{
-		font-size: 10px;
+		padding-left: 20px;
 	}
-	.section_subtitle
+	.logo_text
 	{
 		font-size: 16px;
 	}
-	.header_content
+	.logo_box
 	{
-		padding-left: 15px;
-		padding-right: 30px;
-	}
-	.button
-	{
-		height: 40px;
-	}
-	.button a
-	{
+		width: 12px;
+		height: 12px;
+		line-height: 12px;
 		font-size: 12px;
-		line-height: 36px;
-		padding-left: 31px;
-		padding-right: 30px;
+	}
+	.logo_sub
+	{
+		font-size: 10px;
+		padding-left: 1px;
+	}
+	.menu
+	{
+		top: 90px;
+	}
+	.menu_close_container
+	{
+		top: 20px;
+		right: 20px;
+	}
+	.menu_container
+	{
+		width: 100vw;
+		right: -100vw;
+	}
+	.menu_item a
+	{
+		font-size: 20px;
+	}
+	.home
+	{
+		height: 230px;
+	}
+	.home_container
+	{
+		bottom: 47px;
 	}
 	.home_title
 	{
-		font-size: 36px;
+		font-size: 24px;
 	}
-	.google_map
+	.breadcrumbs ul li, .breadcrumbs ul li a
 	{
-		height: 370px;
+		font-size: 12px;
 	}
-	.newsletter
-	{
-		padding-bottom: 67px;
-	}
-	.newsletter_row
-	{
-		margin-top: 39px;
-	}
-	.newsletter_title
+	.section_title h2
 	{
 		font-size: 24px;
 	}
-	.newsletter_input
+	.button
 	{
-		width: calc(100% - 120px);
-		height: 40px;
+		height: 41px;
 	}
-	.newsletter_input::-webkit-input-placeholder
+	.button a
 	{
-		font-size: 13px !important;
+		font-size: 11px;
+		line-height: 41px;
+		padding-left: 29px;
+		padding-right: 34px;
 	}
-	.newsletter_input:-moz-placeholder
+	.box
 	{
-		font-size: 13px !important;
+		padding-left: 25px;
 	}
-	.newsletter_input::-moz-placeholder
+	.working_hours
 	{
-		font-size: 13px !important;
-	} 
-	.newsletter_input:-ms-input-placeholder
-	{ 
-		font-size: 13px !important;
+		padding-right: 30px;
 	}
-	.newsletter_input::input-placeholder
+	.google_map
 	{
-		font-size: 13px !important;
-	}
-	.newsletter_button
-	{
-		width: 142px;
-		height: 40px;
-		font-size: 12px;
-	}
-	.opening_hours
-	{
-		left: auto;
-		width: 100%;
+		height: 350px;
 	}
 }
 

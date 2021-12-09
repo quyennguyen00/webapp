@@ -22,39 +22,12 @@
 ******************************/
 
 /************
-1. 1840px
-************/
-
-@media only screen and (max-width: 1840px)
-{
-	.main_nav
-	{
-	    margin-left: 143px;
-	}
-}
-
-/************
-1. 1760px
-************/
-
-@media only screen and (max-width: 1760px)
-{
-	.work_hours
-	{
-	    display: none;
-	}
-}
-
-/************
 1. 1600px
 ************/
 
 @media only screen and (max-width: 1600px)
 {
-	.main_nav
-	{
-		margin-left: 54px;
-	}
+	
 }
 
 /************
@@ -63,10 +36,7 @@
 
 @media only screen and (max-width: 1440px)
 {
-	.header_phone
-	{
-		display: none;
-	}
+	
 }
 
 /************
@@ -84,10 +54,7 @@
 
 @media only screen and (max-width: 1280px)
 {
-	.main_nav ul li:not(:last-child)
-	{
-		margin-right: 29px;
-	}
+	
 }
 
 /************
@@ -96,13 +63,13 @@
 
 @media only screen and (max-width: 1199px)
 {
-	.header_button
+	.box
 	{
-		display: none;
+		height: 313px;
 	}
-	.home
+	.box_phone
 	{
-		height: 525px;
+		font-size: 24px;
 	}
 }
 
@@ -130,45 +97,97 @@
 
 @media only screen and (max-width: 991px)
 {
-	.main_nav,
-	.header_social
+	.main_nav
 	{
 		display: none;
 	}
-	.home_slider_dots
+	.logo_container
 	{
-		left: calc((100vw - 690px) / 2);
+		width: 181px;
+	}
+	.logo_content
+	{
+		padding-left: 28px;
+	}
+	.logo_text
+	{
+		font-size: 24px;
+	}
+	.logo_sub
+	{
+		font-size: 12px;
+		font-weight: 400;
+	}
+	.top_bar_content
+	{
+		padding-left: 166px;
+	}
+	.top_bar_item
+	{
+		margin-left: 27px;
+	}
+	.top_bar_item a
+	{
+		font-size: 12px;
+	}
+	.emergencies
+	{
+		font-size: 12px;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.logo_box
+	{
+		width: 18px;
+		height: 18px;
+		line-height: 18px;
+		font-size: 18px;
+		-webkit-transform: translateY(-1px);
+		-moz-transform: translateY(-1px);
+		-ms-transform: translateY(-1px);
+		-o-transform: translateY(-1px);
+		transform: translateY(-1px);
 	}
 	.hamburger
 	{
 		display: block;
 	}
-	.intro_image
+	.about_text
 	{
-		text-align: center;
-		margin-top: 80px;
-	}
-	.test_slider_container
-	{
-		padding-left: 0;
 		padding-right: 0;
+	}
+	.boxes_col
+	{
+		margin-top: 95px;
+	}
+	.box
+	{
+		height: auto;
+		padding-bottom: 40px;
+	}
+	.test_col:not(:last-child)
+	{
+		margin-bottom: 95px;
 	}
 	.team_col:not(:last-child)
 	{
-		margin-bottom: 60px;
+		margin-bottom: 75px;
 	}
-	.cta_phone
+	.footer_column
 	{
-		margin-top: 33px;
+		padding-top: 75px;
 	}
-	.footer_col:not(:last-child)
+	.copyright_content
 	{
-		margin-bottom: 80px;
+		height: auto;
+		padding-top: 30px;
+		padding-bottom: 30px;
 	}
-	.footer_location,
-	.footer_contact
+	.footer_social ul
 	{
-		padding-top: 0;
+		margin-right: 0;
+		margin-left: -5px;
+		margin-top: 15px;
 	}
 }
 
@@ -205,48 +224,25 @@
 
 @media only screen and (max-width: 767px)
 {
-	.home
+	.top_bar
 	{
-		height: 444px;
+		display: none;
 	}
-	.home_container
+	.logo_container
 	{
-		top: 200px;
+		height: 127px;
 	}
-	.home_content
+	.logo
 	{
-		max-width: 100%;
+		margin-top: 9px;
 	}
-	.home_title
+	.loader_col:not(:last-child)
 	{
-		font-size: 48px;
+		margin-bottom: 95px;
 	}
-	.intro_text p
+	.cta_content h2
 	{
-		-webkit-column-count: 1;
-		-moz-column-count: 1;
-		-ms-column-count: 1;
-		-o-column-count: 1;
-		column-count: 1;
-		-webkit-column-gap: 0px;
-		-moz-column-gap: 0px;
-		-ms-column-gap: 0px;
-		-o-column-gap: 0px;
-		column-gap: 0px;
-	}
-	.milestone_col:not(:last-child)
-	{
-		margin-bottom: 50px;
-	}
-	.footer_bar_content
-	{
-		height: auto;
-		padding-top: 30px;
-		padding-bottom: 30px;
-	}
-	.footer_nav
-	{
-		margin-top: 15px;
+		font-size: 36px;
 	}
 }
 
@@ -260,122 +256,112 @@
 	{
 		font-size: 13px;
 	}
-	h2
+	.header.scrolled
 	{
-		font-size: 36px;
+		top: 0px !important;
 	}
-	.header.scrolled .header_content,
-	.header_content
+	.header_content,
+	.header.scrolled .header_content
 	{
 		height: 60px;
 	}
-	.home
+	.header.scrolled .logo_container
 	{
-		height: 365px;
+		top: 0;
 	}
-	.home_container
+	.header.scrolled .logo_container
 	{
-		top: 154px;
+		height: 77px;
 	}
-	.home_text
+	.hamburger i
 	{
-		font-size: 13px;
+		font-size: 20px;
 	}
-	.logo a > div:first-child
+	.logo_container
 	{
-		font-size: 24px;
+		width: 141px;
+		height: 77px;
 	}
-	.logo a > div:last-child
+	.logo_content
 	{
-		font-size: 10px;
+		padding-left: 20px;
 	}
-	.section_subtitle
+	.logo_text
 	{
 		font-size: 16px;
 	}
-	.header_content
+	.logo_box
 	{
-		padding-left: 15px;
-		padding-right: 30px;
-	}
-	.button
-	{
-		height: 40px;
-	}
-	.button a
-	{
+		width: 12px;
+		height: 12px;
+		line-height: 12px;
 		font-size: 12px;
-		line-height: 36px;
-		padding-left: 31px;
-		padding-right: 30px;
+	}
+	.logo_sub
+	{
+		font-size: 10px;
+		padding-left: 1px;
+	}
+	.menu
+	{
+		top: 90px;
+	}
+	.menu_close_container
+	{
+		top: 20px;
+		right: 20px;
+	}
+	.menu_container
+	{
+		width: 100vw;
+		right: -100vw;
+	}
+	.menu_item a
+	{
+		font-size: 20px;
+	}
+	.home
+	{
+		height: 230px;
+	}
+	.home_container
+	{
+		bottom: 47px;
 	}
 	.home_title
 	{
-		font-size: 36px;
+		font-size: 24px;
 	}
-	.test_slider.owl-theme .owl-dots
+	.breadcrumbs ul li, .breadcrumbs ul li a
 	{
-		display: none !important;
+		font-size: 12px;
 	}
-	.test_text p
+	.section_title h2
+	{
+		font-size: 24px;
+	}
+	.button
+	{
+		height: 41px;
+	}
+	.button a
+	{
+		font-size: 11px;
+		line-height: 41px;
+		padding-left: 29px;
+		padding-right: 34px;
+	}
+	.box_emergency_text
+	{
+		font-size:13px;
+	}
+	.test_text
 	{
 		font-size: 14px;
 	}
-	.cta_title
+	.cta_content h2
 	{
 		font-size: 28px;
-	}
-	.cta_phone
-	{
-		font-size: 24px;
-	}
-	.newsletter
-	{
-		padding-bottom: 67px;
-	}
-	.newsletter_row
-	{
-		margin-top: 39px;
-	}
-	.newsletter_title
-	{
-		font-size: 24px;
-	}
-	.newsletter_input
-	{
-		width: calc(100% - 120px);
-		height: 40px;
-	}
-	.newsletter_input::-webkit-input-placeholder
-	{
-		font-size: 13px !important;
-	}
-	.newsletter_input:-moz-placeholder
-	{
-		font-size: 13px !important;
-	}
-	.newsletter_input::-moz-placeholder
-	{
-		font-size: 13px !important;
-	} 
-	.newsletter_input:-ms-input-placeholder
-	{ 
-		font-size: 13px !important;
-	}
-	.newsletter_input::input-placeholder
-	{
-		font-size: 13px !important;
-	}
-	.newsletter_button
-	{
-		width: 142px;
-		height: 40px;
-		font-size: 12px;
-	}
-	.opening_hours
-	{
-		left: auto;
-		width: 100%;
 	}
 }
 
