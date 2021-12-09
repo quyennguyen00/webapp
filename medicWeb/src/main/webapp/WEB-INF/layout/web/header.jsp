@@ -4,7 +4,7 @@
         <!-- Logo -->
         <div class="logo">
             <a href="#">
-                <div>Dr<span>PRO</span></div>
+                <div>Dr<span>T&Q</span></div>
                 <div>Plastic Surgery</div>
             </a>
         </div>
@@ -22,7 +22,7 @@
         <div class="header_extra d-flex flex-row align-items-center justify-content-end ml-auto">
 
             <!-- Work Hourse -->
-            <div class="work_hours">Mo - Sat: 8:00am - 9:00pm</div>
+            <div class="work_hours">Mo - Sat: 7:00am - 9:00pm</div>
 
             <!-- Header Phone -->
             <div class="header_phone">+34 586 778 8892</div>

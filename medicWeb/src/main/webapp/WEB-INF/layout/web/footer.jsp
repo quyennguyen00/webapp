@@ -33,8 +33,8 @@
 							<div class="footer_title">Contact Info</div>
 							<ul class="contact_list">
 								<li>+53 345 7953 32453</li>
-								<li>yourmail@gmail.com</li>
-								<li>contact@gmail.com</li>
+								<li>medicalDR.T&Q@gmail.com</li>
+								<li>medicalDR.T&Q.contact@gmail.com</li>
 							</ul>
 						</div>
 					</div>
@@ -63,23 +63,27 @@
 							<ul class="opening_hours_list">
 								<li class="d-flex flex-row align-items-start justify-content-start">
 									<div>Monday:</div>
-									<div class="ml-auto">8:00am - 9:00pm</div>
+									<div class="ml-auto">7:00am - 9:00pm</div>
 								</li>
 								<li class="d-flex flex-row align-items-start justify-content-start">
 									<div>Thuesday:</div>
-									<div class="ml-auto">8:00am - 9:00pm</div>
+									<div class="ml-auto">7:00am - 9:00pm</div>
 								</li>
 								<li class="d-flex flex-row align-items-start justify-content-start">
 									<div>Wednesday:</div>
-									<div class="ml-auto">8:00am - 9:00pm</div>
+									<div class="ml-auto">7:00am - 9:00pm</div>
 								</li>
 								<li class="d-flex flex-row align-items-start justify-content-start">
 									<div>Thursday:</div>
-									<div class="ml-auto">8:00am - 9:00pm</div>
+									<div class="ml-auto">7:00am - 9:00pm</div>
 								</li>
 								<li class="d-flex flex-row align-items-start justify-content-start">
 									<div>Friday:</div>
-									<div class="ml-auto">8:00am - 7:00pm</div>
+									<div class="ml-auto">8:00am - 9:00pm</div>
+								</li>
+                                                                <li class="d-flex flex-row align-items-start justify-content-start">
+									<div>Saturday:</div>
+									<div class="ml-auto">8:00am - 8:00pm</div>
 								</li>
 							</ul>
 						</div>
@@ -94,7 +98,7 @@
 					<div class="col">
 						<div class="footer_bar_content  d-flex flex-md-row flex-column align-items-md-center justify-content-start">
 							<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">WebSite</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 </div>
 							<nav class="footer_nav ml-md-auto">
