@@ -33,34 +33,19 @@ public class HomeController {
         return"page-index";
     }
     
+    @RequestMapping("/Contact")
+    public String contact(Model model){
+        return"contact";
+    }
     @RequestMapping("/Register")
     public String register(Model model){
-         
         return "register";
-    }
-   
-    
-     @RequestMapping("/ResetPassword")
-    public String password(Model model){
-        return "pass";
     }
     
     @RequestMapping("/Login")
-    public String tables(Model model){
+    public String login(Model model){
         return "login";
     }
    
-    // Redirects 
-      @RequestMapping(path ="/redirectRegister")
-    public String redirectRegister(Model model){
-        return "redirect:/Register";
-    }
-      @RequestMapping(path ="/redirectResetPass")
-    public String redirectGetPass(Model model){
-        return "redirect:/ResetPassword";
-    }
-      @RequestMapping(path ="/redirectLogin")
-    public String redirectLogin(Model model){
-        return "redirect:/";
-    }
+    
 }

@@ -234,7 +234,7 @@ sup {
 }
 
 a {
-  color: #0d6efd;
+  color: #57ccc3;
   text-decoration: underline;
 }
 a:hover {
@@ -3129,9 +3129,9 @@ textarea.form-control-lg {
 }
 
 .btn-info {
-  color: #000;
-  background-color: #0dcaf0;
-  border-color: #0dcaf0;
+  color: #FFFF;
+  background-color:#57ccc3;
+  border-color: #57ccc3;
 }
 .btn-info:hover {
   color: #000;
@@ -6533,7 +6533,7 @@ textarea.form-control-lg {
 
 .fixed-top, .sb-nav-fixed #layoutSidenav #layoutSidenav_nav, .sb-nav-fixed .sb-topnav {
   position: fixed;
-  top: 15px;
+  /*top: 15px;*/
   right: 0;
   left: 0;
   z-index: 1030;
@@ -7323,7 +7323,7 @@ textarea.form-control-lg {
 }
 
 .mt-5 {
-  margin-top: 3rem !important;
+  margin-top: 7rem !important;
 }
 
 .mt-auto {

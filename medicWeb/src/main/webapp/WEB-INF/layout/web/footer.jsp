@@ -17,7 +17,7 @@
 						<div class="footer_about">
 							<div class="footer_logo">
 								<a href="#">
-									<div>Dr<span>PRO</span></div>
+									<div>Dr<span>T&Q</span></div>
 									<div>Plastic Surgery</div>
 								</a>
 							</div>

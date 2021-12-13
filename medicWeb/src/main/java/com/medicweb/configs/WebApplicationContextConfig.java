@@ -46,49 +46,49 @@ public class WebApplicationContextConfig implements WebMvcConfigurer{
               .addResourceLocations("/resources/css/");
       registry.addResourceHandler("/images/**")
               .addResourceLocations("/resources/images/");
-      registry.addResourceHandler("/menu/**")
-              .addResourceLocations("/images/menu/");
+//      registry.addResourceHandler("/menu/**")
+//              .addResourceLocations("/images/menu/");
       
        registry.addResourceHandler("/styles/**")
               .addResourceLocations("/resources/styles/");
-       registry.addResourceHandler("/bootstrap-4.1.2/**")
-              .addResourceLocations("/styles/bootstrap-4.1.2/");
+//       registry.addResourceHandler("/bootstrap-4.1.2/**")
+//              .addResourceLocations("/styles/bootstrap-4.1.2/");
        
-        registry.addResourceHandler("/OwlCarousel/**")
-              .addResourceLocations("/plugins/OwlCarousel/");
-       
-    
-        registry.addResourceHandler("/greensock/**")
-              .addResourceLocations("/plugins/greensock/");
-        registry.addResourceHandler("/scrollmagic/**")
-              .addResourceLocations("/plugins/scrollmagic/");
-//        
-        registry.addResourceHandler("/easing/**")
-              .addResourceLocations("/plugins/easing/");
-//        
-//        
-        registry.addResourceHandler("/fonts/**")
-              .addResourceLocations("/font-awesome-4.7.0/fonts/");
-        registry.addResourceHandler("/less/**")
-              .addResourceLocations("/font-awesome-4.7.0/less/");
-        registry.addResourceHandler("/scss/**")
-              .addResourceLocations("/font-awesome-4.7.0/scss/");
-//        
+//        registry.addResourceHandler("/OwlCarousel/**")
+//              .addResourceLocations("/plugins/OwlCarousel/");
+//       
+//    
+//        registry.addResourceHandler("/greensock/**")
+//              .addResourceLocations("/plugins/greensock/");
+//        registry.addResourceHandler("/scrollmagic/**")
+//              .addResourceLocations("/plugins/scrollmagic/");
+////        
+//        registry.addResourceHandler("/easing/**")
+//              .addResourceLocations("/plugins/easing/");
+////        
+////        
+//        registry.addResourceHandler("/fonts/**")
+//              .addResourceLocations("/font-awesome-4.7.0/fonts/");
+//        registry.addResourceHandler("/less/**")
+//              .addResourceLocations("/font-awesome-4.7.0/less/");
+//        registry.addResourceHandler("/scss/**")
+//              .addResourceLocations("/font-awesome-4.7.0/scss/");
+////        
         registry.addResourceHandler("/plugins/**")
               .addResourceLocations("/resources/plugins/");
-        registry.addResourceHandler("/OwlCarousel/**")
-                .addResourceLocations("/plugins/OwlCarousel/");
+//        registry.addResourceHandler("/OwlCarousel/**")
+//                .addResourceLocations("/plugins/OwlCarousel/");
 //        registry.addResourceHandler("/images/**")
 //                .addResourceLocations("/plugins/images/");
 //         
-        registry.addResourceHandler("/parallax-js-master/**")
-              .addResourceLocations("/plugins/parallax-js-master/");
-//        
-        registry.addResourceHandler("/progressbar/**")
-              .addResourceLocations("/plugins/progressbar/");
-//        
-        registry.addResourceHandler("/jquery-datepicker/**")
-              .addResourceLocations("/plugins/jquery-datepicker/");
+//        registry.addResourceHandler("/parallax-js-master/**")
+//              .addResourceLocations("/plugins/parallax-js-master/");
+////        
+//        registry.addResourceHandler("/progressbar/**")
+//              .addResourceLocations("/plugins/progressbar/");
+////        
+//        registry.addResourceHandler("/jquery-datepicker/**")
+//              .addResourceLocations("/plugins/jquery-datepicker/");
 
     }
     

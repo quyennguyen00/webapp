@@ -12,28 +12,15 @@ and open the template in the editor.
  
 <tiles-definitions>
 <!--        PAGE ADMIN-->
-    <definition name="page" template="/WEB-INF/layout/page-admin.jsp">
+    <definition name="page" template="/WEB-INF/layout/admin/page-admin.jsp">
         <put-attribute name="title" value="ADMIN"/>
-        <put-attribute name="header" value="/WEB-INF/layout/header-admin.jsp"/>
-        <put-attribute name="left" value="/WEB-INF/layout/left-admin.jsp"/>
+        <put-attribute name="header" value="/WEB-INF/layout/admin/header-admin.jsp"/>
+        <put-attribute name="left" value="/WEB-INF/layout/admin/left-admin.jsp"/>
         <put-attribute name="content" value="/WEB-INF/page/tablecontent.jsp"/>
-        <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/layout/admin/footer.jsp"/>
         
     </definition>
-    <definition name="login" template="/WEB-INF/layout/loginform.jsp">
-        <put-attribute name="title" value="Login"/>
-        <put-attribute name="content" value="/WEB-INF/page/login.jsp"/>  
-         <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>     
-    </definition>
-     <definition name="register" extends="login">
-        <put-attribute name="title" value="Register"/>
-        <put-attribute name="content" value="/WEB-INF/page/register.jsp"/>       
-    </definition>
-    
-     <definition name="pass" extends="login">
-        <put-attribute name="title" value="Reset Password"/>
-        <put-attribute name="content" value="/WEB-INF/page/password.jsp"/>       
-    </definition>
+
     
 <!-- PAGE INDEX   -->
 <definition name="page-index" template="/WEB-INF/layout/web/page-index.jsp">
@@ -44,5 +31,16 @@ and open the template in the editor.
         
     </definition>
     
-  
+  <definition name="contact" extends="page-index">
+        <put-attribute name="title" value="LIÊN LẠC"/>
+        <put-attribute name="content" value="/WEB-INF/page/web/contact.jsp"/>       
+    </definition>
+    <definition name="login" extends="page-index">
+        <put-attribute name="title" value="LIÊN LẠC"/>
+        <put-attribute name="content" value="/WEB-INF/page/login.jsp"/>       
+    </definition>
+    <definition name="register" extends="page-index">
+        <put-attribute name="title" value="LIÊN LẠC"/>
+        <put-attribute name="content" value="/WEB-INF/page/register.jsp"/>       
+    </definition>
 </tiles-definitions>
