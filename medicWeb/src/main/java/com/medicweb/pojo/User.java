@@ -6,102 +6,178 @@
 package com.medicweb.pojo;
 
 import java.io.Serializable;
+import java.util.Collection;
+import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author NGUYEN_NGUYEN
+ * @author QUYENNGUYEN
  */
 @Entity
-@Table(name ="user")
-public class User implements Serializable{
-      
-    public static final String ADMIN ="ROLE_ADMIN";
-    public static final String DOCTOR ="ROLE_DOCTOR";
-    public static final String NURSE ="ROLE_NURSE";
-    public static final String PATIENT ="ROLE_PATIENT";
+@Table(name = "user")
+@XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "User.findAll", query = "SELECT u FROM User u"),
+    @NamedQuery(name = "User.findById", query = "SELECT u FROM User u WHERE u.id = :id"),
+    @NamedQuery(name = "User.findByLastName", query = "SELECT u FROM User u WHERE u.lastName = :lastName"),
+    @NamedQuery(name = "User.findByFirstName", query = "SELECT u FROM User u WHERE u.firstName = :firstName"),
+    @NamedQuery(name = "User.findByEmail", query = "SELECT u FROM User u WHERE u.email = :email"),
+    @NamedQuery(name = "User.findByPassword", query = "SELECT u FROM User u WHERE u.password = :password")})
+public class User implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String name;
-    private String username;
+    @Basic(optional = false)
+    @Column(name = "id")
+    private Integer id;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 45)
+    @Column(name = "last_name")
+    private String lastName;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 45)
+    @Column(name = "first_name")
+    private String firstName;
+    // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 45)
+    @Column(name = "email")
+    private String email;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 45)
+    @Column(name = "password")
     private String password;
-    @Column(name ="role_user")
-    private String userrole;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "userId")
+    private Collection<Prescription> prescriptionCollection;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "userId")
+    private Collection<Registration> registrationCollection;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "userId")
+    private Collection<UserRoles> userRolesCollection;
 
-    /**
-     * @return the id
-     */
-    public int getId() {
-        return id;
+    public User() {
     }
 
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
+    public User(Integer id) {
         this.id = id;
     }
 
-    /**
-     * @return the name
-     */
-    public String getName() {
-        return name;
+    public User(Integer id, String lastName, String firstName, String email, String password) {
+        this.id = id;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.email = email;
+        this.password = password;
     }
 
-    /**
-     * @param name the name to set
-     */
-    public void setName(String name) {
-        this.name = name;
+    public Integer getId() {
+        return id;
     }
 
-    /**
-     * @return the username
-     */
-    public String getUsername() {
-        return username;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    /**
-     * @param username the username to set
-     */
-    public void setUsername(String username) {
-        this.username = username;
+    public String getLastName() {
+        return lastName;
     }
 
-    /**
-     * @return the password
-     */
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getPassword() {
         return password;
     }
 
-    /**
-     * @param password the password to set
-     */
     public void setPassword(String password) {
         this.password = password;
     }
 
-    /**
-     * @return the userrole
-     */
-    public String getUserrole() {
-        return userrole;
+    @XmlTransient
+    public Collection<Prescription> getPrescriptionCollection() {
+        return prescriptionCollection;
     }
 
-    /**
-     * @param userrole the userrole to set
-     */
-    public void setUserrole(String userrole) {
-        this.userrole = userrole;
+    public void setPrescriptionCollection(Collection<Prescription> prescriptionCollection) {
+        this.prescriptionCollection = prescriptionCollection;
+    }
+
+    @XmlTransient
+    public Collection<Registration> getRegistrationCollection() {
+        return registrationCollection;
+    }
+
+    public void setRegistrationCollection(Collection<Registration> registrationCollection) {
+        this.registrationCollection = registrationCollection;
+    }
+
+    @XmlTransient
+    public Collection<UserRoles> getUserRolesCollection() {
+        return userRolesCollection;
+    }
+
+    public void setUserRolesCollection(Collection<UserRoles> userRolesCollection) {
+        this.userRolesCollection = userRolesCollection;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof User)) {
+            return false;
+        }
+        User other = (User) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "com.medicweb.pojo.User[ id=" + id + " ]";
     }
     
 }

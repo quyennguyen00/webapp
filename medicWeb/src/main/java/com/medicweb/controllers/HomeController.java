@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import com.medicweb.service.CategoryService;
 
 /**
  *
@@ -19,30 +18,29 @@ import com.medicweb.service.CategoryService;
 @Controller
 public class HomeController {
 
-    @Autowired
-    private CategoryService categoryService;
     
-    @RequestMapping("/Admin")
+    
+    @RequestMapping("/admin")
     public String admin(Model model){
-      model.addAttribute("categories",this.categoryService.getCategories());
+     
         return"page";
     }
     @RequestMapping("/")
     public String index(Model model){
-      model.addAttribute("categories",this.categoryService.getCategories());
+   
         return"page-index";
     }
     
-    @RequestMapping("/Contact")
+    @RequestMapping("/contact")
     public String contact(Model model){
         return"contact";
     }
-    @RequestMapping("/Register")
+    @RequestMapping("/register")
     public String register(Model model){
         return "register";
     }
     
-    @RequestMapping("/Login")
+    @RequestMapping("/login")
     public String login(Model model){
         return "login";
     }

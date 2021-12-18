@@ -20,6 +20,10 @@ and open the template in the editor.
         <put-attribute name="footer" value="/WEB-INF/layout/admin/footer.jsp"/>
         
     </definition>
+    <definition name="medicines" extends="page">
+        <put-attribute name="title" value="LIÊN LẠC"/>
+        <put-attribute name="content" value="/WEB-INF/page/medicines.jsp"/>       
+    </definition>
 
     
 <!-- PAGE INDEX   -->

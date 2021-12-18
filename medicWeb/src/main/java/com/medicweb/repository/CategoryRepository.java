@@ -6,13 +6,13 @@
 package com.medicweb.repository;
 
 import com.medicweb.pojo.Category;
-import com.medicweb.pojo.User;
 import java.util.List;
 
 /**
  *
- * @author NGUYEN_NGUYEN
+ * @author QUYENNGUYEN
  */
 public interface CategoryRepository {
-     List<Category> getCategories();
+    List<Category> getCategories();
+    Category getCategoryById(int cateId);
 }
