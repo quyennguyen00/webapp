@@ -24,6 +24,10 @@ and open the template in the editor.
         <put-attribute name="title" value="LIÊN LẠC"/>
         <put-attribute name="content" value="/WEB-INF/page/medicines.jsp"/>       
     </definition>
+    <definition name="add-medic" extends="page">
+        <put-attribute name="title" value="LIÊN LẠC"/>
+        <put-attribute name="content" value="/WEB-INF/page/addMedic.jsp"/>       
+    </definition>
 
     
 <!-- PAGE INDEX   -->
