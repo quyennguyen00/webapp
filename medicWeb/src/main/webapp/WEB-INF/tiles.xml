@@ -21,15 +21,32 @@ and open the template in the editor.
         
     </definition>
     <definition name="medicines" extends="page">
-        <put-attribute name="title" value="LIÊN LẠC"/>
+        <put-attribute name="title" value="THÔNG TIN THUỐC"/>
         <put-attribute name="content" value="/WEB-INF/page/medicines.jsp"/>       
     </definition>
-    <definition name="add-medic" extends="page">
-        <put-attribute name="title" value="LIÊN LẠC"/>
+    <definition name="show" extends="page">
+        <put-attribute name="title" value="THÊM-CẬP NHẬT"/>
         <put-attribute name="content" value="/WEB-INF/page/addMedic.jsp"/>       
     </definition>
-
+    <definition name="list-doctor" extends="page">
+        <put-attribute name="title" value="QUẢN LÝ BÁC SĨ"/>
+        <put-attribute name="content" value="/WEB-INF/page/doctor-list.jsp"/>       
+    </definition>
+    <definition name="list-nurse" extends="page">
+        <put-attribute name="title" value=" QUẢN LÝ Y TÁ"/>
+        <put-attribute name="content" value="/WEB-INF/page/nurse-list.jsp"/>       
+    </definition>
     
+    <definition name="show-user" extends="page">
+        <put-attribute name="title" value="NGƯỜI DÙNG"/>
+        <put-attribute name="content" value="/WEB-INF/page/addUser.jsp"/>       
+    </definition>
+
+    <!--DOCTOR-->
+    <definition name="page-doctor" extends="page">
+        <put-attribute name="title" value="BÁC SĨ"/>
+        <put-attribute name="content" value="/WEB-INF/page/doctor.jsp"/>       
+    </definition>
 <!-- PAGE INDEX   -->
 <definition name="page-index" template="/WEB-INF/layout/web/page-index.jsp">
         <put-attribute name="title" value="Home"/>

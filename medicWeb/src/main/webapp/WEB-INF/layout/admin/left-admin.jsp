@@ -1,10 +1,11 @@
 <%-- 
-    Document   : left-admin
-    Created on : Nov 18, 2021, 11:27:18 PM
-    Author     : QUYENNGUYEN
+    Document   : add
+    Created on : Dec 21, 2021, 10:27:27 PM
+    Author     : LocNe
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <div id="layoutSidenav_nav">
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
@@ -22,10 +23,8 @@
                 </a>
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="layout-static.html">Thêm</a>
-                        <a class="nav-link" href="layout-sidenav-light.html">Sửa</a>
-                        
-                        <a class="nav-link" href="layout-sidenav-light.html">Tìm kiếm</a>                      
+                        <a class="nav-link" href="<c:url value="/admin/list-doctor"/>">DANH SÁCH</a>
+                        <a class="nav-link" href="<c:url value="/admin/user/add"/>">THÊM</a>                                 
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -35,10 +34,8 @@
                 </a>
                 <div class="collapse" id="collapsePages" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                        <a class="nav-link" href="layout-static.html">Thêm</a>
-                        <a class="nav-link" href="layout-sidenav-light.html">Sửa</a>
-                        
-                        <a class="nav-link" href="layout-sidenav-light.html">Tìm kiếm</a>
+                        <a class="nav-link" href="<c:url value="/admin/list-nurse"/>">DANH SÁCH</a>
+                        <a class="nav-link" href="<c:url value="/admin/user/add"/>">THÊM</a>   
                         
                        
                     </nav>
@@ -48,12 +45,7 @@
                     BỆNH NHÂN
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse" id="pagesCollapsePatients" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                    <nav class="sb-sidenav-menu-nested nav">
-                        
-                        <a class="nav-link" href="layout-sidenav-light.html">Tìm kiếm</a>
-                    </nav>
-                </div>                          
+                                          
                 <div class="sb-sidenav-menu-heading">THỐNG KÊ VÀ THUỐC</div>
                 
                  <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseStats" >
@@ -68,17 +60,16 @@
                        
                     </nav>
                 </div>
-                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseMedicine" >
+                 <a class="nav-link collapsed" href="<c:url value="/admin/medicines"/>" data-bs-toggle="collapse" data-bs-target="#collapseMedicine" >
                     <div class="sb-nav-link-icon"><i class="fas fa-capsules"></i></div>
                     QUẢN LÝ THUỐC
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
                 <div class="collapse" id="collapseMedicine" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                        <a class="nav-link" href="layout-static.html">Thêm</a>
-                        <a class="nav-link" href="layout-sidenav-light.html">Sửa</a>
-                        
-                        <a class="nav-link" href="layout-sidenav-light.html">Tìm kiếm</a>
+                        <a class="nav-link" href="<c:url value="/admin/medicines"/>">DANH SÁCH</a>
+                        <a class="nav-link" href="<c:url value="/admin/medicines/add-medic"/>">THÊM</a>
+                      
                        
                     </nav>
                 </div>

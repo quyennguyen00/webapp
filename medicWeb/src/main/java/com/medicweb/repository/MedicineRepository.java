@@ -14,4 +14,8 @@ import java.util.List;
  */
 public interface MedicineRepository {
     List<Medicines> getMedicineses();
+    Medicines getMedicine(int id);
+    boolean addMedicine(Medicines medicines);
+    boolean upDateMedicine(Medicines medicines);
+    boolean deleteMedicine(int id);
 }

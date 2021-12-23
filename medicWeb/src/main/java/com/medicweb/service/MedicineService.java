@@ -7,6 +7,7 @@ package com.medicweb.service;
 
 import com.medicweb.pojo.Medicines;
 import java.util.List;
+import org.hibernate.Session;
 
 /**
  *
@@ -14,5 +15,8 @@ import java.util.List;
  */
 public interface MedicineService {
     List<Medicines> getMedicines();
-    
+     Medicines getMedicine(int id);
+     boolean addMedicine(Medicines medicines);
+     boolean upDateMedicine(Medicines medicines) ;
+    boolean deleteMedicine(int i);
 }

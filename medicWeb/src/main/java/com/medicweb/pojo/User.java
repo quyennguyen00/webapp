@@ -7,21 +7,31 @@ package com.medicweb.pojo;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  *
@@ -35,8 +45,13 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "User.findById", query = "SELECT u FROM User u WHERE u.id = :id"),
     @NamedQuery(name = "User.findByLastName", query = "SELECT u FROM User u WHERE u.lastName = :lastName"),
     @NamedQuery(name = "User.findByFirstName", query = "SELECT u FROM User u WHERE u.firstName = :firstName"),
+    @NamedQuery(name = "User.findByDob", query = "SELECT u FROM User u WHERE u.dob = :dob"),
+    @NamedQuery(name = "User.findBySex", query = "SELECT u FROM User u WHERE u.sex = :sex"),
     @NamedQuery(name = "User.findByEmail", query = "SELECT u FROM User u WHERE u.email = :email"),
-    @NamedQuery(name = "User.findByPassword", query = "SELECT u FROM User u WHERE u.password = :password")})
+    @NamedQuery(name = "User.findByPassword", query = "SELECT u FROM User u WHERE u.password = :password"),
+    @NamedQuery(name = "User.findByAddress", query = "SELECT u FROM User u WHERE u.address = :address"),
+    @NamedQuery(name = "User.findByImage", query = "SELECT u FROM User u WHERE u.image = :image"),
+    @NamedQuery(name = "User.findByPhone", query = "SELECT u FROM User u WHERE u.phone = :phone")})
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -47,31 +62,53 @@ public class User implements Serializable {
     private Integer id;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 45)
+    @Size(min = 1, max = 45,message = "{user.NotNullErr}")
     @Column(name = "last_name")
     private String lastName;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 45)
+    @Size(min = 1, max = 45,message = "{user.NotNullErr}")
     @Column(name = "first_name")
     private String firstName;
-    // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
+    @Column(name = "dob")
+    @Temporal(TemporalType.DATE)
+    private Date dob;
+    @Size(max = 45)
+    @Column(name = "sex")
+    private String sex;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 45)
+    @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="{user.format.hasErr}")//if the field contains email address consider using this annotation to enforce field validation
     @Column(name = "email")
     private String email;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 45)
+    @Size(min = 1, max = 100,message = "{user.NotNullErr}")
     @Column(name = "password")
     private String password;
+    @Size(max = 255)
+    @Column(name = "address")
+    private String address;
+    @Size(max = 25)
+    @Column(name = "image")
+    private String image;
+    @Pattern(regexp="^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$", message="Chưa đúng định dạng")//if the field contains phone or fax number consider using this annotation to enforce field validation
+    @Size(max = 45)
+    @Column(name = "phone")
+    private String phone;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userId")
     private Collection<Prescription> prescriptionCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userId")
     private Collection<Registration> registrationCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "userId")
-    private Collection<UserRoles> userRolesCollection;
+    @JoinColumn(name = "role", referencedColumnName = "id")
+    @ManyToOne(optional = false)
+    private Role role;
+    @Transient
+    @JsonIgnore
+    private MultipartFile file;
+    @Transient
+    @JsonIgnore
+    private String confirmPassword;
 
     public User() {
     }
@@ -112,6 +149,15 @@ public class User implements Serializable {
         this.firstName = firstName;
     }
 
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -128,7 +174,32 @@ public class User implements Serializable {
         this.password = password;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     @XmlTransient
+    @JsonIgnore
     public Collection<Prescription> getPrescriptionCollection() {
         return prescriptionCollection;
     }
@@ -138,6 +209,7 @@ public class User implements Serializable {
     }
 
     @XmlTransient
+    @JsonIgnore
     public Collection<Registration> getRegistrationCollection() {
         return registrationCollection;
     }
@@ -146,13 +218,12 @@ public class User implements Serializable {
         this.registrationCollection = registrationCollection;
     }
 
-    @XmlTransient
-    public Collection<UserRoles> getUserRolesCollection() {
-        return userRolesCollection;
+    public Role getRole() {
+        return role;
     }
 
-    public void setUserRolesCollection(Collection<UserRoles> userRolesCollection) {
-        this.userRolesCollection = userRolesCollection;
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     @Override
@@ -178,6 +249,48 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return "com.medicweb.pojo.User[ id=" + id + " ]";
+    }
+
+    /**
+     * @return the file
+     */
+    public MultipartFile getFile() {
+        return file;
+    }
+
+    /**
+     * @param file the file to set
+     */
+    public void setFile(MultipartFile file) {
+        this.file = file;
+    }
+
+    /**
+     * @return the confirmPassword
+     */
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    /**
+     * @param confirmPassword the confirmPassword to set
+     */
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
+    }
+
+    /**
+     * @return the dob
+     */
+    public Date getDob() {
+        return dob;
+    }
+
+    /**
+     * @param dob the dob to set
+     */
+    public void setDob(Date dob) {
+        this.dob = dob;
     }
     
 }

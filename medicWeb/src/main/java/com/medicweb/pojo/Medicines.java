@@ -11,6 +11,7 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -50,7 +51,7 @@ public class Medicines implements Serializable {
     private Integer id;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 50)
+    @Size(min = 1, max = 50, message = "{medic.name.SizeErr}")
     @Column(name = "name")
     private String name;
     @Size(max = 255)
@@ -78,7 +79,7 @@ public class Medicines implements Serializable {
     @JoinColumn(name = "type_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Type typeId;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "medicineId")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "medicineId",fetch = FetchType.EAGER)
     private Collection<PrescriptionDetail> prescriptionDetailCollection;
 
     public Medicines() {

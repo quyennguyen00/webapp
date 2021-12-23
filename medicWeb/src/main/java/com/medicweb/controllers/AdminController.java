@@ -5,36 +5,105 @@
  */
 package com.medicweb.controllers;
 
+import com.medicweb.pojo.Manufactory;
+import com.medicweb.pojo.Medicines;
+import com.medicweb.pojo.User;
 import com.medicweb.service.MedicineService;
 import com.medicweb.service.CagetoryService;
+import com.medicweb.service.ManufactoryService;
+import com.medicweb.service.RoleService;
+import com.medicweb.service.SupplierService;
+import com.medicweb.service.TypeService;
+import com.medicweb.service.UserService;
 import com.medicweb.service.impl.CategoryServiceImpl;
+import java.util.Date;
+import java.util.Map;
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
  * @author QUYENNGUYEN
  */
 @Controller
-@RequestMapping("/admin")
+@ControllerAdvice
 public class AdminController {
-    
-    @Autowired
+   @Autowired
     private MedicineService medicineService;
     @Autowired
     private CagetoryService categoryService;
-     @RequestMapping("/medicines")
-    public String admin(Model model){
-        model.addAttribute("medicine", this.medicineService.getMedicines());
+    @Autowired
+    private ManufactoryService manufactoryService;
+    @Autowired
+    private SupplierService supplierService;
+    @Autowired
+    private TypeService typeService;
+    @Autowired
+    private UserService userDetailsService;
+    @Autowired
+    private RoleService roleService;
+    
+    @ModelAttribute
+    public void commonAttr(Model model, HttpSession session) {
+        model.addAttribute("medicine",this.medicineService.getMedicines());
         model.addAttribute("categories", this.categoryService.getCategories());
-        return"medicines";
+        model.addAttribute("manufactories", this.manufactoryService.getManufactorys());
+        model.addAttribute("suppliers", this.supplierService.getSuppliers());
+        model.addAttribute("types", this.typeService.getTypes());
+        model.addAttribute("roles",this.roleService.getRole());
+        model.addAttribute("currentUser",session.getAttribute("currentUser"));
+        model.addAttribute("listDoctor", this.userDetailsService.getDoctor());
+        model.addAttribute("listNurse", this.userDetailsService.getNurse());
     }
-     @RequestMapping("/medicines/add-medic")
-    public String add(Model model){
-//        model.addAttribute("medicine", this.medicineService.getMedicines());
-//        model.addAttribute("categories", this.categoryService.getCategories());
-        return"add-medic";
+    @RequestMapping("/admin")
+    public String admin(Model model){
+        return"page";
     }
+    @GetMapping("/admin/user/add")
+    public String addmedic(Model model){
+        model.addAttribute("user", new User());
+        return"show-user";
+    }
+     @PostMapping("/admin/user/save")
+    public String addMedic(Model model,@ModelAttribute(value = "user") @Valid User user,
+            BindingResult result){
+        if(!result.hasErrors())
+        {
+            if(this.userDetailsService.addUser(user)){
+                 return "redirect:/admin/medicines";
+            }
+            else{
+                 model.addAttribute("errMsg", "Đã xảy ra lỗi!");
+            }        
+        }
+        return "show-user"; 
+    }
+    @RequestMapping("/list-doctor")
+   public String listDoctor(Model model){
+       return "list-doctor";
+   }
+   
+   
+    @GetMapping(value="/list-doctor/edit-{id}")
+    public String showEdit(Model model,@PathVariable int id){
+        model.addAttribute("user",this.userDetailsService.getUserById(id));
+        
+//        model.addAttribute("editMedic", new Medicines());
+        
+        return "show-user";
+    }
+    
+   
+    
 }

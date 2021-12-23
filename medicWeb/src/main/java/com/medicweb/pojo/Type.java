@@ -5,6 +5,7 @@
  */
 package com.medicweb.pojo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
@@ -47,6 +48,7 @@ public class Type implements Serializable {
     @Size(min = 1, max = 45)
     @Column(name = "type")
     private String type;
+    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "typeId")
     private Collection<Medicines> medicinesCollection;
 

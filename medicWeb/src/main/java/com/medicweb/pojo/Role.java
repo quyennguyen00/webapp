@@ -6,22 +6,16 @@
 package com.medicweb.pojo;
 
 import java.io.Serializable;
-import java.util.Collection;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -38,8 +32,8 @@ public class Role implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
+    @NotNull
     @Column(name = "id")
     private Integer id;
     @Basic(optional = false)
@@ -47,8 +41,6 @@ public class Role implements Serializable {
     @Size(min = 1, max = 45)
     @Column(name = "role")
     private String role;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "roleId")
-    private Collection<UserRoles> userRolesCollection;
 
     public Role() {
     }
@@ -76,15 +68,6 @@ public class Role implements Serializable {
 
     public void setRole(String role) {
         this.role = role;
-    }
-
-    @XmlTransient
-    public Collection<UserRoles> getUserRolesCollection() {
-        return userRolesCollection;
-    }
-
-    public void setUserRolesCollection(Collection<UserRoles> userRolesCollection) {
-        this.userRolesCollection = userRolesCollection;
     }
 
     @Override

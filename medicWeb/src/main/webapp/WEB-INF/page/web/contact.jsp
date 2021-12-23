@@ -6,23 +6,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<div class="home d-flex flex-column align-items-start justify-content-end">
-    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/slide-1.jpg" data-speed="0.8"></div>
-    <div class="home_overlay"><img src="images/home_overlay.png" alt=""></div>
-    <div class="home_container">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="home_content">
-                        <div class="home_title">Contact</div>
-                        <div class="home_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- Contact -->
 
 <div class="contact">

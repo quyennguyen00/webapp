@@ -24,33 +24,22 @@
             <ul class="d-flex flex-row align-items-center justify-content-start">
                 <li class="active"><a href="<c:url value="/"/>">Trang chủ</a></li>
                 
-                <li><a href="services.html">Dịch vụ</a></li>
-                <li><a href="blog.html">Bác sĩ</a></li>
-                <li><a href="<c:url value="/Contact"/>">Liên hệ</a></li>
+                <li><a href="#">Dịch vụ</a></li>
+                <li><a href="#">Bác sĩ</a></li>
+                <li><a href="<c:url value="/contact"/>">Liên hệ</a></li>
             </ul>
         </nav>
         <div class="header_extra d-flex flex-row align-items-center justify-content-end ml-auto">
 
             <!-- Work Hourse -->
             <div class="work_hours"></div>
+             <div class=" button button_1 header_phone"><a href="<c:url value="/contact"/>">ĐĂNG KÝ KHÁM</a></div>
+             <c:if test="${pageContext.request.userPrincipal.name == null}">
+                 <div class="button button_1 header_button"><a href="<c:url value="/register"/>">ĐĂNG KÝ</a></div>
 
-            <!-- Header Phone -->
-            <div class=" button button_1 header_phone"><a href="<c:url value="/Contact"/>">ĐĂNG KÝ KHÁM</a></div>
-
-            <!-- Appointment Button -->
-            <div class="button button_1 header_button"><a href="<c:url value="/Login"/>">ĐĂNG NHẬP</a></div>
-
-            <!-- Header Social -->
-            <div class="social header_social">
-                <ul class="d-flex flex-row align-items-center justify-content-start">
-                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
-
-            <!-- Hamburger -->
-            <div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                <div class="button button_1 header_button"><a href="<c:url value="/login"/>">ĐĂNG NHẬP</a></div>
+             </c:if>
+             
         </div>
     </div>
 </header>
@@ -71,8 +60,8 @@
     </nav>
     <div class="menu_extra">
         <div class="menu_link"></div>
-        <div class="menu_link"><a href="#">LOGIN</a></div>
-        <div class="menu_link"><a href="#">Make an appointment</a></div>
+        <div class="menu_link"><a href="<c:url value="/login"/>">LOGIN</a></div>
+        <div class="menu_link"><a href="<c:url value="/contact"/>">Đăng kí lịch khám</a></div>
     </div>
     <div class="social menu_social">
         <ul class="d-flex flex-row align-items-center justify-content-start">

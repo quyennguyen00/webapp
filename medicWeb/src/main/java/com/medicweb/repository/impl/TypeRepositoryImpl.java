@@ -37,6 +37,7 @@ public class TypeRepositoryImpl implements TypeRpository{
     public List<Type> getType() {
         Session session = this.sessionFactory.getObject().getCurrentSession();
         Query q = session.createQuery("From Type");
-        return q.getResultList();}
+        return q.getResultList();
+    }
     
 }

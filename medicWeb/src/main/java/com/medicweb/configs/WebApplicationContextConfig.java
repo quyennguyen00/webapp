@@ -5,10 +5,21 @@
  */
 package com.medicweb.configs;
 
+import com.medicweb.formatter.CategoryFormat;
+import com.medicweb.formatter.ManufactoryFormat;
+import com.medicweb.formatter.RoleFormat;
+import com.medicweb.formatter.SupplierFormat;
+import com.medicweb.formatter.TypeFormat;
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.validation.Validator;
+import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -26,7 +37,8 @@ import org.springframework.web.servlet.view.JstlView;
 @ComponentScan(basePackages = { 
     "com.medicweb.controllers",
     "com.medicweb.repository",
-    "com.medicweb.service"
+    "com.medicweb.service",
+    "com.medicweb.varlidator"
    
 })
 
@@ -65,6 +77,43 @@ public class WebApplicationContextConfig implements WebMvcConfigurer{
         resource.setSuffix(".jsp");
         
         return resource;
+    }
+
+    @Override
+    public void addFormatters(FormatterRegistry registry) {
+       registry.addFormatter(new CategoryFormat());
+       registry.addFormatter(new TypeFormat());
+       registry.addFormatter(new ManufactoryFormat());
+       registry.addFormatter(new SupplierFormat());
+       registry.addFormatter(new RoleFormat());
+    }
+
+    
+    @Override
+    public Validator getValidator() {
+        return validator(); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    @Bean
+    public LocalValidatorFactoryBean validator() {
+        LocalValidatorFactoryBean v = new LocalValidatorFactoryBean();
+        v.setValidationMessageSource(messageSource());
+        return v;
+    }
+
+    @Bean
+    public MessageSource messageSource() {
+        ResourceBundleMessageSource source = new ResourceBundleMessageSource();
+        source.setBasename("messages");//chỉ định 1,, thêm s ở setbasename để nhiều
+        return source;
+    }
+
+    @Bean
+    public CommonsMultipartResolver multipartResolver() {
+
+        CommonsMultipartResolver resolver = new CommonsMultipartResolver();
+        resolver.setDefaultEncoding("UTF-8");
+        return resolver;
     }
    
 }

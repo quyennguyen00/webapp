@@ -32,5 +32,52 @@ public class MedicineRepositoryIpml implements MedicineRepository{
          Query q = session.createQuery("From Medicines");
         return q.getResultList();  
     }
+
+    @Override
+    public boolean addMedicine(Medicines medicines) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+            try {
+                session.save(medicines);
+                return true;
+            } catch (Exception ex) {
+                System.err.println("=== ADD MEDICINES ERRER ===" + ex.getMessage());
+                ex.printStackTrace();
+            }
+        return false;    
+    }
+
+      @Override
+    public boolean upDateMedicine(Medicines medicines) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+            try {
+                session.update(medicines);
+                return true;
+            } catch (Exception ex) {
+                System.err.println("=== ADD MEDICINES ERRER ===" + ex.getMessage());
+                ex.printStackTrace();
+            }
+        return false;    
+    }
+
+
+    @Override
+    public Medicines getMedicine(int id) {
+          Session session = this.sessionFactory.getObject().getCurrentSession();
+          return session.get(Medicines.class, id);
+    }
+
+    @Override
+    public boolean deleteMedicine(int i) {
+      Session session = this.sessionFactory.getObject().getCurrentSession();
+            try {
+                Medicines m = this.getMedicine(i);
+                session.delete(m);
+                return true;
+            } catch (Exception ex) {
+                System.err.println("=== ADD MEDICINES ERRER ===" + ex.getMessage());
+                ex.printStackTrace();
+            }
+        return false;  
+    }
     
 }

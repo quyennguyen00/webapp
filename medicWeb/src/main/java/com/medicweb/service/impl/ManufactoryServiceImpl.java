@@ -6,8 +6,10 @@
 package com.medicweb.service.impl;
 
 import com.medicweb.pojo.Manufactory;
+import com.medicweb.repository.ManufactoryRepository;
 import com.medicweb.service.ManufactoryService;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,14 +19,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class ManufactoryServiceImpl implements ManufactoryService{
 
+    @Autowired
+    private ManufactoryRepository manufactoryRepository;
     @Override
     public List<Manufactory> getManufactorys() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.manufactoryRepository.getManufactorys(); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public Manufactory getManufactoryById(int Id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.manufactoryRepository.getManufactoryById(Id); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
