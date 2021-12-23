@@ -15,7 +15,7 @@
         <div class="logo">
             <a href="<c:url value="/"/>">
                 <div>Dr<span>T&Q</span></div>
-                <div>Plastic Surgery</div>
+                <div></div>
             </a>
         </div>
 
@@ -33,8 +33,11 @@
 
             <!-- Work Hourse -->
             <div class="work_hours"></div>
+            <c:if test="${pageContext.request.userPrincipal.name != null}">
              <div class=" button button_1 header_phone"><a href="<c:url value="/contact"/>">ĐĂNG KÝ KHÁM</a></div>
+            </c:if>
              <c:if test="${pageContext.request.userPrincipal.name == null}">
+                  <div class=" button button_1 header_phone"><a href="<c:url value="/login"/>">ĐĂNG KÝ KHÁM</a></div>
                  <div class="button button_1 header_button"><a href="<c:url value="/register"/>">ĐĂNG KÝ</a></div>
 
                 <div class="button button_1 header_button"><a href="<c:url value="/login"/>">ĐĂNG NHẬP</a></div>
@@ -51,11 +54,11 @@
     <div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
     <nav class="menu_nav">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About us</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="blog.html">News</a></li>
-            <li><a href="contact.html">Contact</a></li>
+           <li class="active"><a href="<c:url value="/"/>">Trang chủ</a></li>
+                
+                <li><a href="#">Dịch vụ</a></li>
+                <li><a href="#">Bác sĩ</a></li>
+                <li><a href="<c:url value="/contact"/>">Liên hệ</a></li>
         </ul>
     </nav>
     <div class="menu_extra">

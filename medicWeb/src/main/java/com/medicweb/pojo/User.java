@@ -97,8 +97,6 @@ public class User implements Serializable {
     @Column(name = "phone")
     private String phone;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userId")
-    private Collection<Prescription> prescriptionCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "userId")
     private Collection<Registration> registrationCollection;
     @JoinColumn(name = "role", referencedColumnName = "id")
     @ManyToOne(optional = false)
@@ -196,16 +194,6 @@ public class User implements Serializable {
 
     public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    @XmlTransient
-    @JsonIgnore
-    public Collection<Prescription> getPrescriptionCollection() {
-        return prescriptionCollection;
-    }
-
-    public void setPrescriptionCollection(Collection<Prescription> prescriptionCollection) {
-        this.prescriptionCollection = prescriptionCollection;
     }
 
     @XmlTransient

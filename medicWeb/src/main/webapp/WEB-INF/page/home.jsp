@@ -23,15 +23,12 @@
 							<div class="row">
 								<div class="col">
 									<div class="home_content">
-										<div class="home_subtitle">#1 Plastic Surgery Clinic</div>
-										<div class="home_title">Love the new you</div>
+										<div class="home_subtitle"></div>
+										<div class="home_title">NƠI TIN CẬY</div>
 										<div class="home_text">
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
+											<p>Là hệ thống lưu trữ chính. Đó là tội lớn nhất nếu bỏ lỡ Internet, nhưng không trang điểm đã được nói. Đó là thông minh và độc đáo. Niềm vui của tất nhiên.</p>
 										</div>
-										<div class="home_buttons d-flex flex-row align-items-center justify-content-start">
-											<div class="button button_1 trans_200"><a href="#">read more</a></div>
-											<div class="button button_2 trans_200"><a href="#">make an appointment</a></div>
-										</div>
+										
 									</div>
 								</div>
 							</div>
@@ -59,8 +56,8 @@
             <div class="col-lg-6 intro_col">
                 <div class="intro_content">
                     <div class="section_title_container">
-                        <div class="section_subtitle">This is Dr Pro</div>
-                        <div class="section_title"><h2>Welcome to our Clinic</h2></div>
+                        <div class="section_subtitle">Đây là DR T&Q  </div>
+                        <div class="section_title"><h2>Chào mừng đến DR T&Q</h2></div>
                     </div>
                     <div class="intro_text">
                         <p>Integer aliquet congue libero, eu gravida odio ultrices ut. Etiam ac erat ut enim maximus accumsan vel ac nisl. Duis feugiat bibendum orci, non elementum urna vestibulum in. Nulla facilisi. Nulla egestas vel lacus sed interdum. Sed mollis, orci elementum eleifend tempor, nunc libero porttitor tellus, vel pharetra metus dolor.</p>

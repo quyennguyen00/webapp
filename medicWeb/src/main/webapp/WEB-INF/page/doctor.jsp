@@ -56,7 +56,7 @@
                         <td>${c.supplierId.name}</td>
                         <td>${c.manufactoryId.factory}</td>
                         <td>${c.categoryId.name}</td>
-                        <td><button type="button" class="btn btn-success" onclick="location.href='http://localhost:8083/medicWeb/admin/medicines/edit-${c.id}'">Sửa</button></td>
+                        <td><button type="button" class="btn btn-success" onclick="location.href='http://localhost:8083/medicWeb/admin/medicines/edit-${c.id}'">Thêm</button></td>
                         
                     </tr>
                     

@@ -26,7 +26,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author NGUYEN_NGUYEN
  */
 @Controller
-@ControllerAdvice
 public class HomeController {
     
     @RequestMapping("/")
@@ -35,11 +34,5 @@ public class HomeController {
         return"page-index";
     }
     
-    @RequestMapping("/contact")
-    public String contact(Model model){
-        return"contact";
-    }
-    
-   
     
 }

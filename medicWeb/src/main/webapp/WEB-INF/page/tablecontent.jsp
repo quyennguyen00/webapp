@@ -89,8 +89,7 @@
                             <th>Nhà sản xuất</th>
                             <th>Nhà cung cấp</th>
                             <th>Nhóm thuốc</th>
-                            <th></th>
-                            <th></th>
+                            
 
                         </tr>
                     </thead>
@@ -104,8 +103,7 @@
                             <th>Nhà sản xuất</th>
                             <th>Nhà cung cấp</th>
                             <th>Nhóm thuốc</th>
-                            <th></th>
-                            <th></th>
+                            
                         </tr>
                     </tfoot>
                     <tbody>
@@ -119,8 +117,7 @@
                                 <td>${c.supplierId.name}</td>
                                 <td>${c.manufactoryId.factory}</td>
                                 <td>${c.categoryId.name}</td>
-                                <td><button type="button" class="btn btn-success"><a href="<c:url value="/admin/medicines/add-medic"/>">Sửa</a></button></td>
-                                <td><button type="button" class="btn btn-danger">Xóa</button></td>
+                                
                             </tr>
 
                         </c:forEach>

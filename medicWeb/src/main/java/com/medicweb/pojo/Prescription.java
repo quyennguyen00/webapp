@@ -65,16 +65,16 @@ public class Prescription implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "amount")
-    private BigDecimal amount;
+    private Long amount;
     @Size(max = 255)
     @Column(name = "description")
     private String description;
     @JoinColumn(name = "registration_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Registration registrationId;
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
-    @ManyToOne(optional = false)
-    private User userId;
+//    @JoinColumn(name = "user_id", referencedColumnName = "id")
+//    @ManyToOne(optional = false)
+//    private User userId;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "prescriptionId")
     private Collection<PrescriptionDetail> prescriptionDetailCollection;
 
@@ -85,7 +85,7 @@ public class Prescription implements Serializable {
         this.id = id;
     }
 
-    public Prescription(Integer id, Date date, String result, BigDecimal amount) {
+    public Prescription(Integer id, Date date, String result, Long amount) {
         this.id = id;
         this.date = date;
         this.result = result;
@@ -116,11 +116,11 @@ public class Prescription implements Serializable {
         this.result = result;
     }
 
-    public BigDecimal getAmount() {
+    public Long getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(Long amount) {
         this.amount = amount;
     }
 
@@ -140,13 +140,13 @@ public class Prescription implements Serializable {
         this.registrationId = registrationId;
     }
 
-    public User getUserId() {
-        return userId;
-    }
-
-    public void setUserId(User userId) {
-        this.userId = userId;
-    }
+//    public User getUserId() {
+//        return userId;
+//    }
+//
+//    public void setUserId(User userId) {
+//        this.userId = userId;
+//    }
 
     @XmlTransient
     public Collection<PrescriptionDetail> getPrescriptionDetailCollection() {
