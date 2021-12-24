@@ -70,32 +70,38 @@ public class AdminController {
     public String admin(Model model){
         return"page";
     }
+    /// MEDICINE
     @GetMapping("/admin/user/add")
     public String addmedic(Model model){
         model.addAttribute("user", new User());
         return"show-user";
     }
-     @PostMapping("/admin/user/save")
-    public String addMedic(Model model,@ModelAttribute(value = "user") @Valid User user,
-            BindingResult result){
-        if(!result.hasErrors())
-        {
-            if(this.userDetailsService.addUser(user)){
-                 return "redirect:/admin/medicines";
-            }
-            else{
-                 model.addAttribute("errMsg", "Đã xảy ra lỗi!");
-            }        
+    @PostMapping("/admin/user/save")
+    public String addUser(Model model, @ModelAttribute(value = "user") @Valid User user,
+            BindingResult result) {
+        if (!result.hasErrors()) {
+            Long count = userDetailsService.checkEmail(user.getEmail().trim());// Email
+            if (count == 1) {
+                model.addAttribute("errEmailMsg", "Email đã tồn tại!");
+            } else
+                if (user.getPassword().isEmpty()){
+                     model.addAttribute("errMsg", "Mật khẩu không đúng!");
+                }                
+                else if (this.userDetailsService.addUser(user) == true) {
+                        return "redirect:/admin";
+                } 
         }
-        return "show-user"; 
+        return "show-user";
+        
     }
-    @RequestMapping("/list-doctor")
+    // DOCTOR
+    @RequestMapping("/admin/list-doctor")
    public String listDoctor(Model model){
        return "list-doctor";
    }
    
    
-    @GetMapping(value="/list-doctor/edit-{id}")
+    @GetMapping(value="/admin/list-doctor/edit-{id}")
     public String showEdit(Model model,@PathVariable int id){
         model.addAttribute("user",this.userDetailsService.getUserById(id));
         
@@ -104,6 +110,18 @@ public class AdminController {
         return "show-user";
     }
     
-   
+   //NURSE
+    @RequestMapping("/admin/list-nurse")
+   public String listNurse(Model model){
+       return "list-nurse";
+   }
+    @GetMapping(value="/admin/list-nurse/edit-{id}")
+    public String showEditNurse(Model model,@PathVariable int id){
+        model.addAttribute("user",this.userDetailsService.getUserById(id));
+        
+//        model.addAttribute("editMedic", new Medicines());
+        
+        return "show-user";
+    }
     
 }

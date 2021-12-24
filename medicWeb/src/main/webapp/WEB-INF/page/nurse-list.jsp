@@ -10,7 +10,7 @@
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
-        DANH SÁCH THÔNG TIN VỀ Y TÁ
+        INFORMATION OF NURSES
     </div>
     <div class="card-body">
         <table id="datatablesSimple">
@@ -56,8 +56,8 @@
                         <td>${c.email}</td>
                         <td>${c.address}</td>
                         <td>${c.phone}</td>                      
-                        <td><button type="button" class="btn btn-success" onclick="location.href='http://localhost:8083/medicWeb/admin/medicines/edit-${c.id}'">Sửa</button></td>
-                        <td><button type="button" class="btn btn-danger" onclick="deleteMedicine(${c.id})">Xóa</button></td>
+                        <td><button type="button" class="btn btn-success" onclick="location.href='http://localhost:8083/medicWeb/admin/list-nurse/edit-${c.id}'">Sửa</button></td>
+                        <td><button type="button" class="btn btn-danger" onclick="deleteUser(${c.id})">Xóa</button></td>
                     </tr>
                     
                 </c:forEach>

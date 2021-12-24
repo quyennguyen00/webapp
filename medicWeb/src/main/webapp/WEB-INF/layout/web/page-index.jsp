@@ -14,20 +14,21 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <!--<base href="./" type="text/html">-->
         <title>
             <tiles:insertAttribute name="title"/>
         </title>
    
-     <link href="styles/bootstrap4/bootstrap.min.css" rel="stylesheet"/>
-        <link href="css/font-awesome.min.css" rel="stylesheet"/>
-        <link href="plugins/OwlCarousel/owl.carousel.css" rel="stylesheet"/>
-        <link href="plugins/OwlCarousel/owl.theme.default.css" rel="stylesheet"/>
-        <link href="plugins/OwlCarousel/animate.css" rel="stylesheet"/>
-        <link href="css/style-admin.css" rel="stylesheet"/>
-        <link href="styles/main_styles.css" rel="stylesheet"/>
-        <link href="styles/responsive.css" rel="stylesheet"/>
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+         <link href="./styles/bootstrap4/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="./plugins/OwlCarousel/owl.carousel.css" rel="stylesheet" type="text/css" />
+        <link href="./plugins/OwlCarousel/owl.theme.default.css" rel="stylesheet" type="text/css" />
+        <link href="./plugins/OwlCarousel/animate.css" rel="stylesheet" type="text/css" />
+        <link href="./css/style-admin.css" rel="stylesheet" type="text/css" />
+        <link href="./styles/main_styles.css" rel="stylesheet" type="text/css" />
+        <link href="        <link href="styles/responsive.css" rel="stylesheet" type="text/css" />
+styles/responsive.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css" type="text/css"  />
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
         <script>

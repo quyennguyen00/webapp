@@ -17,6 +17,7 @@ public class PrescriptionTemp implements Serializable{
     private String name;
     private Long price;
     private int count;
+    private String description;
 
     /**
      * @return the medicineId
@@ -72,5 +73,19 @@ public class PrescriptionTemp implements Serializable{
      */
     public void setCount(int count) {
         this.count = count;
+    }
+
+    /**
+     * @return the description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * @param description the description to set
+     */
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

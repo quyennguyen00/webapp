@@ -56,7 +56,7 @@ public class Registration implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 45,message = "{regit.NotNullErr}")
-    @Column(name = "phone")
+    @Column(name = "`phone`")
     private String phone;
     @Basic(optional = false)
     @NotNull

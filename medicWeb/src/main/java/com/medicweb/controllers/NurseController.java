@@ -21,8 +21,5 @@ public class NurseController {
      @Autowired
     private UserService userDetailsService;
  
-   @RequestMapping("/list-nurse")
-   public String listNurse(Model model){
-       return "list-nurse";
-   }
+   
 }

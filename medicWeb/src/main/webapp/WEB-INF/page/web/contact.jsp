@@ -9,7 +9,7 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:url value="/user-${currentUser.id}/contact" var="action"/>
+<c:url value="/contact/patient-${currentUser.id}" var="action"/>
 <div class="contact">
     <div class="container">
         <div class="row">
@@ -23,7 +23,10 @@
                             <form:input type="hidden" id="id" path="id"/>
                             <form:input type="tel" class="contact_input" placeholder="Số điện thoại" path="phone"/>
                             <form:errors path="phone" cssClass="text-danger" element="div"  ></form:errors>
-                            <form:input type="date" id="date"  class=" contact_input" pattern="\d{4}-\d{2}-\d{2}" path="date"/>
+                            <form:input type="date" path="date"
+                            class="form-control datetimepicker-input"
+                            placeholder="Check-in date"/>
+                      
                             
                         </div>
                             <form:input type="text" class="contact_input" path="active"/>

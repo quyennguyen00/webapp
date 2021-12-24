@@ -20,10 +20,10 @@ com\medicweb\configs\HibernateConfig.class
 com\medicweb\configs\WebApplicationContextConfig.class
 com\medicweb\pojo\Category_.class
 com\medicweb\pojo\Medicines.class
+com\medicweb\controllers\ApiDoctorController.class
 com\medicweb\pojo\PrescriptionTemp.class
 com\medicweb\pojo\User_.class
 com\medicweb\controllers\RegistrationController.class
-com\medicweb\controllers\UserController.class
 com\medicweb\repository\RegistrationRipository.class
 com\medicweb\service\impl\UserServiceImpl.class
 com\medicweb\controllers\AdminController.class
@@ -46,6 +46,7 @@ com\medicweb\formatter\ManufactoryFormat.class
 com\medicweb\repository\MedicineRepository.class
 com\medicweb\pojo\Registration.class
 com\medicweb\repository\impl\RegistrationRepositoryImpl.class
+com\medicweb\controllers\PatientController.class
 com\medicweb\formatter\RoleFormat.class
 com\medicweb\pojo\Prescription_.class
 com\medicweb\pojo\Suppliers_.class

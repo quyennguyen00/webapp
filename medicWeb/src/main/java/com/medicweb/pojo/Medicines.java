@@ -66,7 +66,7 @@ public class Medicines implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "price")
-    private long price;
+    private Long price;
     @JoinColumn(name = "category_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Category categoryId;
@@ -89,7 +89,7 @@ public class Medicines implements Serializable {
         this.id = id;
     }
 
-    public Medicines(Integer id, String name, long price) {
+    public Medicines(Integer id, String name, Long price) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -135,11 +135,11 @@ public class Medicines implements Serializable {
         this.description = description;
     }
 
-    public long getPrice() {
+    public Long getPrice() {
         return price;
     }
 
-    public void setPrice(long price) {
+    public void setPrice(Long price) {
         this.price = price;
     }
 

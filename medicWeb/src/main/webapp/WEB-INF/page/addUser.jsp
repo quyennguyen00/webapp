@@ -16,9 +16,7 @@
     </div>
 </div>
 <c:url value="/admin/user/save" var="action"/>
-<c:if test="${errMsg!=null}">
-    <div class="alert alert-danger">${errMsg}</div>
-</c:if>
+
 
 <form:form method="POST" action="${action}" modelAttribute="user">
     <div class="container row">
@@ -31,7 +29,8 @@
         <div class="col-sm-9"> 
             <div class="tab-content">
                 <div class="tab-pane active" >
-                    <div class="form-group">              
+                    <div class="form-group">   
+                        <form:input type="hidden" path="id"/>
                         <div class="col-xs-6">
                             <label for="lastName"><h5>Họ:</h5></label>
                             <form:input type="text" class="form-control"  path="lastName" name="lastName" id="lastName" placeholder="Nhập thông tin" />
@@ -46,20 +45,20 @@
                             <form:errors path="firstName" cssClass="text-danger" element="div"  ></form:errors>
                             </div>
                         </div>
-                          <div class="form-group">
-                        <div class="col-xs-6">                        
+                        <div class="form-group">
+                            <div class="col-xs-6">                        
                                 <label for="dob"><h5>Ngày sinh</h5></label>
                                 <div class="form-group">
-                                    <form:input type="date" cssClass="form-control" id="dob" path="dob"/>
-                                    <c:if test="${errMsg!=null}">
-                                        <div class="alert alert-danger">${errMsg}</div>
-                                    </c:if>
-                                </div>
+                                <form:input type="date" cssClass="form-control" id="dob" path="dob"/>
+                                <c:if test="${errDobMsg!=null}">
+                                    <div class="alert alert-danger">${errDobMsg}</div>
+                                </c:if>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="col-xs-6">
-                                <label for="sex"><h5>Giới tính</h5></label>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-6">
+                            <label for="sex"><h5>Giới tính</h5></label>
                             <form:select id="sex" path="sex" class="form-control">                                        
                                 <option value="Nam" selected >Nam</option>
                                 <option value="Nữ"  >Nữ</option>
@@ -71,7 +70,7 @@
 
                         <div class="col-xs-6">
                             <label for="phone"><h5>Số điện thoại:</h5></label>
-                            <form:input type="text" class="form-control" name="phone" path="phone" id="phone" placeholder="Nhập số điện thoại" />
+                            <form:input type="tel" class="form-control" name="phone" path="phone" id="phone" placeholder="Nhập số điện thoại" />
                             <form:errors path="phone" cssClass="text-danger" element="div"  ></form:errors>
                             </div>
                         </div>
@@ -111,12 +110,16 @@
                         </div>
                     </div>
                     <div class="form-group">
-
-<!--                        <div class="col-xs-6">
-                            <label for="password"><h5>Mật khẩu:</h5></label>
-                            <form:input type="password" class="form-control" path="password" id="password" placeholder="Nhập password" />
-                            -->
-                        </div>
+                         
+                        <div class="col-xs-6">
+                            <label for="text"><h5>Mật khẩu :</h5></label> 
+                            <form:input type="password" class="form-control" path="password" id="password" placeholder="Nhập password" /> 
+                            <c:if test="${errMsg!=null}">
+                                    <div class="text text-danger">${errMsg}</div>
+                                </c:if>
+                          
+                        </div>                                       
+                        
                         <div class="form-group">
                             <div class="col-xs-12">
                                 <br>
@@ -129,4 +132,4 @@
                 </div>
             </div>
         </div><!--/col-9-->
-</form:form>
+    </form:form>

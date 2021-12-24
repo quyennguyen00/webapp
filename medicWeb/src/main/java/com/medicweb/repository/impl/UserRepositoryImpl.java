@@ -122,5 +122,13 @@ public class UserRepositoryImpl implements UserRepository{
             }
         return false;  
     }
+
+    @Override
+    public Long checkEmail(String email) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        Long query =(Long)session.createQuery( "SELECT COUNT(u.email) FROM User u WHERE u.email = :email")
+                .setParameter("email", email).getSingleResult();
+        return query;
+    }
     
 }

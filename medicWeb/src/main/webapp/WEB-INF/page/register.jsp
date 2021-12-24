@@ -43,7 +43,9 @@
                                            <label for="inputLastName">Email</label>
                                             <form:input class="form-control" type="email" path="email" placeholder="Email"/>
                                             <form:errors path="email" cssClass="text-danger" element="div"  ></form:errors>
-
+                                            <c:if test="${errEmailMsg!=null}">
+                                                        <div class="text text-danger">${errEmailMsg}</div>
+                                                    </c:if>
 
                                         </div>
                                         <div class="row mb-3">
@@ -51,7 +53,9 @@
                                                 <div class="form-floating mb-3">
                                                     <label for="inputLastName">Mật khẩu</label>
                                                     <form:input class="form-control" type="password" path="password" placeholder="Nhập mật khẩu"/> 
-                                                    <form:errors path="password" cssClass="text-danger" element="div"  ></form:errors>
+                                                    <c:if test="${errMsg!=null}">
+                                                        <div class="text text-danger">${errMsg}</div>
+                                                    </c:if>
 
                                                 </div>
                                             </div>
@@ -59,7 +63,7 @@
                                                 <div class="form-floating mb-3">
                                                     <label for="inputLastName">Nhập lại mật khẩu</label>
                                                     <form:input class="form-control" type="password" path="confirmPassword" placeholder="Nhập lại mật khẩu"/> 
-                                                    <form:errors path="confirmPassword" cssClass="text-danger" element="div"  ></form:errors>
+                                                    
 
                                                 </div>
                                             </div>

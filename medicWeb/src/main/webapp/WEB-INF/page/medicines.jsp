@@ -10,7 +10,7 @@
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
-        DANH SÁCH THÔNG TIN THUỐC
+        INFORMATION OF MEDICINES
     </div>
     <div class="card-body">
         <table id="datatablesSimple">

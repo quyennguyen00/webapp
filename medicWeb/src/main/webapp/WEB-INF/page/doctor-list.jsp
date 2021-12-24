@@ -10,7 +10,7 @@
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
-        DANH SÁCH THÔNG TIN BÁC SĨ
+        INFORMATION OF DOCTORS
     </div>
     <div class="card-body">
         <table id="datatablesSimple">
@@ -57,7 +57,7 @@
                         <td>${c.address}</td>
                         <td>${c.phone}</td>                      
                         <td><button type="button" class="btn btn-success" onclick="location.href='http://localhost:8083/medicWeb/admin/list-doctor/edit-${c.id}'">Sửa</button></td>
-                        <td><button type="button" class="btn btn-danger" onclick="deleteMedicine(${c.id})">Xóa</button></td>
+                        <td><button type="button" class="btn btn-danger" onclick="deleteUser(${c.id})">Xóa</button></td>
                     </tr>
                     
                 </c:forEach>

@@ -24,23 +24,38 @@
             <ul class="d-flex flex-row align-items-center justify-content-start">
                 <li class="active"><a href="<c:url value="/"/>">Trang chủ</a></li>
                 
-                <li><a href="#">Dịch vụ</a></li>
-                <li><a href="#">Bác sĩ</a></li>
-                <li><a href="<c:url value="/contact"/>">Liên hệ</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Doctor</a></li>
+                <li><a href="<c:url value="/contact"/>">Contact</a></li>
             </ul>
         </nav>
         <div class="header_extra d-flex flex-row align-items-center justify-content-end ml-auto">
 
             <!-- Work Hourse -->
             <div class="work_hours"></div>
-            <c:if test="${pageContext.request.userPrincipal.name != null}">
-             <div class=" button button_1 header_phone"><a href="<c:url value="/user/contact"/>">ĐĂNG KÝ KHÁM</a></div>
-            </c:if>
-             <c:if test="${pageContext.request.userPrincipal.name == null}">
-                  <div class=" button button_1 header_phone"><a href="<c:url value="/login"/>">ĐĂNG KÝ KHÁM</a></div>
-                 <div class="button button_1 header_button"><a href="<c:url value="/register"/>">ĐĂNG KÝ</a></div>
+            <c:if test="${currentUser.id == '4'}">
+             <div class=" button button_1 header_phone"><a href="<c:url value="/contact/patient-${currentUser.id}"/>">Make an Appointment</a></div>
+              <div class="button button_1 header_button"><a href="<c:url value="/history"/>">HISTORY</a></div>
 
-                <div class="button button_1 header_button"><a href="<c:url value="/login"/>">ĐĂNG NHẬP</a></div>
+                <div class="button button_1 header_button"><a href="<c:url value="/logout"/>">LOGIN</a></div>
+            </c:if>
+             <c:if test="${currentUser.id == null}">
+                  <div class=" button button_1 header_phone"><a href="<c:url value="/login"/>">Make an Appointment</a></div>
+                 <div class="button button_1 header_button"><a href="<c:url value="/register"/>">RIGISTER</a></div>
+
+                <div class="button button_1 header_button"><a href="<c:url value="/login"/>">LOGIN</a></div>
+             </c:if>
+              <c:if test="${currentUser.role != '1'}">
+                 
+                <div class="button button_1 header_button"><a href="<c:url value="/admin"/>">${currentUser.role.role}</a></div>
+             </c:if>
+                 <c:if test="${currentUser.role != '2'}">
+                 
+                <div class="button button_1 header_button"><a href="<c:url value="/doctor"/>">${currentUser.role.role}</a></div>
+             </c:if>
+                 <c:if test="${currentUser.role != '3'}">
+                 
+                <div class="button button_1 header_button"><a href="<c:url value="/nurse"/>">${currentUser.role.role}</a></div>
              </c:if>
              
         </div>
@@ -54,17 +69,17 @@
     <div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
     <nav class="menu_nav">
         <ul>
-           <li class="active"><a href="<c:url value="/"/>">Trang chủ</a></li>
+           <li class="active"><a href="<c:url value="/"/>">Home</a></li>
                 
-                <li><a href="#">Dịch vụ</a></li>
-                <li><a href="#">Bác sĩ</a></li>
-                <li><a href="<c:url value="/contact"/>">Liên hệ</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Doctor</a></li>
+                <li><a href="<c:url value="/contact"/>">Contact</a></li>
         </ul>
     </nav>
     <div class="menu_extra">
         <div class="menu_link"></div>
         <div class="menu_link"><a href="<c:url value="/login"/>">LOGIN</a></div>
-        <div class="menu_link"><a href="<c:url value="/contact"/>">Đăng kí lịch khám</a></div>
+        <div class="menu_link"><a href="<c:url value="/contact"/>">Make an Appointment</a></div>
     </div>
     <div class="social menu_social">
         <ul class="d-flex flex-row align-items-center justify-content-start">

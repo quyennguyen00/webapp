@@ -24,10 +24,10 @@
 								<div class="col">
 									<div class="home_content">
 										<div class="home_subtitle"></div>
-										<div class="home_title">NƠI TIN CẬY</div>
+										<div class="home_title">Medicine made with care</div>
 										<div class="home_text">
-											<p>Là hệ thống lưu trữ chính. Đó là tội lớn nhất nếu bỏ lỡ Internet, nhưng không trang điểm đã được nói. Đó là thông minh và độc đáo. Niềm vui của tất nhiên.</p>
-										</div>
+                                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestibulum mauris quis aliquam. Integer accumsan sodales odio, id tempus velit ullamcorper id. Quisque at erat eu.</p>
+                                                                                           </div>
 										
 									</div>
 								</div>

@@ -44,7 +44,7 @@ public class PrescriptionDetail implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 45)
-    @Column(name = "times")
+    @Column(name = "num")
     private String times;
     @Basic(optional = false)
     @NotNull

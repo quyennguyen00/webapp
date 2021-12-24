@@ -1,4 +1,5 @@
 E:\webapp\medicWeb\src\main\java\com\medicweb\pojo\User.java
+E:\webapp\medicWeb\src\main\java\com\medicweb\controllers\PatientController.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\pojo\Medicines.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\configs\SpringSecurityConfig.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\controllers\DoctorController.java
@@ -48,13 +49,13 @@ E:\webapp\medicWeb\src\main\java\com\medicweb\pojo\PrescriptionDetail.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\pojo\Manufactory.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\repository\UserRepository.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\controllers\MedicineController.java
-E:\webapp\medicWeb\src\main\java\com\medicweb\controllers\UserController.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\service\CagetoryService.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\configs\SecurityWebAppInitializer.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\pojo\Registration.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\repository\impl\CategoryRepoImpl.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\pojo\PrescriptionTemp.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\service\UserService.java
+E:\webapp\medicWeb\src\main\java\com\medicweb\controllers\ApiDoctorController.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\formatter\CategoryFormat.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\repository\CategoryRepository.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\configs\DispatcherServletInitializer.java

@@ -6,6 +6,7 @@
 package com.medicweb.controllers;
 
 import com.medicweb.pojo.Registration;
+import com.medicweb.pojo.User;
 import com.medicweb.service.CagetoryService;
 import com.medicweb.service.ManufactoryService;
 import com.medicweb.service.MedicineService;
@@ -34,8 +35,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @ControllerAdvice
 public class HomeController {
-    @Autowired
-    private RegistrationService registrationService;
+ 
     
       @ModelAttribute
     public void commonAttr(Model model, HttpSession session) {
@@ -47,26 +47,12 @@ public class HomeController {
    
         return"page-index";
     }
-      @GetMapping("/user-{id}/contact")
-    public String contact(Model model,@PathVariable(value = "id") int a){
-        model.addAttribute("registration", new Registration());
-        return"contact";
+    @RequestMapping("/admin/error")
+    public String error(){
+   
+        return"page-error";
     }
-     @PostMapping("/user/contact")
-    public String register(Model model,@ModelAttribute(value = "registration") 
-    @Valid Registration registration, BindingResult  result){            
-        if(!result.hasErrors() && registration.getDate()!= null){    
-
-             if (this.registrationService.addRegistration(registration)) 
-                {
-                     return "redirect:/";
-                } 
-                model.addAttribute("errMsg", "Đã xảy ra lỗi!!!"); 
-            }           
-             model.addAttribute("errMsg", "Giá trị chưa đúng");
-       
-          return "contact";
-    }
+    
     
     
 }

@@ -48,13 +48,20 @@ public class UserServiceImpl implements UserService {
     }
     @Override
     public boolean addUser(User user) {
-        String pass = user.getPassword(); 
-        if(user.getRole()== null){
-            Role r = this.roleService.getRoleById(4);
-            user.setRole(r);
+        
+        if (user.getId() != null) {
+            
+            return this.updateUser(user);
+        } else {
+            String pass = user.getPassword();
+            if (user.getRole() == null) {
+                Role r = this.roleService.getRoleById(4);
+                user.setRole(r);
+            }
+            user.setPassword(this.passwordEncoder.encode(pass));       
+            return this.userRepository.addUser(user);
         }
-        user.setPassword(this.passwordEncoder.encode(pass));       
-        return this.userRepository.addUser(user);
+        
     }
 
     @Override
@@ -92,6 +99,17 @@ public class UserServiceImpl implements UserService {
     public boolean deleteUser(int i) {
         return this.userRepository.deleteUser(i);
     }
+
+    @Override
+    public Long checkEmail(String email) {
+       return this.userRepository.checkEmail(email);
+    }
+
+    @Override
+    public boolean updateUser(User user) {
+        return this.userRepository.updateUser(user);
+     }
+    
 
   
     

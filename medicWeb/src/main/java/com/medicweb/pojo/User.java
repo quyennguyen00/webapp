@@ -31,6 +31,7 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
@@ -38,7 +39,7 @@ import org.springframework.web.multipart.MultipartFile;
  * @author QUYENNGUYEN
  */
 @Entity
-@Table(name = "user")
+@Table(name = "`user`")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "User.findAll", query = "SELECT u FROM User u"),
@@ -72,6 +73,7 @@ public class User implements Serializable {
     private String firstName;
     @Column(name = "dob")
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dob;
     @Size(max = 45)
     @Column(name = "sex")
@@ -79,7 +81,7 @@ public class User implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="{user.format.hasErr}")//if the field contains email address consider using this annotation to enforce field validation
-    @Column(name = "email")
+    @Column(name = "email",unique = true)
     private String email;
     @Basic(optional = false)
     @NotNull
@@ -93,7 +95,7 @@ public class User implements Serializable {
     @Column(name = "image")
     private String image;
     @Pattern(regexp="^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$", message="Chưa đúng định dạng")//if the field contains phone or fax number consider using this annotation to enforce field validation
-    @Size(max = 45)
+    @Size(max = 45,message = "{user.NotNullErr}")
     @Column(name = "phone")
     private String phone;
     @JoinColumn(name = "role", referencedColumnName = "id")

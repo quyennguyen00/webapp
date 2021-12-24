@@ -21,35 +21,45 @@ and open the template in the editor.
         
     </definition>
     <definition name="medicines" extends="page">
-        <put-attribute name="title" value="THÔNG TIN THUỐC"/>
+        <put-attribute name="title" value="INFORMATION OF MEDICINES"/>
         <put-attribute name="content" value="/WEB-INF/page/medicines.jsp"/>       
     </definition>
     <definition name="show" extends="page">
-        <put-attribute name="title" value="THÊM-CẬP NHẬT"/>
+        <put-attribute name="title" value="ADD-UPDATE"/>
         <put-attribute name="content" value="/WEB-INF/page/addMedic.jsp"/>       
     </definition>
     <definition name="list-doctor" extends="page">
-        <put-attribute name="title" value="QUẢN LÝ BÁC SĨ"/>
+        <put-attribute name="title" value="DOCTOR MANAGER"/>
         <put-attribute name="content" value="/WEB-INF/page/doctor-list.jsp"/>       
     </definition>
     <definition name="list-nurse" extends="page">
-        <put-attribute name="title" value=" QUẢN LÝ Y TÁ"/>
+        <put-attribute name="title" value="NURSES MANAGER "/>
         <put-attribute name="content" value="/WEB-INF/page/nurse-list.jsp"/>       
     </definition>
     
     <definition name="show-user" extends="page">
-        <put-attribute name="title" value="NGƯỜI DÙNG"/>
+        <put-attribute name="title" value="USERS"/>
         <put-attribute name="content" value="/WEB-INF/page/addUser.jsp"/>       
     </definition>
 
     <!--DOCTOR-->
     <definition name="page-doctor" extends="page">
-        <put-attribute name="title" value="BÁC SĨ"/>
+        <put-attribute name="title" value="DOCTOR"/>
         <put-attribute name="content" value="/WEB-INF/page/doctor.jsp"/>       
+    </definition>
+    
+     <definition name="prescription" extends="page">
+        <put-attribute name="title" value="PRESCRIPTION"/>
+        <put-attribute name="content" value="/WEB-INF/page/doctor.jsp"/>       
+    </definition>
+    <!--ERROR PAGE-->
+     <definition name="page-error" extends="page">
+        <put-attribute name="title" value="404 PAGE"/>
+        <put-attribute name="content" value="/WEB-INF/page/errorpage.jsp"/>       
     </definition>
 <!-- PAGE INDEX   -->
 <definition name="page-index" template="/WEB-INF/layout/web/page-index.jsp">
-        <put-attribute name="title" value="Home"/>
+        <put-attribute name="title" value="HOME"/>
         <put-attribute name="header" value="/WEB-INF/layout/web/header.jsp"/>  
         <put-attribute name="content" value="/WEB-INF/page/home.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/layout/web/footer.jsp"/>
@@ -57,15 +67,15 @@ and open the template in the editor.
     </definition>
     
   <definition name="contact" extends="page-index">
-        <put-attribute name="title" value="LIÊN LẠC"/>
+        <put-attribute name="title" value="CONTACT"/>
         <put-attribute name="content" value="/WEB-INF/page/web/contact.jsp"/>       
     </definition>
     <definition name="login" extends="page-index">
-        <put-attribute name="title" value="LIÊN LẠC"/>
+        <put-attribute name="title" value="LOGIN"/>
         <put-attribute name="content" value="/WEB-INF/page/login.jsp"/>       
     </definition>
     <definition name="register" extends="page-index">
-        <put-attribute name="title" value="LIÊN LẠC"/>
+        <put-attribute name="title" value="REGISTER"/>
         <put-attribute name="content" value="/WEB-INF/page/register.jsp"/>       
     </definition>
 </tiles-definitions>

@@ -11,52 +11,52 @@
         <div class="sb-sidenav-menu">
             <div class="nav">
                  <div class="sb-sidenav-menu-heading"></div>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="<c:url value="/admin/error"/>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                XẾP LỊCH
+                                CALENDER
                             </a>
-                <div class="sb-sidenav-menu-heading">NGƯỜI DÙNG</div>
+                <div class="sb-sidenav-menu-heading">LIST USER</div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fas fa-user-md"></i></div>
-                    BÁC SĨ
+                    DOCTOR
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="<c:url value="/admin/list-doctor"/>">DANH SÁCH</a>
-                        <a class="nav-link" href="<c:url value="/admin/user/add"/>">THÊM</a>                                 
+                        <a class="nav-link" href="<c:url value="/admin/list-doctor"/>">LIST</a>
+                        <a class="nav-link" href="<c:url value="/admin/user/add"/>">ADD</a>                                 
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                     <div class="sb-nav-link-icon"><i class="fas fa-user-nurse"></i></div>
-                    Y TÁ
+                    NURSE
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
                 <div class="collapse" id="collapsePages" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                        <a class="nav-link" href="<c:url value="/admin/list-nurse"/>">DANH SÁCH</a>
-                        <a class="nav-link" href="<c:url value="/admin/user/add"/>">THÊM</a>   
+                        <a class="nav-link" href="<c:url value="/admin/list-nurse"/>">LIST</a>
+                        <a class="nav-link" href="<c:url value="/admin/user/add"/>">ADD</a>   
                         
                        
                     </nav>
                 </div>
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapsePatients" aria-expanded="false" aria-controls="pagesCollapseError">
+<!--                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapsePatients" aria-expanded="false" aria-controls="pagesCollapseError">
                      <div class="sb-nav-link-icon"><i class="fas fa-hospital-user"></i></div>
                     BỆNH NHÂN
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                </a>
+                </a>-->
                                           
-                <div class="sb-sidenav-menu-heading">THỐNG KÊ VÀ THUỐC</div>
+                <div class="sb-sidenav-menu-heading">STATS VÀ MEDICINES</div>
                 
                  <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseStats" >
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-line"></i></div>
-                    THỐNG KÊ
+                    STATS
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
                 <div class="collapse" id="collapseStats" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                        <a class="nav-link" href="layout-static.html">Bệnh nhân</a>
-                        <a class="nav-link" href="layout-sidenav-light.html">Doanh thu</a>                
+                        <a class="nav-link" href="layout-static.html">PATIENT</a>
+                        <a class="nav-link" href="layout-sidenav-light.html">TURNOVER</a>                
                        
                     </nav>
                 </div>
@@ -67,8 +67,8 @@
                 </a>
                 <div class="collapse" id="collapseMedicine" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                        <a class="nav-link" href="<c:url value="/admin/medicines"/>">DANH SÁCH</a>
-                        <a class="nav-link" href="<c:url value="/admin/medicines/add-medic"/>">THÊM</a>
+                        <a class="nav-link" href="<c:url value="/admin/medicines"/>">LIST</a>
+                        <a class="nav-link" href="<c:url value="/admin/medicines/add-medic"/>">ADD</a>
                       
                        
                     </nav>
