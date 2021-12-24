@@ -5,6 +5,7 @@
  */
 package com.medicweb.pojo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
@@ -30,7 +31,6 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
-import org.codehaus.jackson.annotate.JsonIgnore;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
@@ -96,11 +96,12 @@ public class User implements Serializable {
     @Size(max = 45)
     @Column(name = "phone")
     private String phone;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "userId")
-    private Collection<Registration> registrationCollection;
     @JoinColumn(name = "role", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Role role;
+    @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "userId")
+    private Collection<Registration> registrationCollection;
     @Transient
     @JsonIgnore
     private MultipartFile file;

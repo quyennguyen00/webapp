@@ -6,8 +6,10 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<!-- Contact -->
-
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:url value="/user-${currentUser.id}/contact" var="action"/>
 <div class="contact">
     <div class="container">
         <div class="row">
@@ -15,33 +17,25 @@
             <!-- Contact Form -->
             <div class="col-lg-7">
                 <div class="contact_form_container">
-                    <div class="contact_form_title">ĐẶT LỊCH HẸN</div>
-                    <form action="#" class="contact_form" id="contact_form">
-                        <div class="d-flex flex-row align-items-start justify-content-between flex-wrap">
-                            <input type="text" class="contact_input" placeholder="Họ&Tên" required="required">
-                            <input type="email" class="contact_input" placeholder="E-mail" required="required">
-                            <input type="tel" class="contact_input" placeholder="Số điện thoại" required="required">
-                            <select class="contact_select contact_input" required>
-                                <option disabled="" selected="">Speciality</option>
-                                <option>Speciality 1</option>
-                                <option>Speciality 2</option>
-                                <option>Speciality 3</option>
-                                <option>Speciality 4</option>
-                                <option>Speciality 5</option>
-                            </select>
-                            <select class="contact_select contact_input"required="required">
-                                <option disabled="" selected="">Doctor</option>
-                                <option>Doctor 1</option>
-                                <option>Doctor 2</option>
-                                <option>Doctor 3</option>
-                                <option>Doctor 4</option>
-                                <option>Doctor 5</option>
-                            </select>
-                            <input type="text" id="datepicker" data-date-format="mm/dd/yyyy"class="contact_input datepicker" placeholder="Ngày" required="required">
+                    <div class="contact_form_title">ĐĂNG KÝ KHÁM</div>
+                    <form:form method="post" action="${action}" class="contact_form" id="contact_form" modelAttribute="registration">
+                        <div class=" flex-row align-items-start flex-wrap">
+                            <form:input type="hidden" id="id" path="id"/>
+                            <form:input type="tel" class="contact_input" placeholder="Số điện thoại" path="phone"/>
+                            <form:errors path="phone" cssClass="text-danger" element="div"  ></form:errors>
+                            <form:input type="date" id="date"  class=" contact_input" pattern="\d{4}-\d{2}-\d{2}" path="date"/>
+                            
                         </div>
-                        <button class="button button_1 contact_button trans_200">Đặt lịch hẹn</button>
-                        <button class="button button_1 contact_button trans_200">Thiết lập lại</button>
-                    </form>
+                            <form:input type="text" class="contact_input" path="active"/>
+                            <form:textarea type="text" class="contact form-control" placeholder="Triệu chứng" path="description"/>
+                            <form:errors path="description" cssClass="text-danger" element="div"  ></form:errors>
+                            
+                            <form:input type="text" path="userId" value="${currentUser}"/>
+                            <c:if test="${errMsg!=null}">
+                                <div class="text-danger">${errMsg}</div>
+                            </c:if>
+                        <button class="button button_1 contact_button trans_200" type="submit">Đăng ký khám</button>
+                    </form:form>
         
                 </div>
             </div>

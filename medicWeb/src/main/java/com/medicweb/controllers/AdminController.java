@@ -62,7 +62,7 @@ public class AdminController {
         model.addAttribute("suppliers", this.supplierService.getSuppliers());
         model.addAttribute("types", this.typeService.getTypes());
         model.addAttribute("roles",this.roleService.getRole());
-        model.addAttribute("currentUser",session.getAttribute("currentUser"));
+//        model.addAttribute("currentUser",session.getAttribute("currentUser"));
         model.addAttribute("listDoctor", this.userDetailsService.getDoctor());
         model.addAttribute("listNurse", this.userDetailsService.getNurse());
     }

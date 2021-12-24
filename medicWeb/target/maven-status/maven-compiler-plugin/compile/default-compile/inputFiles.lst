@@ -3,6 +3,7 @@ E:\webapp\medicWeb\src\main\java\com\medicweb\pojo\Medicines.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\configs\SpringSecurityConfig.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\controllers\DoctorController.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\controllers\AdminController.java
+E:\webapp\medicWeb\src\main\java\com\medicweb\repository\impl\RegistrationRepositoryImpl.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\controllers\NurseController.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\formatter\SupplierFormat.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\controllers\ApiMedicineController.java
@@ -18,6 +19,7 @@ E:\webapp\medicWeb\src\main\java\com\medicweb\controllers\HomeController.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\service\RoleService.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\configs\handlers\LoginSuccessHandler.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\varlidator\WebAppValidator.java
+E:\webapp\medicWeb\src\main\java\com\medicweb\repository\RegistrationRipository.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\formatter\ManufactoryFormat.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\utils\Utils.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\service\impl\UserServiceImpl.java
@@ -57,10 +59,12 @@ E:\webapp\medicWeb\src\main\java\com\medicweb\formatter\CategoryFormat.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\repository\CategoryRepository.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\configs\DispatcherServletInitializer.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\controllers\ApiUserController.java
+E:\webapp\medicWeb\src\main\java\com\medicweb\service\RegistrationService.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\repository\ManufactoryRepository.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\service\MedicineService.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\formatter\TypeFormat.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\configs\HibernateConfig.java
+E:\webapp\medicWeb\src\main\java\com\medicweb\service\impl\RegistrationServiceImpl.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\service\SupplierService.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\repository\impl\RoleRepositoryImpl.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\service\impl\CategoryServiceImpl.java

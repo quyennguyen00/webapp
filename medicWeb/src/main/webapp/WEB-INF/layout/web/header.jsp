@@ -34,7 +34,7 @@
             <!-- Work Hourse -->
             <div class="work_hours"></div>
             <c:if test="${pageContext.request.userPrincipal.name != null}">
-             <div class=" button button_1 header_phone"><a href="<c:url value="/contact"/>">ĐĂNG KÝ KHÁM</a></div>
+             <div class=" button button_1 header_phone"><a href="<c:url value="/user/contact"/>">ĐĂNG KÝ KHÁM</a></div>
             </c:if>
              <c:if test="${pageContext.request.userPrincipal.name == null}">
                   <div class=" button button_1 header_phone"><a href="<c:url value="/login"/>">ĐĂNG KÝ KHÁM</a></div>

@@ -1,4 +1,5 @@
 com\medicweb\repository\UserRepository.class
+com\medicweb\service\impl\RegistrationServiceImpl.class
 com\medicweb\utils\Utils.class
 com\medicweb\repository\impl\UserRepositoryImpl.class
 com\medicweb\repository\impl\ManufactoryRepositoryImpl.class
@@ -12,6 +13,7 @@ com\medicweb\pojo\Manufactory_.class
 com\medicweb\repository\SupplierRepository.class
 com\medicweb\pojo\Role_.class
 com\medicweb\pojo\Type_.class
+com\medicweb\service\RegistrationService.class
 com\medicweb\configs\handlers\LoginSuccessHandler.class
 com\medicweb\formatter\CategoryFormat.class
 com\medicweb\configs\HibernateConfig.class
@@ -22,6 +24,7 @@ com\medicweb\pojo\PrescriptionTemp.class
 com\medicweb\pojo\User_.class
 com\medicweb\controllers\RegistrationController.class
 com\medicweb\controllers\UserController.class
+com\medicweb\repository\RegistrationRipository.class
 com\medicweb\service\impl\UserServiceImpl.class
 com\medicweb\controllers\AdminController.class
 com\medicweb\repository\impl\MedicineRepositoryIpml.class
@@ -42,6 +45,7 @@ com\medicweb\pojo\Registration_.class
 com\medicweb\formatter\ManufactoryFormat.class
 com\medicweb\repository\MedicineRepository.class
 com\medicweb\pojo\Registration.class
+com\medicweb\repository\impl\RegistrationRepositoryImpl.class
 com\medicweb\formatter\RoleFormat.class
 com\medicweb\pojo\Prescription_.class
 com\medicweb\pojo\Suppliers_.class

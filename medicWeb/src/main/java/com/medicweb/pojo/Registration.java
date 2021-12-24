@@ -5,6 +5,7 @@
  */
 package com.medicweb.pojo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
@@ -27,13 +28,14 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  *
  * @author QUYENNGUYEN
  */
 @Entity
-@Table(name = "registration")
+@Table(name = "`registration`")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Registration.findAll", query = "SELECT r FROM Registration r"),
@@ -48,31 +50,32 @@ public class Registration implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "id")
+    @Column(name = "`id`")
     private Integer id;
     // @Pattern(regexp="^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$", message="Invalid phone/fax format, should be as xxx-xxx-xxxx")//if the field contains phone or fax number consider using this annotation to enforce field validation
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 45)
+    @Size(min = 1, max = 45,message = "{regit.NotNullErr}")
     @Column(name = "phone")
     private String phone;
     @Basic(optional = false)
     @NotNull
     @Column(name = "date")
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date date;
     @Basic(optional = false)
-    @NotNull
     @Column(name = "active")
     private boolean active;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 225)
+    @Size(min = 1, max = 225,message = "{regit.NotNullErr}")
     @Column(name = "description")
     private String description;
+    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "registrationId")
     private Collection<Prescription> prescriptionCollection;
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @JoinColumn(name = "`user_id`", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private User userId;
 

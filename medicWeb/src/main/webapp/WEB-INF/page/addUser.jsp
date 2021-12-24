@@ -12,7 +12,7 @@
 
 <div class="card mb-4">
     <div class="card-header">       
-        <h4>THÊM - CẬP NHẬT THÔNG TIN VỀ THUỐC</h4>
+        <h4>THÊM - CẬP NHẬT THÔNG TIN NGƯỜI DÙNG</h4>
     </div>
 </div>
 <c:url value="/admin/user/save" var="action"/>
@@ -51,7 +51,9 @@
                                 <label for="dob"><h5>Ngày sinh</h5></label>
                                 <div class="form-group">
                                     <form:input type="date" cssClass="form-control" id="dob" path="dob"/>
-                                
+                                    <c:if test="${errMsg!=null}">
+                                        <div class="alert alert-danger">${errMsg}</div>
+                                    </c:if>
                                 </div>
                             </div>
                         </div>
@@ -110,10 +112,10 @@
                     </div>
                     <div class="form-group">
 
-                        <div class="col-xs-6">
+<!--                        <div class="col-xs-6">
                             <label for="password"><h5>Mật khẩu:</h5></label>
                             <form:input type="password" class="form-control" path="password" id="password" placeholder="Nhập password" />
-                            
+                            -->
                         </div>
                         <div class="form-group">
                             <div class="col-xs-12">
