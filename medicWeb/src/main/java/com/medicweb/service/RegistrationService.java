@@ -6,6 +6,7 @@
 package com.medicweb.service;
 
 import com.medicweb.pojo.Registration;
+import com.medicweb.pojo.User;
 import java.util.List;
 
 /**
@@ -16,4 +17,5 @@ public interface RegistrationService {
     List<Registration> geRegistrations();
     boolean addRegistration(Registration r);
     Registration getRegistrationById(int id);
+    List<Registration> getRegistrationsByUser(User u);
 }

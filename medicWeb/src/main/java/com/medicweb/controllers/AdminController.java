@@ -82,10 +82,13 @@ public class AdminController {
         if (!result.hasErrors()) {
             Long count = userDetailsService.checkEmail(user.getEmail().trim());// Email
             if (count == 1) {
-                model.addAttribute("errEmailMsg", "Email đã tồn tại!");
-            } else
-                if (user.getPassword().isEmpty()){
-                     model.addAttribute("errMsg", "Mật khẩu không đúng!");
+                if(user.getId() != null && this.userDetailsService.updateUser(user)){
+                     return "redirect:/admin";
+                }else{
+                     model.addAttribute("errEmailMsg", "Email already exists!");
+                }
+            } else if (user.getPassword().isEmpty()){
+                     model.addAttribute("errMsg", "Enter password!");
                 }                
                 else if (this.userDetailsService.addUser(user) == true) {
                         return "redirect:/admin";

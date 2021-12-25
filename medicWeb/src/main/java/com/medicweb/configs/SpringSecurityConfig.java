@@ -6,6 +6,8 @@
 package com.medicweb.configs;
 
 
+import com.cloudinary.Cloudinary;
+import com.cloudinary.utils.ObjectUtils;
 import com.medicweb.configs.handlers.MyAccessDeniedHandler;
 import com.medicweb.configs.handlers.LoginSuccessHandler;
 import com.medicweb.configs.handlers.LogoutHandler;
@@ -64,6 +66,17 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
     public MyAccessDeniedHandler accessDenied() {
         return new MyAccessDeniedHandler();
     }
+    
+       @Bean
+    public Cloudinary cloudinary() {
+        Cloudinary c = new Cloudinary(ObjectUtils.asMap(
+                "cloud_name", "dhj3qxlyh",
+                "api_key", "173413849841721",
+                "api_secret", "qgFFyzYS2Tq16G8ry2l-NCzW4dg",
+                "secure", true));
+
+        return c;
+    }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -82,9 +95,11 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
        http.logout().logoutSuccessHandler(this.logoutHandler);   
        http.exceptionHandling().accessDeniedPage("/login?accessDenied");
 //       
-//       http.authorizeRequests().antMatchers("/").permitAll()
-//               .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')");
-       
+       http.authorizeRequests().antMatchers("/").permitAll()
+               .antMatchers("/admin/**").access("hasAnyAuthority('1')")
+               .antMatchers("/doctor/**").access("hasAnyAuthority('2')")
+               .antMatchers("/nurse/**").access("hasAnyAuthority('3')");
+              
        http.csrf().disable();
     }
     

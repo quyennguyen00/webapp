@@ -6,6 +6,7 @@
 package com.medicweb.service.impl;
 
 import com.medicweb.pojo.Registration;
+import com.medicweb.pojo.User;
 import com.medicweb.repository.RegistrationRipository;
 import com.medicweb.service.RegistrationService;
 import java.util.List;
@@ -35,5 +36,11 @@ public class RegistrationServiceImpl implements RegistrationService{
     public Registration getRegistrationById(int id) {
         return this.registrationRipository.getRegistrationById(id);
     }
-    
+
+    @Override
+    public List<Registration> getRegistrationsByUser(User u) {
+        return this.registrationRipository.getRegistrationsByUser(u);
+
+    }
 }
+

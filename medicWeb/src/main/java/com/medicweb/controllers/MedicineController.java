@@ -56,7 +56,7 @@ public class MedicineController {
                  return "redirect:/admin/medicines";
             }
             else{
-                 model.addAttribute("errMsg", "Đã xảy ra lỗi!!!");
+                 model.addAttribute("errMsg", "ERROR!!!");
             }        
         }
         return "show";     

@@ -17,7 +17,7 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">ĐĂNG NHẬP</h3></div>
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">LOGIN</h3></div>
                                     <div class="card-body">
                                         <form method="POST" action="${action}">
                                             <div class="form-floating mb-3">
@@ -31,17 +31,17 @@
                                             <div class="form-floating mb-3">
                                                <c:if test="${param.Error != null}">
                                                     <div class="text text-danger">
-                                                       Email hoặc mật khẩu không đúng!
+                                                       Email or password incorrect!
                                                     </div>
                                                 </c:if><c:if test="${param.accessDenied != null}">
                                                     <div class="alert alert-danger">
-                                                        Không có quyền truy cập
+                                                        Access to this resource is denied.
                                                     </div>
                                                 </c:if>
                                                 
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <button type="submit" class="btn btn-info btn-block"><div class="d-grid">ĐĂNG NHẬP</div></button>
+                                                <button type="submit" class="btn btn-info btn-block"><div class="d-grid">LOGIN</div></button>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                      
@@ -50,7 +50,7 @@
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="<c:url value="/register"/>">Tạo tài khoản? Đăng kí!</a></div>
+                                        <div class="small"><a href="<c:url value="/register"/>">Need an account? Sign up!</a></div>
                                     </div>
                                 </div>
                             </div>

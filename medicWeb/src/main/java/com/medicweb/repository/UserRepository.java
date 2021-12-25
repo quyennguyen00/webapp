@@ -7,6 +7,7 @@ package com.medicweb.repository;
 
 
 
+import com.medicweb.pojo.Registration;
 import com.medicweb.pojo.Role;
 import com.medicweb.pojo.User;
 import java.util.List;
@@ -21,7 +22,10 @@ public interface UserRepository {
     boolean deleteUser(int id);
     Long checkEmail(String email);
     User getUserById(int id);
+    User getUserByRigisId( Registration r);
     List<User> getUsers(String username);// get username or email to login
     List<User> getDoctor();
     List<User> getNurse();
+    List<User> getPatient();
+    
 }

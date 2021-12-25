@@ -5,6 +5,7 @@
  */
 package com.medicweb.service;
 
+import com.medicweb.pojo.Registration;
 import com.medicweb.pojo.User;
 import java.util.List;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -15,6 +16,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
  */
 public interface UserService extends UserDetailsService{
    User getUserById(int id);
+   User getUserByRigisId( Registration r);
     boolean addUser(User user);
     boolean updateUser(User user);
     boolean deleteUser(int id);
@@ -22,5 +24,6 @@ public interface UserService extends UserDetailsService{
     List<User> getUsers(String username);
     List<User> getDoctor();
     List<User> getNurse();
+    List<User> getPatient();
 
 }

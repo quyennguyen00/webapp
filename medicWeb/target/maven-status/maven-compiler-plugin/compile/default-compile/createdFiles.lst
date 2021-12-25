@@ -1,6 +1,7 @@
 com\medicweb\repository\UserRepository.class
 com\medicweb\service\impl\RegistrationServiceImpl.class
 com\medicweb\utils\Utils.class
+com\medicweb\controllers\PrescriptionController.class
 com\medicweb\repository\impl\UserRepositoryImpl.class
 com\medicweb\repository\impl\ManufactoryRepositoryImpl.class
 com\medicweb\configs\SpringSecurityConfig.class
@@ -20,7 +21,6 @@ com\medicweb\configs\HibernateConfig.class
 com\medicweb\configs\WebApplicationContextConfig.class
 com\medicweb\pojo\Category_.class
 com\medicweb\pojo\Medicines.class
-com\medicweb\controllers\ApiDoctorController.class
 com\medicweb\pojo\PrescriptionTemp.class
 com\medicweb\pojo\User_.class
 com\medicweb\controllers\RegistrationController.class
@@ -37,13 +37,13 @@ com\medicweb\controllers\DoctorController.class
 com\medicweb\configs\handlers\MyAccessDeniedHandler.class
 com\medicweb\repository\impl\TypeRepositoryImpl.class
 com\medicweb\configs\handlers\LogoutHandler.class
-com\medicweb\controllers\ApiPrescriptionTemp.class
 com\medicweb\controllers\ApiMedicineController.class
 com\medicweb\controllers\ApiUserController.class
 com\medicweb\pojo\Medicines_.class
 com\medicweb\pojo\Registration_.class
 com\medicweb\formatter\ManufactoryFormat.class
 com\medicweb\repository\MedicineRepository.class
+com\medicweb\controllers\ApiPrescriptionController.class
 com\medicweb\pojo\Registration.class
 com\medicweb\repository\impl\RegistrationRepositoryImpl.class
 com\medicweb\controllers\PatientController.class

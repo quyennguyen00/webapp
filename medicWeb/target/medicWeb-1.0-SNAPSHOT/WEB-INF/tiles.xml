@@ -52,22 +52,35 @@ and open the template in the editor.
         <put-attribute name="title" value="PRESCRIPTION"/>
         <put-attribute name="content" value="/WEB-INF/page/doctor.jsp"/>       
     </definition>
+    <!--PATIENT-->
+    <definition name="page-patient" extends="page">
+        <put-attribute name="title" value="PRESCRIPTION"/>
+        <put-attribute name="content" value="/WEB-INF/page/page-patient.jsp"/>       
+    </definition>
     <!--ERROR PAGE-->
      <definition name="page-error" extends="page">
         <put-attribute name="title" value="404 PAGE"/>
         <put-attribute name="content" value="/WEB-INF/page/errorpage.jsp"/>       
     </definition>
+    
 <!-- PAGE INDEX   -->
 <definition name="page-index" template="/WEB-INF/layout/web/page-index.jsp">
         <put-attribute name="title" value="HOME"/>
+        <put-attribute name="css" value="/WEB-INF/layout/web/css.jsp"/>
         <put-attribute name="header" value="/WEB-INF/layout/web/header.jsp"/>  
         <put-attribute name="content" value="/WEB-INF/page/home.jsp"/>
+        <put-attribute name="js" value="/WEB-INF/layout/web/js.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/layout/web/footer.jsp"/>
         
     </definition>
     
   <definition name="contact" extends="page-index">
         <put-attribute name="title" value="CONTACT"/>
+        <put-attribute name="css" value=""/>
+        <put-attribute name="header" value="/WEB-INF/layout/web/header.jsp"/>  
+        <!--<put-attribute name="content" value="/WEB-INF/page/home.jsp"/>-->
+        <put-attribute name="js" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/layout/web/footer.jsp"/>
         <put-attribute name="content" value="/WEB-INF/page/web/contact.jsp"/>       
     </definition>
     <definition name="login" extends="page-index">

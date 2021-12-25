@@ -91,7 +91,7 @@ public class User implements Serializable {
     @Size(max = 255)
     @Column(name = "address")
     private String address;
-    @Size(max = 25)
+    @Size(max = 200)
     @Column(name = "image")
     private String image;
     @Pattern(regexp="^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$", message="Chưa đúng định dạng")//if the field contains phone or fax number consider using this annotation to enforce field validation

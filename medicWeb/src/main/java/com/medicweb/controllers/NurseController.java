@@ -16,10 +16,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author QUYENNGUYEN
  */
 @Controller
-@RequestMapping("/admin")
 public class NurseController {
      @Autowired
     private UserService userDetailsService;
  
+      @RequestMapping("/nurse")
+    public String error(){
+   
+        return"page-error";
+    }
    
 }

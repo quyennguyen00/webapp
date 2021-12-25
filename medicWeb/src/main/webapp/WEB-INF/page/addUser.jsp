@@ -59,11 +59,28 @@
                     <div class="form-group">
                         <div class="col-xs-6">
                             <label for="sex"><h5>Giới tính</h5></label>
-                            <form:select id="sex" path="sex" class="form-control">                                        
-                                <option value="Nam" selected >Nam</option>
-                                <option value="Nữ"  >Nữ</option>
-                                <option value="Khác"  >Khác</option>                                                                                   
-                            </form:select>
+                            <c:if test="${user.sex == 'Nam' || user.sex == null}">
+                                <form:select id="sex" path="sex" class="form-control">                                                                    
+                                    <option value="Nam" selected >Nam</option>
+                                    <option value="Nữ"  >Nữ</option>
+                                    <option value="Khác"  >Khác</option>                                                                                        
+                                </form:select>
+                            </c:if>     
+                            <c:if test="${user.sex == 'Nữ'}">
+                                <form:select id="sex" path="sex" class="form-control">                                                                    
+                                    <option value="Nam" >Nam</option>
+                                    <option value="Nữ" selected  >Nữ</option>
+                                    <option value="Khác"  >Khác</option>                                                                                        
+                                </form:select>
+                            </c:if>  
+                             <c:if test="${user.sex == 'Khác' }">
+                                <form:select id="sex" path="sex" class="form-control">                                                                    
+                                    <option value="Nam" >Nam</option>
+                                    <option value="Nữ"  >Nữ</option>
+                                    <option value="Khác"  selected >Khác</option>                                                                                        
+                                </form:select>
+                            </c:if> 
+                                    
                         </div>
                     </div>
                     <div class="form-group">
@@ -82,6 +99,9 @@
                                 <label for="email"><h5>Email</h5></label>
                             <form:input type="email" class="form-control" path="email" id="email" placeholder="you@email.com"/>
                             <form:errors path="email" cssClass="text-danger" element="div"  ></form:errors>
+                             <c:if test="${errEmailMsg!=null}">
+                                    <div class="text text-danger">${errEmailMsg}</div>
+                                </c:if>
                             </div>
                         </div>
                         <div class="form-group">

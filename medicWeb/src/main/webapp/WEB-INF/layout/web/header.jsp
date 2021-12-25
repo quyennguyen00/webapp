@@ -22,7 +22,7 @@
         <!-- Main Navigation -->
         <nav class="main_nav">
             <ul class="d-flex flex-row align-items-center justify-content-start">
-                <li class="active"><a href="<c:url value="/"/>">Trang chủ</a></li>
+                <li class="active"><a href="<c:url value="/"/>">Home</a></li>
                 
                 <li><a href="#">Services</a></li>
                 <li><a href="#">Doctor</a></li>
@@ -33,11 +33,11 @@
 
             <!-- Work Hourse -->
             <div class="work_hours"></div>
-            <c:if test="${currentUser.id == '4'}">
+            <c:if test="${currentUser.role.role == 'BỆNH NHÂN'}">
              <div class=" button button_1 header_phone"><a href="<c:url value="/contact/patient-${currentUser.id}"/>">Make an Appointment</a></div>
-              <div class="button button_1 header_button"><a href="<c:url value="/history"/>">HISTORY</a></div>
+              <div class="button button_1 header_button"><a href="<c:url value="/patient"/>">HISTORY</a></div>
 
-                <div class="button button_1 header_button"><a href="<c:url value="/logout"/>">LOGIN</a></div>
+                <div class="button button_1 header_button"><a href="<c:url value="/logout"/>">LOG OUT</a></div>
             </c:if>
              <c:if test="${currentUser.id == null}">
                   <div class=" button button_1 header_phone"><a href="<c:url value="/login"/>">Make an Appointment</a></div>
@@ -45,15 +45,15 @@
 
                 <div class="button button_1 header_button"><a href="<c:url value="/login"/>">LOGIN</a></div>
              </c:if>
-              <c:if test="${currentUser.role != '1'}">
+              <c:if test="${currentUser.role.role == 'ADMIN'}">
                  
                 <div class="button button_1 header_button"><a href="<c:url value="/admin"/>">${currentUser.role.role}</a></div>
              </c:if>
-                 <c:if test="${currentUser.role != '2'}">
+                 <c:if test="${currentUser.role.role == 'BÁC SĨ'}">
                  
                 <div class="button button_1 header_button"><a href="<c:url value="/doctor"/>">${currentUser.role.role}</a></div>
              </c:if>
-                 <c:if test="${currentUser.role != '3'}">
+                 <c:if test="${currentUser.role.role == 'Y TÁ'}">
                  
                 <div class="button button_1 header_button"><a href="<c:url value="/nurse"/>">${currentUser.role.role}</a></div>
              </c:if>

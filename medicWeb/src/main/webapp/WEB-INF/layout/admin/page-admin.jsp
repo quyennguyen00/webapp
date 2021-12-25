@@ -46,10 +46,6 @@
       </div>
       </div>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
-        <script type="text/javascript">
-        $(function () {
-            $('#datetimepicker1').datetimepicker();
-        });
-     </script>
+       
     </body>
 </html>

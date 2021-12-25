@@ -5,8 +5,12 @@
  */
 package com.medicweb.controllers;
 
+import com.medicweb.pojo.Registration;
 import com.medicweb.pojo.User;
+import com.medicweb.service.RegistrationService;
 import com.medicweb.service.UserService;
+import java.util.List;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +18,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -27,6 +32,9 @@ public class PatientController {
     
     @Autowired
     private UserService userDetailsService;
+    
+    @Autowired
+    private RegistrationService registrationService;
     
     @RequestMapping("/login")
     public String login(Model model){
@@ -44,11 +52,11 @@ public class PatientController {
         if (!result.hasErrors()) {
             Long count = userDetailsService.checkEmail(user.getEmail().trim());
             if (count == 1) {
-                model.addAttribute("errEmailMsg", "Email đã tồn tại!");
+                model.addAttribute("errEmailMsg", "Email already exists!");
             } else
                 if (user.getPassword().isEmpty()
                         || !user.getPassword().equals(user.getConfirmPassword())) {
-                    model.addAttribute("errMsg", "Mật khẩu không đúng!");
+                    model.addAttribute("errMsg", "Enter password or incorrect!");
                 }
                 else if (this.userDetailsService.addUser(user) == true) {
                         return "redirect:/login";
@@ -56,5 +64,12 @@ public class PatientController {
         }
          return "register";
     }
-    // 
+      @GetMapping("/history/patient")
+    public String history(Model model,HttpSession session){
+        User user = (User) session.getAttribute("currentUser");
+          model.addAttribute("listRegistraion",this.registrationService.getRegistrationsByUser(user));
+        return"page-patient";
+    }
+      
+    
 }

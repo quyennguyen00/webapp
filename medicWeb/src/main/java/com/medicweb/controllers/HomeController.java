@@ -36,11 +36,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @ControllerAdvice
 public class HomeController {
  
+    @Autowired 
+    private RegistrationService registrationService;
     
       @ModelAttribute
     public void commonAttr(Model model, HttpSession session) {
        model.addAttribute("currentUser",session.getAttribute("currentUser"));
-
+       model.addAttribute("listregister",registrationService.geRegistrations());
+       
     }
     @RequestMapping("/")
     public String index(){
@@ -52,7 +55,12 @@ public class HomeController {
    
         return"page-error";
     }
-    
+    @RequestMapping("/patient/error")
+    public String settting(){
+   
+        return"page-error";
+    }
+   
     
     
 }

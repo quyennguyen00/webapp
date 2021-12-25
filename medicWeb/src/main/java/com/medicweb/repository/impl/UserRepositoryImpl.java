@@ -6,6 +6,7 @@
 package com.medicweb.repository.impl;
 
 import com.medicweb.pojo.Medicines;
+import com.medicweb.pojo.Registration;
 import com.medicweb.pojo.Role;
 import com.medicweb.pojo.User;
 import com.medicweb.repository.UserRepository;
@@ -129,6 +130,37 @@ public class UserRepositoryImpl implements UserRepository{
         Long query =(Long)session.createQuery( "SELECT COUNT(u.email) FROM User u WHERE u.email = :email")
                 .setParameter("email", email).getSingleResult();
         return query;
+    }
+
+    @Override
+    public List<User> getPatient() {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<Object[]> query = builder.createQuery(Object[].class);
+          
+        Root root = query.from(User.class);
+        query = query.select(root);
+        List<Predicate> predicates = new ArrayList<>();
+        Predicate p = builder.equal(root.get("role").as(Role.class),4);
+         query = query.where(p);
+        
+        Query q = session.createQuery(query);
+        return q.getResultList();
+    }
+
+    @Override
+    public User getUserByRigisId(Registration r) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<User> query = builder.createQuery(User.class);
+        Root root = query.from(User.class);
+        Root rootR = query.from(Registration.class);
+        query = query.select(root);
+        
+        Predicate p = builder.equal(root.get("id").as(User.class), r.getUserId());
+            query = query.where(p);
+        Query q = session.createQuery(query);
+        return (User) q.getSingleResult();
     }
     
 }

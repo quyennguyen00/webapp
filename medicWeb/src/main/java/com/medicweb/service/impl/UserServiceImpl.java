@@ -5,7 +5,9 @@
  */
 package com.medicweb.service.impl;
 
+import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
+import com.medicweb.pojo.Registration;
 import com.medicweb.pojo.Role;
 import com.medicweb.pojo.User;
 import com.medicweb.repository.UserRepository;
@@ -16,6 +18,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -38,6 +42,8 @@ public class UserServiceImpl implements UserService {
     private BCryptPasswordEncoder passwordEncoder;
     @Autowired
     private RoleService roleService;
+        @Autowired
+    private Cloudinary cloudinary;
     
     
     @Override
@@ -46,11 +52,11 @@ public class UserServiceImpl implements UserService {
        
         return u;
     }
-    @Override
+@Override
     public boolean addUser(User user) {
-        
+
         if (user.getId() != null) {
-            
+
             return this.updateUser(user);
         } else {
             String pass = user.getPassword();
@@ -58,10 +64,19 @@ public class UserServiceImpl implements UserService {
                 Role r = this.roleService.getRoleById(4);
                 user.setRole(r);
             }
-            user.setPassword(this.passwordEncoder.encode(pass));       
+            Map map;
+            try {
+                map = this.cloudinary.uploader().upload(user.getFile().getBytes(),
+                        ObjectUtils.asMap("resource_type", "auto"));
+                user.setImage((String) map.get("secure_url"));
+
+            } catch (IOException ex) {
+                Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            user.setPassword(this.passwordEncoder.encode(pass));
             return this.userRepository.addUser(user);
         }
-        
+
     }
 
     @Override
@@ -94,6 +109,10 @@ public class UserServiceImpl implements UserService {
     public List<User> getNurse() {
         return this.userRepository.getNurse();
     }
+     @Override
+    public List<User> getPatient() {
+        return this.userRepository.getNurse();
+    }
 
     @Override
     public boolean deleteUser(int i) {
@@ -109,6 +128,13 @@ public class UserServiceImpl implements UserService {
     public boolean updateUser(User user) {
         return this.userRepository.updateUser(user);
      }
+
+    @Override
+    public User getUserByRigisId(Registration r) {
+        
+    return this.getUserByRigisId(r);
+    }
+    
     
 
   

@@ -37,13 +37,13 @@ E:\webapp\medicWeb\src\main\java\com\medicweb\repository\impl\UserRepositoryImpl
 E:\webapp\medicWeb\src\main\java\com\medicweb\service\impl\TypeServiceImpl.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\configs\handlers\MyAccessDeniedHandler.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\repository\impl\MedicineRepositoryIpml.java
+E:\webapp\medicWeb\src\main\java\com\medicweb\controllers\PrescriptionController.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\controllers\RegistrationController.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\pojo\Suppliers.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\service\impl\ManufactoryServiceImpl.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\service\impl\MedicineServiceIpml.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\configs\handlers\LogoutHandler.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\varlidator\MedicineValidator.java
-E:\webapp\medicWeb\src\main\java\com\medicweb\controllers\ApiPrescriptionTemp.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\repository\MedicineRepository.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\pojo\PrescriptionDetail.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\pojo\Manufactory.java
@@ -55,7 +55,6 @@ E:\webapp\medicWeb\src\main\java\com\medicweb\pojo\Registration.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\repository\impl\CategoryRepoImpl.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\pojo\PrescriptionTemp.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\service\UserService.java
-E:\webapp\medicWeb\src\main\java\com\medicweb\controllers\ApiDoctorController.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\formatter\CategoryFormat.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\repository\CategoryRepository.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\configs\DispatcherServletInitializer.java
@@ -65,6 +64,7 @@ E:\webapp\medicWeb\src\main\java\com\medicweb\repository\ManufactoryRepository.j
 E:\webapp\medicWeb\src\main\java\com\medicweb\service\MedicineService.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\formatter\TypeFormat.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\configs\HibernateConfig.java
+E:\webapp\medicWeb\src\main\java\com\medicweb\controllers\ApiPrescriptionController.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\service\impl\RegistrationServiceImpl.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\service\SupplierService.java
 E:\webapp\medicWeb\src\main\java\com\medicweb\repository\impl\RoleRepositoryImpl.java

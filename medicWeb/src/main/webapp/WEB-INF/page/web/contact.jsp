@@ -9,6 +9,8 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ 
+
 <c:url value="/contact/patient-${currentUser.id}" var="action"/>
 <div class="contact">
     <div class="container">
@@ -29,11 +31,11 @@
                       
                             
                         </div>
-                            <form:input type="text" class="contact_input" path="active"/>
+                            
                             <form:textarea type="text" class="contact form-control" placeholder="Triệu chứng" path="description"/>
                             <form:errors path="description" cssClass="text-danger" element="div"  ></form:errors>
                             
-                            <form:input type="text" path="userId" value="${currentUser}"/>
+                          
                             <c:if test="${errMsg!=null}">
                                 <div class="text-danger">${errMsg}</div>
                             </c:if>
@@ -97,3 +99,4 @@
         </div>
     </div>
 </div>
+

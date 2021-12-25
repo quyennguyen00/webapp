@@ -6,8 +6,10 @@
 package com.medicweb.controllers;
 
 import com.medicweb.pojo.Medicines;
+import com.medicweb.pojo.PrescriptionTemp;
 import com.medicweb.pojo.User;
 import com.medicweb.service.UserService;
+import java.util.Map;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,17 +34,23 @@ public class DoctorController {
  
    @GetMapping("/doctor")
    public String listDoctor(Model model,HttpSession session){
-       
+//       model.addAttribute("userByRegisId",this.userDetailsService.getUserByRigisId(r))
+
+       Map<Integer, PrescriptionTemp> pres = (Map<Integer, PrescriptionTemp>) session.getAttribute("prescription");
+        if (pres != null) {
+            model.addAttribute("prescriptions", pres.values());
+        } else {
+            model.addAttribute("prescriptions", null);
+        }
+        
+//         model.addAttribute("cartStats", utils.cartStats(pres));
+//        return "cart";  
        return "page-doctor";
    }
+
+    @RequestMapping("/doctor/history-patient")
+    public String error(){
    
-   
-//    @GetMapping(value="/list-doctor/edit-{id}")
-//    public String showEdit(Model model,@PathVariable int id){
-//        model.addAttribute("user",this.userDetailsService.getUserById(id));
-//        
-////        model.addAttribute("editMedic", new Medicines());
-//        
-//        return "show-user";
-//    }
+        return "page-error";
+    }
 }

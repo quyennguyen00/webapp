@@ -54,7 +54,7 @@ public class RegistrationController {
         if (this.registrationService.addRegistration(registration)) {
             return "redirect:/";
         }
-        model.addAttribute("errMsg", "Đã xảy ra lỗi!!!");
+        model.addAttribute("errMsg", "ERROR!!!");
 
         return "contact";
     }

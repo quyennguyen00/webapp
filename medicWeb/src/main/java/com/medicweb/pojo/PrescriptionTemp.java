@@ -15,7 +15,6 @@ public class PrescriptionTemp implements Serializable{
     
     private int medicineId;
     private String name;
-    private Long price;
     private int count;
     private String description;
 
@@ -45,20 +44,6 @@ public class PrescriptionTemp implements Serializable{
      */
     public void setName(String name) {
         this.name = name;
-    }
-
-    /**
-     * @return the price
-     */
-    public Long getPrice() {
-        return price;
-    }
-
-    /**
-     * @param price the price to set
-     */
-    public void setPrice(Long price) {
-        this.price = price;
     }
 
     /**
