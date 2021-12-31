@@ -12,7 +12,7 @@
 
 <div class="card mb-4">
     <div class="card-header">       
-        <h4>THÊM - CẬP NHẬT THÔNG TIN NGƯỜI DÙNG</h4>
+        <h4>ADD- UPDATE INFORMATION OF USER</h4>
     </div>
 </div>
 <c:url value="/admin/user/save" var="action"/>
@@ -32,22 +32,22 @@
                     <div class="form-group">   
                         <form:input type="hidden" path="id"/>
                         <div class="col-xs-6">
-                            <label for="lastName"><h5>Họ:</h5></label>
-                            <form:input type="text" class="form-control"  path="lastName" name="lastName" id="lastName" placeholder="Nhập thông tin" />
+                            <label for="lastName"><h5>Last Name:</h5></label>
+                            <form:input type="text" class="form-control"  path="lastName" name="lastName" id="lastName" placeholder="Enter information" />
                             <form:errors path="lastName" cssClass="text-danger" element="div"  ></form:errors>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-xs-6">
-                                <label for="firstName"><h5>Tên:</h5></label>
+                                <label for="firstName"><h5>First Name:</h5></label>
                             <form:input type="text" class="form-control" name="firstName"  path="firstName"
-                                        id="firstName" placeholder="Nhập thông tin"/>
+                                        id="firstName" placeholder="Enter information"/>
                             <form:errors path="firstName" cssClass="text-danger" element="div"  ></form:errors>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-xs-6">                        
-                                <label for="dob"><h5>Ngày sinh</h5></label>
+                                <label for="dob"><h5>Dob</h5></label>
                                 <div class="form-group">
                                 <form:input type="date" cssClass="form-control" id="dob" path="dob"/>
                                 <c:if test="${errDobMsg!=null}">
@@ -58,7 +58,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-xs-6">
-                            <label for="sex"><h5>Giới tính</h5></label>
+                            <label for="sex"><h5>Sex</h5></label>
                             <c:if test="${user.sex == 'Nam' || user.sex == null}">
                                 <form:select id="sex" path="sex" class="form-control">                                                                    
                                     <option value="Nam" selected >Nam</option>
@@ -86,8 +86,8 @@
                     <div class="form-group">
 
                         <div class="col-xs-6">
-                            <label for="phone"><h5>Số điện thoại:</h5></label>
-                            <form:input type="tel" class="form-control" name="phone" path="phone" id="phone" placeholder="Nhập số điện thoại" />
+                            <label for="phone"><h5>Phone:</h5></label>
+                            <form:input type="tel" class="form-control" name="phone" path="phone" id="phone" placeholder=" Eanter phone number" />
                             <form:errors path="phone" cssClass="text-danger" element="div"  ></form:errors>
                             </div>
                         </div>
@@ -107,15 +107,15 @@
                         <div class="form-group">
 
                             <div class="col-xs-6">
-                                <label for="address"><h5>Địa chỉ:</h5></label>
-                            <form:input type="address" class="form-control" path="address" placeholder="Nhập thông tin" />
+                                <label for="address"><h5>Address:</h5></label>
+                            <form:input type="address" class="form-control" path="address" placeholder="Enter address" />
                             <form:errors path="address" cssClass="text-danger" element="div"  ></form:errors>
                             </div>
                         </div>
                         <div class="form-group">
 
                             <div class="col-xs-6">
-                                <label for="phone"><h5>Chức vụ:</h5></label>
+                                <label for="phone"><h5>Job:</h5></label>
                             <form:select id="cate" path="role" class="form-control">
                                 <c:forEach items="${roles}" var="cat">
                                     <c:if test="${cat.id == user.role.id}">
@@ -132,8 +132,8 @@
                     <div class="form-group">
                          
                         <div class="col-xs-6">
-                            <label for="text"><h5>Mật khẩu :</h5></label> 
-                            <form:input type="password" class="form-control" path="password" id="password" placeholder="Nhập password" /> 
+                            <label for="text"><h5>Password :</h5></label> 
+                            <form:input type="password" class="form-control" path="password" id="password" placeholder="Enter password" /> 
                             <c:if test="${errMsg!=null}">
                                     <div class="text text-danger">${errMsg}</div>
                                 </c:if>
@@ -143,7 +143,7 @@
                         <div class="form-group">
                             <div class="col-xs-12">
                                 <br>
-                                <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> LƯU DỮ LIỆU</button>                              	
+                                <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> SAVE</button>                              	
                             </div>
                         </div>
 

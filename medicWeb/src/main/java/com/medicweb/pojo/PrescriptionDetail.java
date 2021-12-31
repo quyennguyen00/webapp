@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "PrescriptionDetail.findAll", query = "SELECT p FROM PrescriptionDetail p"),
     @NamedQuery(name = "PrescriptionDetail.findById", query = "SELECT p FROM PrescriptionDetail p WHERE p.id = :id"),
-    @NamedQuery(name = "PrescriptionDetail.findByTimes", query = "SELECT p FROM PrescriptionDetail p WHERE p.times = :times"),
+    @NamedQuery(name = "PrescriptionDetail.findByTimes", query = "SELECT p FROM PrescriptionDetail p WHERE p.num = :num"),
     @NamedQuery(name = "PrescriptionDetail.findByDescription", query = "SELECT p FROM PrescriptionDetail p WHERE p.description = :description")})
 public class PrescriptionDetail implements Serializable {
 
@@ -45,7 +45,7 @@ public class PrescriptionDetail implements Serializable {
     @NotNull
     @Size(min = 1, max = 45)
     @Column(name = "num")
-    private String times;
+    private int num;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 45)
@@ -65,9 +65,9 @@ public class PrescriptionDetail implements Serializable {
         this.id = id;
     }
 
-    public PrescriptionDetail(Integer id, String times, String description) {
+    public PrescriptionDetail(Integer id, int num, String description) {
         this.id = id;
-        this.times = times;
+        this.num = num;
         this.description = description;
     }
 
@@ -79,12 +79,12 @@ public class PrescriptionDetail implements Serializable {
         this.id = id;
     }
 
-    public String getTimes() {
-        return times;
+    public int getNum() {
+        return num;
     }
 
-    public void setTimes(String times) {
-        this.times = times;
+    public void setNum(int times) {
+        this.num = times;
     }
 
     public String getDescription() {

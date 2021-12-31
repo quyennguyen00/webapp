@@ -39,7 +39,7 @@ public class RegistrationServiceImpl implements RegistrationService{
 
     @Override
     public List<Registration> getRegistrationsByUser(User u) {
-        return this.registrationRipository.getRegistrationsByUser(u);
+        return this.registrationRipository.getRegistrationsByUser(u);// get list REGISTRATION of user
 
     }
 }

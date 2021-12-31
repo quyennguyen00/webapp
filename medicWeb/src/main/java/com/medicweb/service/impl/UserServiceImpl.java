@@ -55,27 +55,26 @@ public class UserServiceImpl implements UserService {
 @Override
     public boolean addUser(User user) {
 
-        if (user.getId() != null) {
+        if (user.getId() == null) {
 
-            return this.updateUser(user);
-        } else {
             String pass = user.getPassword();
             if (user.getRole() == null) {
                 Role r = this.roleService.getRoleById(4);
                 user.setRole(r);
-            }
-            Map map;
-            try {
-                map = this.cloudinary.uploader().upload(user.getFile().getBytes(),
-                        ObjectUtils.asMap("resource_type", "auto"));
-                user.setImage((String) map.get("secure_url"));
+                Map map;
+                try {
+                    map = this.cloudinary.uploader().upload(user.getFile().getBytes(),
+                            ObjectUtils.asMap("resource_type", "auto"));
+                    user.setImage((String) map.get("secure_url"));
 
-            } catch (IOException ex) {
-                Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
+                    Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
+            
             user.setPassword(this.passwordEncoder.encode(pass));
             return this.userRepository.addUser(user);
-        }
+        } else   return this.updateUser(user);
 
     }
 

@@ -6,7 +6,7 @@
 package com.medicweb.controllers;
 
 import com.medicweb.pojo.Medicines;
-import com.medicweb.pojo.PrescriptionTemp;
+import com.medicweb.pojo.MedicineItems;
 import com.medicweb.pojo.User;
 import com.medicweb.service.UserService;
 import java.util.Map;
@@ -31,20 +31,19 @@ public class DoctorController {
     
     @Autowired
     private UserService userDetailsService;
+    
  
    @GetMapping("/doctor")
    public String listDoctor(Model model,HttpSession session){
 //       model.addAttribute("userByRegisId",this.userDetailsService.getUserByRigisId(r))
 
-       Map<Integer, PrescriptionTemp> pres = (Map<Integer, PrescriptionTemp>) session.getAttribute("prescription");
+        Map<Integer, MedicineItems> pres = (Map<Integer, MedicineItems>) session.getAttribute("prescription");
         if (pres != null) {
             model.addAttribute("prescriptions", pres.values());
         } else {
             model.addAttribute("prescriptions", null);
         }
         
-//         model.addAttribute("cartStats", utils.cartStats(pres));
-//        return "cart";  
        return "page-doctor";
    }
 

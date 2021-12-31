@@ -17,29 +17,29 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Tên thuốc</th>
-                    <th>Thành phần</th>
-                    <th>Hàm lượng</th>
-                    <th>Giá</th>
-                    <th>Dạng</th>
-                    <th>Nhà sản xuất</th>
-                    <th>Nhà cung cấp</th>
-                     <th>Nhóm thuốc</th>
+                    <th>Name</th>
+                    <th>Element</th>
+                    <th>Weight</th>
+                    <th>Price</th>
+                    <th>Type</th>
+                    <th>Manufactory</th>
+                    <th>Supplier</th>
+                     <th>Category</th>
                      <th></th>
                      <th></th>
                      
                 </tr>
             </thead>
             <tfoot>
-                <tr><th>ID</th>
-                    <th>Tên thuốc</th>
-                    <th>Thành phần</th>
-                    <th>Hàm lượng</th>
-                    <th>Giá</th>
-                    <th>Dạng</th>
-                    <th>Nhà sản xuất</th>
-                    <th>Nhà cung cấp</th>
-                     <th>Nhóm thuốc</th>
+                <tr> <th>ID</th>
+                    <th>Name</th>
+                    <th>Element</th>
+                    <th>Weight</th>
+                    <th>Price</th>
+                    <th>Type</th>
+                    <th>Manufactory</th>
+                    <th>Supplier</th>
+                     <th>Category</th>
                      <th></th>
                      <th></th>
                 </tr>
@@ -56,8 +56,8 @@
                         <td>${c.supplierId.name}</td>
                         <td>${c.manufactoryId.factory}</td>
                         <td>${c.categoryId.name}</td>
-                        <td><button type="button" class="btn btn-success" onclick="location.href='http://localhost:8083/medicWeb/admin/medicines/edit-${c.id}'">Sửa</button></td>
-                        <td><button type="button" class="btn btn-danger" onclick="deleteMedicine(${c.id})">Xóa</button></td>
+                        <td><button type="button" class="btn btn-success" onclick="location.href='http://localhost:8083/medicWeb/admin/medicines/edit-${c.id}'">Update</button></td>
+                        <td><button type="button" class="btn btn-danger" onclick="deleteMedicine(${c.id})">Delete</button></td>
                     </tr>
                     
                 </c:forEach>

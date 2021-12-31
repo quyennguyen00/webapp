@@ -36,39 +36,16 @@ public class PatientController {
     @Autowired
     private RegistrationService registrationService;
     
-    @RequestMapping("/login")
-    public String login(Model model){
-        return "login";
-    }
-     @GetMapping("/register")
-    public String registerView(Model model){
-        model.addAttribute("user",new User());
-        return "register";
-    }
-    @PostMapping("/register")
-    public String register(Model model, @ModelAttribute(value = "user") @Valid User user,
-             BindingResult result) {
-        
-        if (!result.hasErrors()) {
-            Long count = userDetailsService.checkEmail(user.getEmail().trim());
-            if (count == 1) {
-                model.addAttribute("errEmailMsg", "Email already exists!");
-            } else
-                if (user.getPassword().isEmpty()
-                        || !user.getPassword().equals(user.getConfirmPassword())) {
-                    model.addAttribute("errMsg", "Enter password or incorrect!");
-                }
-                else if (this.userDetailsService.addUser(user) == true) {
-                        return "redirect:/login";
-                } 
-        }
-         return "register";
-    }
       @GetMapping("/history/patient")
     public String history(Model model,HttpSession session){
         User user = (User) session.getAttribute("currentUser");
           model.addAttribute("listRegistraion",this.registrationService.getRegistrationsByUser(user));
         return"page-patient";
+    }
+      @GetMapping("/patient/setting")
+    public String setting(){
+        
+        return"page-error";
     }
       
     

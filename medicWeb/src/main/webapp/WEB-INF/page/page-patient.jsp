@@ -10,14 +10,14 @@
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
-        INFORMATION OF DOCTORS
+       APPOINTMENT LIST
     </div>
     <div class="card-body">
         <table id="datatablesSimple">
             <thead>
                 <tr>
-                   <th></th>
-                    <th>Phone</th>
+                   <th>ID</th>
+                    <th>Email</th>
                     <th>Date</th>
                     <th>Description</th>
                     
@@ -28,8 +28,8 @@
             </thead>
             <tfoot>
                 <tr>
-                     <th></th>
-                    <th>Phone</th>
+                     <th>ID</th>
+                    <th>Email</th>
                     <th>Date</th>
                     <th>Description</th>
                     
@@ -40,14 +40,14 @@
             <tbody>
                <c:forEach var="c" items="${listRegistraion}">
                     <tr>
-                         <td>
-                            <c:set var="count" value="${count +1}"/>${count}                                         
-                        </td>
-                        <td>${c.phone}</td>
+                         <td>${c.id} </td>
+                        <td>${c.email}</td>
                         <td>${c. date}</td>
                         <td>${c.description}</td>
-                                        
-                        <td><button type="button" class="btn btn-success" onclick="">Hủy</button></td>
+                        <c:if test="${c.active == 'false'}" >
+                          <td><button type="button" class="btn btn-success" onclick="">Cancel</button></td>   
+                        </c:if>               
+                       
                         
                     </tr>
                     

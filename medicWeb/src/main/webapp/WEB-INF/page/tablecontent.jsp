@@ -75,35 +75,34 @@
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                DANH SÁCH THÔNG TIN THUỐC
+                INFORMATION OF MEDICINES
             </div>
             <div class="card-body">
                 <table id="datatablesSimple">
                     <thead>
-                        <tr>
-                            <th>Tên thuốc</th>
-                            <th>Thành phần</th>
-                            <th>Hàm lượng</th>
-                            <th>Giá</th>
-                            <th>Dạng</th>
-                            <th>Nhà sản xuất</th>
-                            <th>Nhà cung cấp</th>
-                            <th>Nhóm thuốc</th>
-                            
-
+                        <tr>       
+                            <th>Name</th>
+                            <th>Element</th>
+                            <th>Weight</th>
+                            <th>Price</th>
+                            <th>Type</th>
+                            <th>Manufactory</th>
+                            <th>Supplier</th>
+                             <th>Category</th>
+                           
                         </tr>
                     </thead>
                     <tfoot>
-                        <tr>
-                            <th>Tên thuốc</th>
-                            <th>Thành phần</th>
-                            <th>Hàm lượng</th>
-                            <th>Giá</th>
-                            <th>Dạng</th>
-                            <th>Nhà sản xuất</th>
-                            <th>Nhà cung cấp</th>
-                            <th>Nhóm thuốc</th>
-                            
+                        <tr>       
+                            <th>Name</th>
+                            <th>Element</th>
+                            <th>Weight</th>
+                            <th>Price</th>
+                            <th>Type</th>
+                            <th>Manufactory</th>
+                            <th>Supplier</th>
+                             <th>Category</th>
+                           
                         </tr>
                     </tfoot>
                     <tbody>

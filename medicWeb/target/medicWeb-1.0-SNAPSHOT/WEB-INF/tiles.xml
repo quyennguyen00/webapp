@@ -52,9 +52,18 @@ and open the template in the editor.
         <put-attribute name="title" value="PRESCRIPTION"/>
         <put-attribute name="content" value="/WEB-INF/page/doctor.jsp"/>       
     </definition>
+    <!--NURSE-->
+    <definition name="page-nurse" extends="page">
+        <put-attribute name="title" value="NURSE"/>
+        <put-attribute name="content" value="/WEB-INF/page/nurse.jsp"/>       
+    </definition>
+    <definition name="registration" extends="page">
+        <put-attribute name="title" value="REGISTER"/>
+        <put-attribute name="content" value="/WEB-INF/page/registration.jsp"/>       
+    </definition>
     <!--PATIENT-->
     <definition name="page-patient" extends="page">
-        <put-attribute name="title" value="PRESCRIPTION"/>
+        <put-attribute name="title" value="HISTORY"/>
         <put-attribute name="content" value="/WEB-INF/page/page-patient.jsp"/>       
     </definition>
     <!--ERROR PAGE-->

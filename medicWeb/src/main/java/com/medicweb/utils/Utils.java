@@ -5,7 +5,7 @@
  */
 package com.medicweb.utils;
 
-import com.medicweb.pojo.PrescriptionTemp;
+import com.medicweb.pojo.MedicineItems;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,11 +14,11 @@ import java.util.Map;
 @author QUYENNGUYEN
  */
 public class Utils {
-    public static int count(Map<Integer, PrescriptionTemp> cart) {
+    public static int count(Map<Integer, MedicineItems> pres) {
         int q = 0;
         
-        if (cart != null)
-            for (PrescriptionTemp c: cart.values())
+        if (pres != null)
+            for (MedicineItems c: pres.values())
                 q += c.getCount();
         
         return q;

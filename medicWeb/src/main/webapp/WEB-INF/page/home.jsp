@@ -56,8 +56,8 @@
             <div class="col-lg-6 intro_col">
                 <div class="intro_content">
                     <div class="section_title_container">
-                        <div class="section_subtitle">Đây là DR T&Q  </div>
-                        <div class="section_title"><h2>Chào mừng đến DR T&Q</h2></div>
+                        <div class="section_subtitle">DR T&Q  </div>
+                        <div class="section_title"><h2>Welcome to DR T&Q</h2></div>
                     </div>
                     <div class="intro_text">
                         <p>Integer aliquet congue libero, eu gravida odio ultrices ut. Etiam ac erat ut enim maximus accumsan vel ac nisl. Duis feugiat bibendum orci, non elementum urna vestibulum in. Nulla facilisi. Nulla egestas vel lacus sed interdum. Sed mollis, orci elementum eleifend tempor, nunc libero porttitor tellus, vel pharetra metus dolor.</p>

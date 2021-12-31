@@ -32,11 +32,16 @@ public class RegistrationRepositoryImpl implements RegistrationRipository{
 
     @Override
     public List<Registration> geRegistrations() {
-       Session session = this.sessionFactory.getObject().getCurrentSession();
-        Query q = session.createQuery("SELECT r FROM Registration r WHERE r.active = :active")
-                .setParameter("active", false);
+         Session session = this.sessionFactory.getObject().getCurrentSession();
+        javax.persistence.Query q = session.createQuery("From Registration");
         return q.getResultList();
     }
+//    public List<Registration> geRegistrations() {
+//       Session session = this.sessionFactory.getObject().getCurrentSession();
+//        Query q = session.createQuery("SELECT r FROM Registration r WHERE r.active = :active")
+//                .setParameter("active", false);
+//        return q.getResultList();
+//    }
 
     @Override
     public boolean addRegistration(Registration r) {

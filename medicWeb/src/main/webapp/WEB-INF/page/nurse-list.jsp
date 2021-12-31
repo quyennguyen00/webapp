@@ -16,14 +16,14 @@
         <table id="datatablesSimple">
             <thead>
                 <tr>
-                    <th>STT</th>
-                    <th>Họ</th>
-                    <th>Tên</th>
-                    <th>Ngày sinh</th>
-                    <th>Giới tính</th>
-                    <th>email</th>
-                    <th>Địa chỉ</th>
-                    <th>Số điện thoại</th>
+                    <th></th>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Dob</th>
+                    <th>Sex</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Phone</th>
                      <th></th>
                      <th></th>
                      
@@ -31,14 +31,14 @@
             </thead>
             <tfoot>
                 <tr>
-                    <th>STT</th>
-                    <th>Họ</th>
-                    <th>Tên</th>
-                    <th>Ngày sinh</th>
-                    <th>Giới tính</th>
-                    <th>email</th>
-                    <th>Địa chỉ</th>
-                    <th>Số điện thoại</th>
+                    <th></th>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Dob</th>
+                    <th>Sex</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Phone</th>
                      <th></th>
                      <th></th>
                 </tr>
@@ -56,8 +56,8 @@
                         <td>${c.email}</td>
                         <td>${c.address}</td>
                         <td>${c.phone}</td>                      
-                        <td><button type="button" class="btn btn-success" onclick="location.href='http://localhost:8083/medicWeb/admin/list-nurse/edit-${c.id}'">Sửa</button></td>
-                        <td><button type="button" class="btn btn-danger" onclick="deleteUser(${c.id})">Xóa</button></td>
+                        <td><button type="button" class="btn btn-success" onclick="location.href='http://localhost:8083/medicWeb/admin/list-nurse/edit-${c.id}'">Update</button></td>
+                        <td><button type="button" class="btn btn-danger" onclick="deleteUser(${c.id})">Delete</button></td>
                     </tr>
                     
                 </c:forEach>

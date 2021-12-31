@@ -20,6 +20,7 @@
             <div class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-2 my-2 my-md-0">
                 <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
+                    <i class="fas fa-shopping-cart"></i>
                      </div>
             </form>
             </div>
@@ -39,7 +40,7 @@
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <c:if test="${currentUser.role.role == 'BỆNH NHÂN'}">
                             <!--<li class="dropdown-item" ><i class="fa fa-user" aria-hidden="true"></i></li>-->
-                            <li><a class="dropdown-item" href="#!">Setting</a></li>
+                            <li><a class="dropdown-item" href="<c:url value="/patient/setting"/>">Setting</a></li>
                             <li><hr class="dropdown-divider" /></li>
                             <li><a class="dropdown-item" href="<c:url value="/logout"/>">Log out</a></li>
                         </c:if>

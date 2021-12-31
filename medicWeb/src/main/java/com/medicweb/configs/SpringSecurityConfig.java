@@ -93,12 +93,12 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
        http.formLogin().defaultSuccessUrl("/").failureUrl("/login?Error");
        http.formLogin().successHandler(this.loginSuccessHandler);
        http.logout().logoutSuccessHandler(this.logoutHandler);   
-       http.exceptionHandling().accessDeniedPage("/login?accessDenied");
+//       http.exceptionHandling().accessDeniedPage("/login?accessDenied");
 //       
-       http.authorizeRequests().antMatchers("/").permitAll()
-               .antMatchers("/admin/**").access("hasAnyAuthority('1')")
-               .antMatchers("/doctor/**").access("hasAnyAuthority('2')")
-               .antMatchers("/nurse/**").access("hasAnyAuthority('3')");
+//       http.authorizeRequests().antMatchers("/").permitAll()
+//               .antMatchers("/admin/**").access("hasAnyAuthority('1')")
+//               .antMatchers("/doctor/**").access("hasAnyAuthority('2')")
+//               .antMatchers("/nurse/**").access("hasAnyAuthority('3')");
               
        http.csrf().disable();
     }

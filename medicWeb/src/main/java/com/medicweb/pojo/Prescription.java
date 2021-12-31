@@ -5,6 +5,7 @@
  */
 package com.medicweb.pojo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Collection;
@@ -13,6 +14,7 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,6 +23,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -63,18 +66,15 @@ public class Prescription implements Serializable {
     private String result;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Basic(optional = false)
-    @NotNull
     @Column(name = "amount")
     private Long amount;
     @Size(max = 255)
     @Column(name = "description")
     private String description;
-    @JoinColumn(name = "registration_id", referencedColumnName = "id")
-    @ManyToOne(optional = false)
-    private Registration registrationId;
-//    @JoinColumn(name = "user_id", referencedColumnName = "id")
-//    @ManyToOne(optional = false)
-//    private User userId;
+    @OneToOne
+    @JoinColumn(name = "examination_id", nullable = false)
+    private ExaminationCard examinationCard;
+    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "prescriptionId")
     private Collection<PrescriptionDetail> prescriptionDetailCollection;
 
@@ -132,14 +132,6 @@ public class Prescription implements Serializable {
         this.description = description;
     }
 
-    public Registration getRegistrationId() {
-        return registrationId;
-    }
-
-    public void setRegistrationId(Registration registrationId) {
-        this.registrationId = registrationId;
-    }
-
 //    public User getUserId() {
 //        return userId;
 //    }
@@ -180,6 +172,24 @@ public class Prescription implements Serializable {
     @Override
     public String toString() {
         return "com.medicweb.pojo.Prescription[ id=" + id + " ]";
+    }
+
+    /**
+     * @return the examinationCard
+     */
+    public ExaminationCard getExaminationCard() {
+        return examinationCard;
+    }
+
+    /**
+     * @param examinationCard the examinationCard to set
+     */
+    public void setExaminationCard(ExaminationCard examinationCard) {
+        this.examinationCard = examinationCard;
+    }
+
+    public void setAmount(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

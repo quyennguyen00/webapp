@@ -35,7 +35,7 @@
             <div class="work_hours"></div>
             <c:if test="${currentUser.role.role == 'BỆNH NHÂN'}">
              <div class=" button button_1 header_phone"><a href="<c:url value="/contact/patient-${currentUser.id}"/>">Make an Appointment</a></div>
-              <div class="button button_1 header_button"><a href="<c:url value="/patient"/>">HISTORY</a></div>
+              <div class="button button_1 header_button"><a href="<c:url value="/history/patient"/>">HISTORY</a></div>
 
                 <div class="button button_1 header_button"><a href="<c:url value="/logout"/>">LOG OUT</a></div>
             </c:if>

@@ -40,7 +40,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @NamedQueries({
     @NamedQuery(name = "Registration.findAll", query = "SELECT r FROM Registration r"),
     @NamedQuery(name = "Registration.findById", query = "SELECT r FROM Registration r WHERE r.id = :id"),
-    @NamedQuery(name = "Registration.findByPhone", query = "SELECT r FROM Registration r WHERE r.phone = :phone"),
+    @NamedQuery(name = "Registration.findByEmail", query = "SELECT r FROM Registration r WHERE r.email = :email"),
     @NamedQuery(name = "Registration.findByDate", query = "SELECT r FROM Registration r WHERE r.date = :date"),
     @NamedQuery(name = "Registration.findByActive", query = "SELECT r FROM Registration r WHERE r.active = :active"),
     @NamedQuery(name = "Registration.findByDescription", query = "SELECT r FROM Registration r WHERE r.description = :description")})
@@ -56,8 +56,8 @@ public class Registration implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 45,message = "{regit.NotNullErr}")
-    @Column(name = "`phone`")
-    private String phone;
+    @Column(name = "email")
+    private String email;
     @Basic(optional = false)
     @NotNull
     @Column(name = "date")
@@ -74,7 +74,7 @@ public class Registration implements Serializable {
     private String description;
     @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "registrationId")
-    private Collection<Prescription> prescriptionCollection;
+    private Collection<ExaminationCard> examinationCardCollection;
     @JoinColumn(name = "`user_id`", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private User userId;
@@ -88,7 +88,7 @@ public class Registration implements Serializable {
 
     public Registration(Integer id, String phone, Date date, boolean active, String description) {
         this.id = id;
-        this.phone = phone;
+        this.email = phone;
         this.date = date;
         this.active = active;
         this.description = description;
@@ -102,12 +102,12 @@ public class Registration implements Serializable {
         this.id = id;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Date getDate() {
@@ -132,15 +132,6 @@ public class Registration implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    @XmlTransient
-    public Collection<Prescription> getPrescriptionCollection() {
-        return prescriptionCollection;
-    }
-
-    public void setPrescriptionCollection(Collection<Prescription> prescriptionCollection) {
-        this.prescriptionCollection = prescriptionCollection;
     }
 
     public User getUserId() {

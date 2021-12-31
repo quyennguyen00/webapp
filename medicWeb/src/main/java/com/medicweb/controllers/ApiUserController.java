@@ -38,13 +38,11 @@ public class ApiUserController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
     // DELETE
-   @Autowired
-    private UserService userService;
     @DeleteMapping(path = "/api/user-{id}", produces = {
         MediaType.APPLICATION_JSON_VALUE
     })
     public ResponseEntity<Medicines> deleteMedicine(@PathVariable("id") Integer id) {
-        if (this.userService.deleteUser(id) == true) {
+        if (this.userDetailsService.deleteUser(id) == true) {
             return new ResponseEntity<>(HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);

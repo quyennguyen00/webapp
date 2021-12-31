@@ -9,7 +9,7 @@
 <div id="layoutSidenav_nav">
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
-            <c:if test="${currentUser.role.role == 'ADMIN'}">
+            <%--<c:if test="${currentUser.role.role == 'ADMIN'}">--%>
             <div class="nav">
                  <div class="sb-sidenav-menu-heading"></div>
                   
@@ -58,8 +58,8 @@
                 </a>
                 <div class="collapse" id="collapseStats" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                        <a class="nav-link" href="layout-static.html">PATIENT</a>
-                        <a class="nav-link" href="layout-sidenav-light.html">TURNOVER</a>                
+                        <a class="nav-link" href="<c:url value="/admin/patient"/>">PATIENT</a>
+                        <a class="nav-link" href="<c:url value="/admin/turnover"/>">TURNOVER</a>                
                        
                     </nav>
                 </div>
@@ -77,7 +77,7 @@
                     </nav>
                 </div>
             </div>
-            </c:if>
+            <%--</c:if>--%>
             <c:if test="${currentUser.role.role == 'BÁC SĨ'}">
                 <div class="nav">
                  <div class="sb-sidenav-menu-heading"></div>
@@ -112,10 +112,29 @@
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="<c:url value="/nurse"/>">RIGISTRATION</a>
-                                                       
+
+                    </nav>
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="<c:url value="/nurse/examination-card"/>">EXAMINATION CARD</a>
+
+                    </nav>
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="<c:url value="/nurse"/>">PAYMENT</a>
+
                     </nav>
                 </div>
                 
+            </div>
+            </c:if>
+                        <c:if test="${currentUser.role.role == 'BỆNH NHÂN'}">
+                <div class="nav">
+                 <div class="sb-sidenav-menu-heading"></div>
+                  
+                            <a class="nav-link" href="<c:url value="/history/patient"/>">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                HISTORY
+                            </a>
+               
             </div>
             </c:if>
         </div>

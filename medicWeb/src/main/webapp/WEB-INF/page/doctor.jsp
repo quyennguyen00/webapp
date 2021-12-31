@@ -7,11 +7,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<script>
-    function getContent() {
-        document.getElementById("content").value;
-    }
-</script>
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
@@ -62,9 +57,8 @@
                         <td>${c.supplierId.name}</td>
                         <td>${c.manufactoryId.factory}</td>
                         <td>${c.categoryId.name}</td>
-                        <th><input type="text" class="form-control mr-3" style=" width: 200px"id ="content" placeholder="how to use"></th>
-                            <c:set var="content" value="$"/>
-                        <td><button type="button" class="btn btn-success" onclick="addToPrescription(${c.id}, '${c.name}', 'giatri'">Add</button></td>
+                        <th><input type="text" class="form-control mr-3" style=" width: 200px" id ="contentId"  placeholder="how to use"></th>
+                        <td><button type="button" class="btn btn-success" onclick="addToPrescription(${c.id}, '${c.name}','${c.typeId.type}')">Add</button></td>
 
                     </tr>
 
@@ -97,9 +91,9 @@
                             <label class="order-form-label">Select ID of registration</label>
                         </div>
                         <div class="col-12">
-                            <select id="sex" path="sex" class="form-control">                                                                     
-                                <c:forEach items="${listregister}" var="cat">                   
-                                    <option value="PTN${cat.id}"selected >${cat.id}</option>
+                            <select id="sex" path="" class="form-control">                                                                     
+                                <c:forEach items="${register}" var="cat">                   
+                                    <option value="${cat.id}"selected >PTN${cat.id}</option>
                                 </c:forEach>                                                                                        
                             </select>
 
@@ -123,12 +117,12 @@
                             <label class="order-form-label" for="date-picker-example">Date</label>
                         </div>
                         <div class="col-12">
-                            <input class="order-form-input datepicker" placeholder="Selected date" type="text"
+                            <input class="order-form-input datepicker"  type="date"
                                    id="date-picker-example">
                         </div>
                     </div>
 
-                    <div class="row mt-3 mx-4">
+                    <div class="row mt-3 mx-4" id="areaMedicine">
                         <table id="datatablesSimple">
                             <thead>
                                 <tr>
@@ -137,26 +131,32 @@
                                     <th>Medicine</th>
                                     <th>Description</th>
                                     <th>Num</th>
+                                    <th>Type</th>
                                     <th></th>
-                                    <th></th>
+                                    
+                                    
                                 </tr>
                             </thead>
 
                             <tbody>
-                                <c:forEach var="c" items="${listDoctor}">
-                                    <tr>
+                            
+                                <c:forEach var="p" items="${prescriptions}">
+                                    <tr id="medicine${p.medicineId}">
                                         <td>
-                                            <c:set var="count" value="${dem +1}"/>${dem}                                         
+                                            <c:set var="dem" value="${dem +1}"/>${dem}                                         
                                         </td>
-
-                                        <td>${c.email}</td>
-                                        <td>${c.address}</td>
-                                        <td>${c.phone}</td>                      
-                                        <td><button type="button" class="btn btn-danger" onclick="deleteUser(${c.id})">Xóa</button></td>
+                                            <td>${p.name}</td>
+                                            <td>${p.description}</td>
+                                            <td><input type="number" class="form-control" style=" width: 200px" value="${p.count}" onblur=" updatePres(this,${p.medicineId})"/></td>
+                                            <td>${p.type}</td>
+                                                          
+                                        <td><button type="button" class="btn btn-danger" onclick="deletePres(${p.medicineId})">Delete</button></td>
 
                                     </tr>
 
                                 </c:forEach>
+                           
+                                
                                 <tr></tr>
                                 <tr  >                           
                                     <th></th>
@@ -164,7 +164,7 @@
                                     <th >Sum</th>                                                                 
                                     <th> 
 
-                                        <div><span id ="cartCounter">0</span></div>
+                                        <div><span >${dem}</span></div>
 
                                     </th>                                    
 
@@ -178,7 +178,7 @@
 
                     <div class="row mt-3">
                         <div class="col-12">
-                            <button type="button" id="btnSubmit" class="btn btn-dark d-block mx-auto btn-submit">Submit</button>
+                            <button type="button" id="btnSubmit" onclick="add()" class="btn btn-success d-block mx-auto btn-submit">Submit</button>
                         </div>
                     </div>
 
@@ -187,4 +187,5 @@
         </div>
     </section>
 </div>
+
 

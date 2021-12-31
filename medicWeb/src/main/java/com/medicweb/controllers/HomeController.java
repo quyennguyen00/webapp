@@ -12,6 +12,7 @@ import com.medicweb.service.ManufactoryService;
 import com.medicweb.service.MedicineService;
 import com.medicweb.service.RegistrationService;
 import com.medicweb.service.RoleService;
+import com.medicweb.service.ServiceServices;
 import com.medicweb.service.SupplierService;
 import com.medicweb.service.TypeService;
 import com.medicweb.service.UserService;
@@ -39,16 +40,50 @@ public class HomeController {
     @Autowired 
     private RegistrationService registrationService;
     
+    @Autowired
+    private UserService userDetailsService;
+    @Autowired
+    private ServiceServices serviceServices;
+    
       @ModelAttribute
     public void commonAttr(Model model, HttpSession session) {
        model.addAttribute("currentUser",session.getAttribute("currentUser"));
-       model.addAttribute("listregister",registrationService.geRegistrations());
+       model.addAttribute("register",registrationService.geRegistrations());
+       model.addAttribute("service",serviceServices.getService());
        
     }
     @RequestMapping("/")
     public String index(){
    
         return"page-index";
+    }
+    @RequestMapping("/login")
+    public String login(Model model){
+        return "login";
+    }
+     @GetMapping("/register")
+    public String registerView(Model model){
+        model.addAttribute("user",new User());
+        return "register";
+    }
+    @PostMapping("/register")
+    public String register(Model model, @ModelAttribute(value = "user") @Valid User user,
+             BindingResult result) {
+        
+        if (!result.hasErrors()) {
+            Long count = userDetailsService.checkEmail(user.getEmail().trim());
+            if (count == 1) {
+                model.addAttribute("errEmailMsg", "Email already exists!");
+            } else
+                if (user.getPassword().isEmpty()
+                        || !user.getPassword().equals(user.getConfirmPassword())) {
+                    model.addAttribute("errMsg", "Enter password or incorrect!");
+                }
+                else if (this.userDetailsService.addUser(user) == true) {
+                        return "redirect:/login";
+                } 
+        }
+         return "register";
     }
     @RequestMapping("/admin/error")
     public String error(){

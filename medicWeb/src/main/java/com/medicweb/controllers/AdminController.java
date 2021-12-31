@@ -108,7 +108,6 @@ public class AdminController {
     public String showEdit(Model model,@PathVariable int id){
         model.addAttribute("user",this.userDetailsService.getUserById(id));
         
-//        model.addAttribute("editMedic", new Medicines());
         
         return "show-user";
     }
@@ -125,6 +124,15 @@ public class AdminController {
 //        model.addAttribute("editMedic", new Medicines());
         
         return "show-user";
+    }
+    // STAST
+     @RequestMapping("/admin/patient")
+    public String stastPatient(Model model){
+        return"page-error";
+    }
+      @RequestMapping("/admin/turnover")
+    public String stastTurnovert(Model model){
+        return"page-error";
     }
     
 }

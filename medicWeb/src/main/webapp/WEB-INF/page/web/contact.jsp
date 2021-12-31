@@ -6,11 +6,28 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
- 
 
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+ 
+ <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../styles/bootstrap4/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="../plugins/OwlCarousel/owl.carousel.css" rel="stylesheet" type="text/css" />
+        <link href="../plugins/OwlCarousel/owl.theme.default.css" rel="stylesheet" type="text/css" />
+        <link href="../plugins/OwlCarousel/animate.css" rel="stylesheet" type="text/css" />
+        <link href="../css/style-admin.css" rel="stylesheet" type="text/css" />
+        <link href="../styles/main_styles.css" rel="stylesheet" type="text/css" />
+        <link href="../styles/responsive.css" rel="stylesheet" type="text/css" />
+
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css" type="text/css"  />
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+   
 <c:url value="/contact/patient-${currentUser.id}" var="action"/>
 <div class="contact">
     <div class="container">
@@ -19,12 +36,13 @@
             <!-- Contact Form -->
             <div class="col-lg-7">
                 <div class="contact_form_container">
-                    <div class="contact_form_title">ĐĂNG KÝ KHÁM</div>
+                    <div class="contact_form_title">Make an Appointment</div>
                     <form:form method="post" action="${action}" class="contact_form" id="contact_form" modelAttribute="registration">
                         <div class=" flex-row align-items-start flex-wrap">
                             <form:input type="hidden" id="id" path="id"/>
-                            <form:input type="tel" class="contact_input" placeholder="Số điện thoại" path="phone"/>
-                            <form:errors path="phone" cssClass="text-danger" element="div"  ></form:errors>
+                            <form:input type="text" class="contact_input" placeholder="Your Email" path="email" value="${currentUser.email}"/>
+                            <input type="text" class="contact_input" placeholder="Full Name" value="${currentUser.lastName} ${currentUser.firstName}" />
+                            <form:errors path="email" cssClass="text-danger" element="div"  ></form:errors>
                             <form:input type="date" path="date"
                             class="form-control datetimepicker-input"
                             placeholder="Check-in date"/>
@@ -32,14 +50,14 @@
                             
                         </div>
                             
-                            <form:textarea type="text" class="contact form-control" placeholder="Triệu chứng" path="description"/>
+                            <form:textarea type="text" class="contact form-control" placeholder="Enter information" path="description"/>
                             <form:errors path="description" cssClass="text-danger" element="div"  ></form:errors>
                             
                           
                             <c:if test="${errMsg!=null}">
                                 <div class="text-danger">${errMsg}</div>
                             </c:if>
-                        <button class="button button_1 contact_button trans_200" type="submit">Đăng ký khám</button>
+                        <button class="button button_1 contact_button trans_200" type="submit">Make an Appointment</button>
                     </form:form>
         
                 </div>
@@ -99,4 +117,18 @@
         </div>
     </div>
 </div>
+        <script src="../js/jquery-3.2.1.min.js"></script>
+        <script src="../styles/bootstrap4/popper.js"></script>
+        <script src="../styles/bootstrap4/bootstrap.min.js"></script>
+        <script src="../lugins/greensock/TweenMax.min.js"></script>
+        <script src="../plugins/greensock/TimelineMax.min.js"></script>
+        <script src="../plugins/scrollmagic/ScrollMagic.min.js"></script>
+        <script src="../plugins/greensock/animation.gsap.min.js"></script>
+        <script src="../plugins/greensock/ScrollToPlugin.min.js"></script>
+        <script src="../plugins/OwlCarousel/owl.carousel.js"></script>
+        <script src="../plugins/easing/easing.js"></script>
+        <script src="../plugins/parallax-js-master/parallax.min.js"></script>
+        <script src="../lugins/jquery-datepicker/jquery-ui.js"></script>
+        <script src="../js/custom.js"></script>
+        <script src="../js/contact.js"></script>
 
