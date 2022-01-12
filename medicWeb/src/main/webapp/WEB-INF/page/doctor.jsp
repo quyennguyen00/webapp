@@ -92,8 +92,11 @@
                         </div>
                         <div class="col-12">
                             <select id="sex" path="" class="form-control">                                                                     
-                                <c:forEach items="${register}" var="cat">                   
-                                    <option value="${cat.id}"selected >PTN${cat.id}</option>
+                                <c:forEach items="${register}" var="cat">   
+                                    <c:if test="${cat.active == 'true'}" >
+                                        <option value="${cat.id}"selected >${cat.id}</option>
+                                    </c:if>
+                                    
                                 </c:forEach>                                                                                        
                             </select>
 

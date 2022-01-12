@@ -41,14 +41,17 @@ C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\configs\Securi
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\service\impl\CategoryServiceImpl.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\service\SupplierService.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\repository\TypeRpository.java
+C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\formatter\RegisterForMat.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\controllers\MedicineController.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\repository\impl\ExamRepositoryImpl.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\repository\impl\RegistrationRepositoryImpl.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\pojo\MedicineItems.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\repository\impl\SupplierRepositoryImpl.java
+C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\controllers\ApiExaminationController.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\pojo\Role.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\repository\impl\ServiceRepositoryImpl.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\repository\RegistrationRipository.java
+C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\repository\BillRepository.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\controllers\PatientController.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\pojo\PrescriptionDetail.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\pojo\Category.java
@@ -60,6 +63,7 @@ C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\service\impl\S
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\pojo\Services.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\service\CagetoryService.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\configs\WebApplicationContextConfig.java
+C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\repository\impl\BillRepositoryImpl.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\repository\impl\RoleRepositoryImpl.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\pojo\Registration.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\service\impl\ExamServiceImpl.java
@@ -84,3 +88,4 @@ C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\service\Prescr
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\controllers\ApiMedicineController.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\service\impl\PrescriptionServiceImpl.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\formatter\CategoryFormat.java
+C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\pojo\Bill.java

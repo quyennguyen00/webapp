@@ -101,10 +101,11 @@
                         </div>
                         <div class="row mt-3 mx-4">
                             <div class="col-12">
-                                <label class="order-form-label" >Date</label>
+                                <label class="order-form-label" for="createdDate" >Date</label>
                             </div>
                             <div class="col-12">
-                                <form:input type="date" cssClass="form-control" id="dob" path="createdDate"/>
+                                  <form:input type="date" cssClass="form-control" id="createdDate" path="createdDate"/>
+                                   <form:errors path="createdDate" cssClass="text-danger" element="div"  ></form:errors>
                             </div>
                         </div>
                         <div class="row mt-3 mx-4">
@@ -114,7 +115,7 @@
                             <div class="col-12">
                                 <form:select id="serviceId" path="serviceId" class="form-control">                                                                     
                                     <c:forEach items="${service}" var="cat">     
-                                        <option value="${cat.id}" >${cat.name} </option>
+                                        <option value="${cat.id}" >${cat.name} - ${cat.price} </option>
                                     </c:forEach>                                     
                                 </form:select>
                             </div>

@@ -71,12 +71,13 @@ public class Prescription implements Serializable {
     @Size(max = 255)
     @Column(name = "description")
     private String description;
-    @OneToOne
-    @JoinColumn(name = "examination_id", nullable = false)
-    private ExaminationCard examinationCard;
+    @JoinColumn(name = "registration_id", referencedColumnName = "id")
+    @ManyToOne(optional = false)
+    private Registration registration;
     @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "prescriptionId")
     private Collection<PrescriptionDetail> prescriptionDetailCollection;
+
 
     public Prescription() {
     }
@@ -177,19 +178,28 @@ public class Prescription implements Serializable {
     /**
      * @return the examinationCard
      */
-    public ExaminationCard getExaminationCard() {
-        return examinationCard;
-    }
-
-    /**
-     * @param examinationCard the examinationCard to set
-     */
-    public void setExaminationCard(ExaminationCard examinationCard) {
-        this.examinationCard = examinationCard;
-    }
+ 
 
     public void setAmount(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    /**
+     * @return the examinationId
+     */
+
+    /**
+     * @return the registration
+     */
+    public Registration getRegistration() {
+        return registration;
+    }
+
+    /**
+     * @param registration the registration to set
+     */
+    public void setRegistration(Registration registration) {
+        this.registration = registration;
     }
     
 }

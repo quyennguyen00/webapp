@@ -7,7 +7,9 @@ package com.medicweb.configs;
 
 import com.medicweb.formatter.CategoryFormat;
 import com.medicweb.formatter.ManufactoryFormat;
+import com.medicweb.formatter.RegisterForMat;
 import com.medicweb.formatter.RoleFormat;
+import com.medicweb.formatter.ServiceFormat;
 import com.medicweb.formatter.SupplierFormat;
 import com.medicweb.formatter.TypeFormat;
 import org.springframework.context.MessageSource;
@@ -84,6 +86,8 @@ public class WebApplicationContextConfig implements WebMvcConfigurer{
        registry.addFormatter(new ManufactoryFormat());
        registry.addFormatter(new SupplierFormat());
        registry.addFormatter(new RoleFormat());
+       registry.addFormatter(new ServiceFormat());
+       registry.addFormatter(new RegisterForMat());
     }
 
     

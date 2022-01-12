@@ -10,7 +10,7 @@
 <h1 class="text-center text-danger">ĐƠN THUỐC</h1>
 
 <c:if test="${carts == null}">
-    <h4 class="text-danger">Khong co san pham nao trong gio</h4>
+    <h4 class="text-danger">Khong co dơn thuoc</h4>
 </c:if>
     
 <c:if test="${carts != null}">

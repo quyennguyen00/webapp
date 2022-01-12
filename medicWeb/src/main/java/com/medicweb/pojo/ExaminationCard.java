@@ -27,13 +27,15 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  *
  * @author QUYENNGUYEN
  */
 @Entity
-@Table(name = "examination_card")
+@Table(name = "`examination_card`")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "ExaminationCard.findAll", query = "SELECT e FROM ExaminationCard e"),
@@ -46,27 +48,25 @@ public class ExaminationCard implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "id")
+    @Column(name = "`id`")
     private Integer id;
     @Basic(optional = false)
-    @NotNull
+    @NotNull(message = "{examination.NotNullErr}")
     @Column(name = "created_date")
     @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date createdDate;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Basic(optional = false)
-    @NotNull
     @Column(name = "price")
     private Long price;
     @JoinColumn(name = "registration_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
-    @OneToOne(mappedBy = "prescription")
-    private Prescription prescription;    
     private Registration registrationId;
     @JoinColumn(name = "service_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Services serviceId;
-
+    
     public ExaminationCard() {
     }
 
@@ -121,6 +121,7 @@ public class ExaminationCard implements Serializable {
         this.serviceId = serviceId;
     }
 
+   
     @Override
     public int hashCode() {
         int hash = 0;
@@ -145,7 +146,6 @@ public class ExaminationCard implements Serializable {
     public String toString() {
         return "com.medicweb.pojo.ExaminationCard[ id=" + id + " ]";
     }
-
     
     
 }

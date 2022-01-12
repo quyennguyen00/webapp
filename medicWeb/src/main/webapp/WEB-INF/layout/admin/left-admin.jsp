@@ -119,7 +119,7 @@
 
                     </nav>
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="<c:url value="/nurse"/>">PAYMENT</a>
+                        <a class="nav-link" href="<c:url value="/nurse/paymet"/>">PAYMENT</a>
 
                     </nav>
                 </div>

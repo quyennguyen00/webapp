@@ -6,6 +6,7 @@
 package com.medicweb.service;
 
 import com.medicweb.pojo.ExaminationCard;
+import com.medicweb.pojo.Registration;
 import java.util.List;
 
 /**
@@ -14,6 +15,7 @@ import java.util.List;
  */
 public interface ExamService {
      List<ExaminationCard> getlist();
+     List<Object[]> getListByRegister(int r);
     boolean addExam(ExaminationCard e);
     ExaminationCard getExam(int id);
 }

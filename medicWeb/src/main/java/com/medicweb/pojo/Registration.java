@@ -67,14 +67,19 @@ public class Registration implements Serializable {
     @Basic(optional = false)
     @Column(name = "active")
     private boolean active;
+    @Column(name = "check")
+    private Boolean check;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 225,message = "{regit.NotNullErr}")
     @Column(name = "description")
     private String description;
-    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "registrationId")
     private Collection<ExaminationCard> examinationCardCollection;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "registration")
+    private Collection<Prescription> prescriptionCollection;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "registrationId")
+    private Collection<Bill> billCollection;
     @JoinColumn(name = "`user_id`", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private User userId;
@@ -125,7 +130,13 @@ public class Registration implements Serializable {
     public void setActive(boolean active) {
         this.active = active;
     }
+     public Boolean getCheck() {
+        return check;
+    }
 
+    public void setCheck(Boolean check) {
+        this.check = check;
+    }
     public String getDescription() {
         return description;
     }
@@ -165,6 +176,34 @@ public class Registration implements Serializable {
     @Override
     public String toString() {
         return "com.medicweb.pojo.Registration[ id=" + id + " ]";
+    }
+
+    /**
+     * @return the examinationCardCollection
+     */
+    public Collection<ExaminationCard> getExaminationCardCollection() {
+        return examinationCardCollection;
+    }
+
+    /**
+     * @param examinationCardCollection the examinationCardCollection to set
+     */
+    public void setExaminationCardCollection(Collection<ExaminationCard> examinationCardCollection) {
+        this.examinationCardCollection = examinationCardCollection;
+    }
+
+    /**
+     * @return the prescriptionCollection
+     */
+    public Collection<Prescription> getPrescriptionCollection() {
+        return prescriptionCollection;
+    }
+
+    /**
+     * @param prescriptionCollection the prescriptionCollection to set
+     */
+    public void setPrescriptionCollection(Collection<Prescription> prescriptionCollection) {
+        this.prescriptionCollection = prescriptionCollection;
     }
     
 }

@@ -70,7 +70,7 @@ public class AdminController {
     public String admin(Model model){
         return"page";
     }
-    /// MEDICINE
+    /// USER
     @GetMapping("/admin/user/add")
     public String addmedic(Model model){
         model.addAttribute("user", new User());

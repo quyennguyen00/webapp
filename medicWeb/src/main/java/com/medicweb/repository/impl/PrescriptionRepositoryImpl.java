@@ -42,7 +42,6 @@ public class PrescriptionRepositoryImpl implements PrescriptionRepository{
         try {
             Prescription p = new Prescription();
             p.setDate(new Date());
-            p.setExaminationCard(this.examRepository.getExam(1));
             p.setResult("111");
 //            p.setAmount(pres.size());
             session.save(p);

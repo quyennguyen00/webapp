@@ -20,6 +20,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -33,43 +34,44 @@ public class NurseController {
     private ServiceServices serviceServices;
     @Autowired
     private ExamService examService;
+    @Autowired
+    private RegistrationService registrationService;
     
       @ModelAttribute
     public void commonAttr(Model model, HttpSession session) {
        model.addAttribute("service",serviceServices.getService());
        
     }
-
+    // 
       @GetMapping("/nurse")
     public String nursePage(Model model){
         return"registration";
     }
+    //
       @GetMapping("/nurse/examination-card")
     public String examination(Model model){
         model.addAttribute("exam", new ExaminationCard());
         return"page-nurse";
     }
    
-     @PostMapping("/nurse/examination-card")
-    public String addExam(Model model,@ModelAttribute(value = "exam") @Valid ExaminationCard exam){
-         Services s = this.serviceServices.getServiceById(exam.getServiceId().getId());
-         exam.setPrice(s.getPrice());
-         if(this.examService.addExam(exam)){
-//             return "redirect:/nurse";
-                return "page-nurse";
-         }
-        return "page-nurse";
-    }
     @PostMapping("/nurse/examination-card/add")
     public String add(Model model,@ModelAttribute(value = "exam") @Valid ExaminationCard exam,
             BindingResult result){
-
-         Services s = this.serviceServices.getServiceById(exam.getServiceId().getId());
+        if(!result.hasErrors()){
+            Services s = this.serviceServices.getServiceById(exam.getServiceId().getId());
          exam.setPrice(s.getPrice());
-         if(this.examService.addExam(exam)){
-             return "redirect:/nurse";
-         }
+         if(this.examService.addExam(exam))
+             return "redirect:/nurse";      
+        }    
         return "page-nurse";
-        
     }
+    //
+    @GetMapping(value="/nurse/payment-{id}")
+    public String payment(Model model,@PathVariable int id){
+        model.addAttribute("payment",this.examService.getListByRegister(id));
+        model.addAttribute("regis",this.registrationService.getRegistrationById(id));
+        return"payment";
+    }
+    
+    
 }

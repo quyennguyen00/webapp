@@ -6,6 +6,7 @@
 package com.medicweb.service.impl;
 
 import com.medicweb.pojo.ExaminationCard;
+import com.medicweb.pojo.Registration;
 import com.medicweb.repository.ExamRepository;
 import com.medicweb.service.ExamService;
 import java.util.List;
@@ -34,6 +35,11 @@ public class ExamServiceImpl implements ExamService{
     @Override
     public ExaminationCard getExam(int id) {
        return  this.examRepository.getExam(id);
+    }
+
+    @Override
+    public List<Object[]> getListByRegister(int r) {
+       return this.examRepository.getListByRegister(r);
     }
     
 }
