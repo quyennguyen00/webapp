@@ -5,13 +5,19 @@
  */
 package com.medicweb.controllers;
 
+import com.medicweb.pojo.Bill;
 import com.medicweb.pojo.ExaminationCard;
 import com.medicweb.pojo.Medicines;
+import com.medicweb.pojo.Registration;
 import com.medicweb.pojo.Services;
+import com.medicweb.service.BillService;
 import com.medicweb.service.ExamService;
 import com.medicweb.service.RegistrationService;
 import com.medicweb.service.ServiceServices;
 import com.medicweb.service.UserService;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +42,8 @@ public class NurseController {
     private ExamService examService;
     @Autowired
     private RegistrationService registrationService;
+    @Autowired
+    private BillService billService;
     
       @ModelAttribute
     public void commonAttr(Model model, HttpSession session) {
@@ -66,12 +74,16 @@ public class NurseController {
         return "page-nurse";
     }
     //
+    @GetMapping(value="/nurse/list-payment")
+    public String payment(Model model){
+        return"payment";
+    }
+
     @GetMapping(value="/nurse/payment-{id}")
-    public String payment(Model model,@PathVariable int id){
+    public String pay(Model model,@PathVariable int id){
         model.addAttribute("payment",this.examService.getListByRegister(id));
         model.addAttribute("regis",this.registrationService.getRegistrationById(id));
         return"payment";
     }
-    
     
 }

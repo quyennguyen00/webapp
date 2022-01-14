@@ -4,6 +4,7 @@ com\medicweb\pojo\Services_.class
 com\medicweb\service\impl\ServiceServicesImpl.class
 com\medicweb\service\RoleService.class
 com\medicweb\repository\impl\ExamRepositoryImpl.class
+com\medicweb\service\BillService.class
 com\medicweb\formatter\CategoryFormat.class
 com\medicweb\configs\WebApplicationContextConfig.class
 com\medicweb\pojo\Category_.class
@@ -23,6 +24,7 @@ com\medicweb\repository\ExamRepository.class
 com\medicweb\pojo\Suppliers_.class
 com\medicweb\pojo\Services.class
 com\medicweb\service\CagetoryService.class
+com\medicweb\service\impl\BillServiceImpl.class
 com\medicweb\configs\TilesConfig.class
 com\medicweb\service\UserService.class
 com\medicweb\varlidator\MedicineValidator.class

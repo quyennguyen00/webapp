@@ -67,7 +67,7 @@ public class Registration implements Serializable {
     @Basic(optional = false)
     @Column(name = "active")
     private boolean active;
-    @Column(name = "check")
+    @Column(name = "pay")
     private Boolean check;
     @Basic(optional = false)
     @NotNull

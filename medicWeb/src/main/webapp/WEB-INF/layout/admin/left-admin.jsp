@@ -53,13 +53,25 @@
                 
                  <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseStats" >
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-line"></i></div>
-                    STATS
+                    STATS- PATIENT
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
                 <div class="collapse" id="collapseStats" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                        <a class="nav-link" href="<c:url value="/admin/patient"/>">PATIENT</a>
-                        <a class="nav-link" href="<c:url value="/admin/turnover"/>">TURNOVER</a>                
+                        <a class="nav-link" href="<c:url value="/admin/patient/month"/>">PATIENT-MONTH</a>
+                        <a class="nav-link" href="<c:url value="/admin/patient/year"/>">PATIENT-YEAR</a>                
+                       
+                    </nav>
+                </div>
+                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseTu" >
+                    <div class="sb-nav-link-icon"><i class="fas fa-chart-line"></i></div>
+                    TURNOVER
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseTu" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                        <a class="nav-link" href="<c:url value="/admin/turnover/month"/>">TURNOVER-MONTH</a>
+                        <a class="nav-link" href="<c:url value="/admin/turnover/year"/>">TURNOVER-YEAR</a>                
                        
                     </nav>
                 </div>

@@ -134,10 +134,18 @@
         
     }
     
-    function add(){
+    function add(id){
     if(confirm("Bạn chắc chắn ?")== true){
         fetch("/medicWeb/api/add",{
-            method: "post"
+            method: "post",
+             body: JSON.stringify({
+            "registration": id
+           
+           
+         }),
+        headers: {
+            "Content-Type": "application/json"
+        }
         }).then(function (res){
             return res.json();
         }).then(function(code){
@@ -145,22 +153,28 @@
             location.reload();
        
         });
-//        fetch(`/medicWeb/api/add`, {
-//        method: "POST",
-//        headers: {
-//            "Content-Type": "application/json"
-//        }
-//    }).then(res => {
-//        if (res.status == 200) {
-//            location.reload();
-//        } else {
-//            alert("Something wrong!!!");
-//        }
-//    })
-// Swal.fire(
-//            'Thành công!',
-//            'Đặt hàng thành công!',
-//            'success'
-//        )
     }
-}
+   }
+    
+    function pay(date,price,regisId){
+        if(confirm("Bạn chắc chắn ?")== true){
+         fetch("/medicWeb/api/bill", {
+        method: 'post',
+        body: JSON.stringify({
+            "date": date,
+            "total": price,
+            "registrationId": regisId
+           
+         }),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).then(function(res) {
+         console.info(res)
+        return res.json();
+    }).then(function(data) {
+         console.info(data);  
+    })
+    window.location.replace("http://localhost:8083/medicWeb/nurse/list-payment")
+    }
+    }

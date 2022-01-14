@@ -8,6 +8,7 @@ package com.medicweb.controllers;
 import com.medicweb.pojo.Medicines;
 import com.medicweb.pojo.MedicineItems;
 import com.medicweb.pojo.User;
+import com.medicweb.service.RegistrationService;
 import com.medicweb.service.UserService;
 import java.util.Map;
 import javax.servlet.http.HttpSession;
@@ -31,12 +32,13 @@ public class DoctorController {
     
     @Autowired
     private UserService userDetailsService;
+    @Autowired
+    private RegistrationService registrationService;
     
  
    @GetMapping("/doctor")
    public String listDoctor(Model model,HttpSession session){
-//       model.addAttribute("userByRegisId",this.userDetailsService.getUserByRigisId(r))
-
+//       model.addAttribute("regis",this.registrationService.getRegistrationById(id));
         Map<Integer, MedicineItems> pres = (Map<Integer, MedicineItems>) session.getAttribute("prescription");
         if (pres != null) {
             model.addAttribute("prescriptions", pres.values());

@@ -48,7 +48,7 @@ public class Bill implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "total")
-    private BigDecimal total;
+    private Long total;
     @Basic(optional = false)
     @NotNull
     @Column(name = "create_date")
@@ -65,7 +65,7 @@ public class Bill implements Serializable {
         this.id = id;
     }
 
-    public Bill(Integer id, BigDecimal total, Date createDate) {
+    public Bill(Integer id, Long total, Date createDate) {
         this.id = id;
         this.total = total;
         this.createDate = createDate;
@@ -79,11 +79,11 @@ public class Bill implements Serializable {
         this.id = id;
     }
 
-    public BigDecimal getTotal() {
+    public Long getTotal() {
         return total;
     }
 
-    public void setTotal(BigDecimal total) {
+    public void setTotal(Long total) {
         this.total = total;
     }
 

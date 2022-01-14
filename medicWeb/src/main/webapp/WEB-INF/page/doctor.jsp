@@ -90,16 +90,19 @@
                         <div class=" row col-12">
                             <label class="order-form-label">Select ID of registration</label>
                         </div>
-                        <div class="col-12">
+                        <div class="col-9">
                             <select id="sex" path="" class="form-control">                                                                     
                                 <c:forEach items="${register}" var="cat">   
                                     <c:if test="${cat.active == 'true'}" >
-                                        <option value="${cat.id}"selected >${cat.id}</option>
+                                        <option value="${cat.id}"selected > <c:set var="id" value="${cat.id}"/>${cat.id}</option>
                                     </c:if>
                                     
                                 </c:forEach>                                                                                        
                             </select>
 
+                        </div>
+                        <div class="col-3">
+                            <button type="button" id="btnSubmit"  class="btn btn-success d-block mx-auto btn-submit">Submit</button>
                         </div>
 
                     </div>
@@ -181,7 +184,7 @@
 
                     <div class="row mt-3">
                         <div class="col-12">
-                            <button type="button" id="btnSubmit" onclick="add()" class="btn btn-success d-block mx-auto btn-submit">Submit</button>
+                            <button type="button" id="btnSubmit" onclick="add(${id})" class="btn btn-success d-block mx-auto btn-submit">Submit</button>
                         </div>
                     </div>
 

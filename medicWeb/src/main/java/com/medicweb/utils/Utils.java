@@ -24,12 +24,12 @@ public class Utils {
         return q;
     }
     
-//    public static Map<String, String> cartStats(Map<Integer, Cart> cart) {
+//    public static Map<String, String> cartStats(Map<Integer, MedicineItems> cart) {
 //        Long s = 0l;
 //        int q = 0;
 //        
 //        if (cart != null)
-//            for (PrescriptionTemp c: cart.values()) {
+//            for (MedicineItems c: cart.) {
 //                q += c.getQuantity();
 //                s += c.getQuantity() * c.getPrice();
 //            }

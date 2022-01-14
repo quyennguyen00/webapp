@@ -12,6 +12,7 @@ import com.medicweb.service.MedicineService;
 import com.medicweb.service.CagetoryService;
 import com.medicweb.service.ManufactoryService;
 import com.medicweb.service.RoleService;
+import com.medicweb.service.StatsService;
 import com.medicweb.service.SupplierService;
 import com.medicweb.service.TypeService;
 import com.medicweb.service.UserService;
@@ -53,6 +54,8 @@ public class AdminController {
     private UserService userDetailsService;
     @Autowired
     private RoleService roleService;
+    @Autowired
+    private StatsService statsService;
     
     @ModelAttribute
     public void commonAttr(Model model, HttpSession session) {
@@ -102,13 +105,9 @@ public class AdminController {
    public String listDoctor(Model model){
        return "list-doctor";
    }
-   
-   
     @GetMapping(value="/admin/list-doctor/edit-{id}")
     public String showEdit(Model model,@PathVariable int id){
         model.addAttribute("user",this.userDetailsService.getUserById(id));
-        
-        
         return "show-user";
     }
     
@@ -120,19 +119,28 @@ public class AdminController {
     @GetMapping(value="/admin/list-nurse/edit-{id}")
     public String showEditNurse(Model model,@PathVariable int id){
         model.addAttribute("user",this.userDetailsService.getUserById(id));
-        
-//        model.addAttribute("editMedic", new Medicines());
-        
         return "show-user";
     }
-    // STAST
-     @RequestMapping("/admin/patient")
+    // TURNOVER
+    @RequestMapping("/admin/turnover/month")
+    public String monthStats(Model model){
+        model.addAttribute("monthStats",this.statsService.monthStats());
+        return "page-stats";
+    }
+    @RequestMapping("/admin/turnover/year")
+    public String yearStats(Model model){
+        model.addAttribute("yearStats",this.statsService.yearStats());
+        return "year-stats";
+    }
+//    PATIENT
+        @RequestMapping("/admin/patient/month")
     public String stastPatient(Model model){
-        return"page-error";
+         model.addAttribute("monthP",this.statsService.monthPatient());
+        return"patient-month";
     }
-      @RequestMapping("/admin/turnover")
-    public String stastTurnovert(Model model){
-        return"page-error";
+         @RequestMapping("/admin/patient/year")
+    public String yearPatient(Model model){
+         model.addAttribute("yearP",this.statsService.yearPatient());
+        return"patient-year";
     }
-    
 }

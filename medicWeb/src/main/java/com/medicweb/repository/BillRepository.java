@@ -5,10 +5,12 @@
  */
 package com.medicweb.repository;
 
+import com.medicweb.pojo.Bill;
+
 /**
  *
  * @author QUYENNGUYEN
  */
 public interface BillRepository {
-    
+    boolean addBill(Bill b);
 }

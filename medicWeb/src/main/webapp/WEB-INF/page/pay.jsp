@@ -8,6 +8,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<c:url value="/nurse/payment/add" var="action"/>
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
@@ -53,7 +54,7 @@
                             <td>${c.userId.lastName}</td>
                             <td>${c.userId.firstName}</td>
                             <td>${c.userId.id}</td>
-                            <td><button type="button" class="btn btn-success" ><a href="<c:url value="/nurse/payment-${c.id}" />">PAY</a></button></td>
+                            <td><button type="button" class="btn btn-success" onclick="location.href='http://localhost:8083/medicWeb/nurse/payment-${c.id}'">PAY</button></td>
                         </tr>
                     </c:if>
                 </c:forEach>
@@ -80,8 +81,7 @@
                 <div class="col-12">
 
                     <div class="row mt-3 mx-4">
-
-
+          
                     </div>
                     <div class="row mx-4">
                         <div class="col-12 mb-2">
@@ -96,18 +96,9 @@
                         </div>
                     </div>
 
-                    <div class="row mt-3 mx-4">
-                        <div class="col-12">
-                            <label class="order-form-label" for="date-picker-example">Date</label>
-                        </div>
-                        <div class="col-12">
-                            <input class="order-form-input datepicker"  type="date"
-                                   id="date-picker-example">
-                        </div>
-                    </div>
-
                     <div class="row mt-3 mx-4" id="areaMedicine">
                         <table>
+                             <c:if test="${payment != null}">
                             <thead>
                                 <tr>
 
@@ -119,15 +110,21 @@
 
                             <tbody>
                                 <c:forEach var="p" items="${payment}">
+                                   
                                     <tr >
                                         <td>
                                             <c:set var="dem" value="${dem +1}"/>${dem}                                         
                                         </td>
                                         <td>${p[1].getName()}</td>
                                         <td>
+                                            <c:set var ="sum" value="${sum + p[1].getPrice() }" ></c:set>
                                             <fmt:formatNumber type = "number" maxFractionDigits = "0" value = "${p[1].getPrice()}" />  VNĐ</td>
                                     </tr>
+                                     
+                                     
                                     </c:forEach>
+                                    
+                                    <c:if test="${sum == 0}"><div>Empty</div></c:if>
                                     <tr>
                                         <td></td>
                                         <td></td>
@@ -137,21 +134,20 @@
                                         <th></th>
                                         <th >Sum</th>                                                                 
                                         <th> 
-                                            <fmt:formatNumber type = "number" maxFractionDigits = "0" value = "" />  VNĐ
+                                            <fmt:formatNumber type = "number" maxFractionDigits = "0" value = "${sum}" />  VNĐ
                                         </th>                                    
-
                                     </tr>
 
-                                
+
                             </tbody>
+                            </c:if>
+                            
                         </table>
                     </div>
-
-
-
                     <div class="row mt-3">
                         <div class="col-12">
-                            <button type="button" id="btnSubmit" onclick="add()" class="btn btn-success d-block mx-auto btn-submit">Submit</button>
+                            <button type="submit" onclick="pay('',${sum},${regis.id})"
+                                    class="btn btn-success d-block mx-auto btn-submit">Submit</button>
                         </div>
                     </div>
 

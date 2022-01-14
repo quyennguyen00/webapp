@@ -53,6 +53,7 @@ C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\repository\imp
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\repository\RegistrationRipository.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\repository\BillRepository.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\controllers\PatientController.java
+C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\service\BillService.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\pojo\PrescriptionDetail.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\pojo\Category.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\repository\impl\MedicineRepositoryIpml.java
@@ -86,6 +87,7 @@ C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\pojo\User.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\controllers\ApiPrescriptionController.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\service\PrescriptionService.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\controllers\ApiMedicineController.java
+C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\service\impl\BillServiceImpl.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\service\impl\PrescriptionServiceImpl.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\formatter\CategoryFormat.java
 C:\Users\Admin\Desktop\webapp\medicWeb\src\main\java\com\medicweb\pojo\Bill.java

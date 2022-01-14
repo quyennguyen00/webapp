@@ -61,6 +61,10 @@ and open the template in the editor.
         <put-attribute name="title" value="REGISTER"/>
         <put-attribute name="content" value="/WEB-INF/page/registration.jsp"/>       
     </definition>
+    <definition name="list-payment" extends="page">
+        <put-attribute name="title" value="PAY"/>
+        <put-attribute name="content" value="/WEB-INF/page/list-pay.jsp"/>       
+    </definition>
     <definition name="payment" extends="page">
         <put-attribute name="title" value="PAY"/>
         <put-attribute name="content" value="/WEB-INF/page/pay.jsp"/>       
@@ -69,6 +73,23 @@ and open the template in the editor.
     <definition name="page-patient" extends="page">
         <put-attribute name="title" value="HISTORY"/>
         <put-attribute name="content" value="/WEB-INF/page/page-patient.jsp"/>       
+    </definition>
+    <!--STATS-->
+    <definition name="patient-month" extends="page">
+        <put-attribute name="title" value="PATIENT-MONTH"/>
+        <put-attribute name="content" value="/WEB-INF/page/patient-month.jsp"/>       
+    </definition>
+    <definition name="patient-year" extends="page">
+        <put-attribute name="title" value="PATIENT-YEAR"/>
+        <put-attribute name="content" value="/WEB-INF/page/patient-year.jsp"/>       
+    </definition>
+    <definition name="page-stats" extends="page">
+        <put-attribute name="title" value="TURNOVER-MONTH"/>
+        <put-attribute name="content" value="/WEB-INF/page/month-stats.jsp"/>       
+    </definition>
+    <definition name="year-stats" extends="page">
+        <put-attribute name="title" value="TURNOVER-YEAR"/>
+        <put-attribute name="content" value="/WEB-INF/page/year-stats.jsp"/>       
     </definition>
     <!--ERROR PAGE-->
      <definition name="page-error" extends="page">
